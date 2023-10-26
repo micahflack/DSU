@@ -1,0 +1,217 @@
+\documentclass[12pt,oneside]{book}
+\usepackage[letterpaper, left=1.2in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{fancyhdr}
+%\pagestyle{fancy}		% add Heading of Chapter on top of each page
+\pagestyle{plain}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\leftmark}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+% \pagestyle{headings}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{lipsum}
+% \usepackage{fmtcount} % for textual representation of numbers
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\thechapter}{0pt}{\Huge}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{soul}
+\usepackage{frcursive}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs, multirow} % for borders and merged ranges
+\usepackage{tocloft}
+% \renewcommand{\chaptername}{}
+% \renewcommand{\thechapter}{}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+% \renewcommand{\cftchappresnum}{Chapter }
+% \renewcommand{\cftchapaftersnum}{:}
+% \renewcommand\cftchapafterpnum{\vskip 1pt}
+% \renewcommand{\cftchapnumwidth}{1em}
+
+\renewcommand*\cftfigpresnum{Figure~}
+\settowidth{\cftfignumwidth}{\cftfigpresnum}
+\renewcommand{\cftfigaftersnumb}{\quad~}
+\setlength{\cftfignumwidth}{4em}
+
+\renewcommand*{\cfttabpresnum}{Table~}
+\settowidth{\cfttabnumwidth}{\cfttabpresnum}
+\renewcommand{\cfttabaftersnumb}{\quad~}
+\setlength{\cfttabnumwidth}{4em}
+
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+\usepackage{soul}% for underlines
+\usepackage[table]{xcolor} % for cell colors
+% \usepackage{} % Change to other font if needed
+\usepackage{setspace}
+% \usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[bookmarks=true, hidelinks]{hyperref}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex} % ieee citaion style
+%\usepackage[backend=biber,style=apa]{biblatex} % apa citation style
+
+\usepackage{hyphenat}
+
+\usepackage{appendix}
+\usepackage{listings}
+\usepackage{bm}
+% \usepackage{natbib}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{5}
+\bibliography{Reference}
+\addbibresource{Main.bib}
+\usepackage{titlesec}
+% \titlespacing*{\chapter}{0pt}{0pt}{30pt}
+% \titleformat{\chapter}[display]{\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries\centering}{}{-90pt}{\Huge}
+
+% table row color macro
+\usepackage[first=0,last=9]{lcg}
+\newcommand{\ra}{\rand0.\arabic{rand}}
+
+\begin{document}
+\doublespacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Additional Material
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+%========================================
+\input{Additional/TitlePage.tex}
+\currentpdfbookmark{Title Page}{TitlePage}
+
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+% Dissertation Approval Form
+%=========================================
+% \input{Additional/ApprovalForm}
+% \clearpage
+
+
+% Acknowledgements
+%=========================================
+% \input{Additional/Acknowledgements}
+% \clearpage
+
+% Abstract
+%=========================================
+% \input{Additional/Abstract.tex}
+% \clearpage
+
+% Declaration 
+%=========================================
+% \input{Additional/Declaration.tex}
+% \clearpageContents
+
+% \begin{singlespace}
+%     \setlength\cftbeforefigskip{\baselineskip}
+%     \Abstract
+% \end{singlespace}
+% \setcounter{page}{3}
+
+% Acknowledgements Page (optional)
+%========================================
+%\pagenumbering{roman} % Uncomment if Copyright page is not in use
+% \addcontentsline{toc}{chapter}{Acknowledgments}
+% %\setcounter{page}{2} % Uncomment if Copyright page is not in use
+% \input{Additional/Acknowledgements.tex}
+
+% Table of Contents
+%========================================
+% \pagenumbering{roman} % Uncomment if Copyright and Acknowledgements are not in use
+% \setcounter{page}{2} % Uncomment if Copyright and Acknowledgements are not in use
+
+% \renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\contentsname}{\hfill \Large \uppercase{Table of Contents}\hfill}   
+\renewcommand{\cftaftertoctitle}{\hfill}
+\addcontentsline{toc}{chapter}{Table of Contents}
+% \begin{doublespacing}
+\tableofcontents
+\clearpage
+% \end{doublespacing}
+% \currentpdfbookmark{Table of Contents}{TOC}
+
+
+%%% Uncomment triple comments for List of Tables
+% List of figures and tables
+%========================================
+% \addcontentsline{toc}{chapter}{List of Tables}
+\renewcommand{\listtablename}{\hfill \Large \uppercase{List of Tables} \hfill}
+\addcontentsline{toc}{chapter}{List of Tables}
+% \begin{singlespace}
+% 	\setlength\cftbeforetabskip{\baselineskip}
+\listoftables
+% \end{singlespace}
+\clearpage
+
+%%% Uncomment triple comments for List of Figures
+% \addcontentsline{toc}{chapter}{List of Figures}
+\renewcommand{\listfigurename}{\hfill \Large \uppercase{List of Figures} \hfill}
+\addcontentsline{toc}{chapter}{List of Figures}
+% \begin{siwnglespace}
+    % \setlength\cftbeforefigskip{\baselineskip}
+\listoffigures
+% \end{singwlespace}
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Main Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% resume page numbering for rest of document
+\pagenumbering{arabic}
+\setcounter{page}{1} % set the page number appropriately
+
+% Chapter 1
+\input{MainContent/Introduction.tex}
+
+% Chapter 2
+\input{MainContent/RelatedWorks.tex}
+
+% Chapter 3
+\input{MainContent/ProposedResearch.tex}
+
+% Chapter 4
+%%% \input{MainContent/Significance.tex}
+
+% Chapter 5
+\input{MainContent/Timeline.tex}
+
+% Chapter 6
+\input{MainContent/Conclusion.tex}
+
+%%% % Evaluations
+%%% \input{MainContent/Evaluations.tex}
+
+\clearpage
+
+% Appendices
+%========================================
+% \input{MainContent/AppendixA.tex}
+% \clearpage
+
+% \input{MainContent/AppendixB.tex}
+% \clearpage
+
+% Reference
+%========================================
+\addcontentsline{toc}{chapter}{References}
+\begin{singlespace}
+	\setlength\bibitemsep{\baselineskip}
+	\printbibliography[title={References}]
+\end{singlespace}
+\clearpage
+
+\end{document}
