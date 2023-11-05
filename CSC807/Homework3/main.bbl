@@ -673,6 +673,159 @@
       \field{type}{phdthesis}
       \field{year}{2021}
     \endentry
+    \entry{tianSoKPlugPray2018}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=e43319664e5d21946486e43e5a93f0bb}{%
+           family={Tian},
+           familyi={T\bibinitperiod},
+           given={Jing},
+           giveni={J\bibinitperiod}}}%
+        {{hash=945d8f545fbdbcfc83e91439b713e668}{%
+           family={Scaife},
+           familyi={S\bibinitperiod},
+           given={Nolen},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ac480063a097b769bae5aa33cd291d46}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8a5991f7d0edf5d3cbc0cc37cbef43a8}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d036433b717d49c0a2eb775b557b8239}{%
+           family={Bates},
+           familyi={B\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a21e438da7f3d985cb8a021dce7c8b8a}{%
+           family={Butler},
+           familyi={B\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{4920a91adfe91b8376bc93c4d81a6cc1}
+      \strng{fullhash}{d27d9ef3c2c1f980d8720c28848f8882}
+      \strng{bibnamehash}{d27d9ef3c2c1f980d8720c28848f8882}
+      \strng{authorbibnamehash}{d27d9ef3c2c1f980d8720c28848f8882}
+      \strng{authornamehash}{4920a91adfe91b8376bc93c4d81a6cc1}
+      \strng{authorfullhash}{d27d9ef3c2c1f980d8720c28848f8882}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{USB-based attacks have increased in complexity in recent years. Modern attacks now incorporate a wide range of attack vectors, from social engineering to signal injection. To address these challenges, the security community has responded with a growing set of fragmented defenses. In this work, we survey and categorize USB attacks and defenses, unifying observations from both peer-reviewed research and industry. Our systematization extracts offensive and defensive primitives that operate across layers of communication within the USB ecosystem. Based on our taxonomy, we discover that USB attacks often abuse the trust-by-default nature of the ecosystem, and transcend different layers within a software stack; none of the existing defenses provide a complete solution, and solutions expanding multiple layers are most effective. We then develop the first formal verification of the recently released USB Type-C Authentication specification, and uncover fundamental flaws in the specification's design. Based on the findings from our systematization, we observe that while the spec has successfully pinpointed an urgent need to solve the USB security problem, its flaws render these goals unattainable. We conclude by outlining future research directions to ensure a safer computing experience with USB.}
+      \field{booktitle}{2018 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})}
+      \field{eventtitle}{2018 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})}
+      \field{issn}{2375-1207}
+      \field{month}{5}
+      \field{shorttitle}{{{SoK}}}
+      \field{title}{{{SoK}}: "{{Plug}} \& {{Pray}}" {{Today}} – {{Understanding USB Insecurity}} in {{Versions}} 1 {{Through C}}}
+      \field{urlday}{5}
+      \field{urlmonth}{11}
+      \field{urlyear}{2023}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1032\bibrangedash 1047}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1109/SP.2018.00037
+      \endverb
+      \verb{file}
+      \verb /home/micahflack/Zotero/storage/F8B94ZXW/tian2018.pdf.pdf;/home/micahflack/Zotero/storage/HHHPW7B3/Tian et al. - 2018 - SoK Plug & Pray Today – Understanding USB Insec.pdf;/home/micahflack/Zotero/storage/3U8NYJTI/8418652.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8418652
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8418652
+      \endverb
+    \endentry
+    \entry{USBKillDevices}{online}{}
+      \list{organization}{1}{%
+        {USBKill}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The USBKill, or USB Killer is a device used by pentesters, industrial clients and law-enforcement world-wide to perform security checks against power surge attacks on USB ports. USBKill.com is manufacturer of the USB Kill device, USBKill Shield - which defends against USB Attacks like a USB Condom \& other accessories}
+      \field{title}{{{USB Kill}} Devices for Pentesting \& Law-Enforcement}
+      \field{urlday}{5}
+      \field{urlmonth}{11}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/micahflack/Zotero/storage/ZWUFIQBJ/usbkill.com.html
+      \endverb
+      \verb{urlraw}
+      \verb https://usbkill.com/
+      \endverb
+      \verb{url}
+      \verb https://usbkill.com/
+      \endverb
+    \endentry
+    \entry{sridharEMIIssuesUniversal2003}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=6253e5b7795f0c60691fd6328be84e1a}{%
+           family={Sridhar},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=478e9630c116dfc15e160eaecaedd04e}{%
+           family={Prasad},
+           familyi={P\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=059087a583919a465a00e9f4a9112ad6}{%
+           family={Punitha},
+           familyi={P\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=550843ea88dbc031549592515a68003c}{%
+           family={Karunakaran},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{abdd4d894e61a36d9327c72b499f2d6a}
+      \strng{fullhash}{0bdd91eb74c5eb5ece4ee01c8bb9008f}
+      \strng{bibnamehash}{0bdd91eb74c5eb5ece4ee01c8bb9008f}
+      \strng{authorbibnamehash}{0bdd91eb74c5eb5ece4ee01c8bb9008f}
+      \strng{authornamehash}{abdd4d894e61a36d9327c72b499f2d6a}
+      \strng{authorfullhash}{0bdd91eb74c5eb5ece4ee01c8bb9008f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Universal serial bus (USB) is rapidly replacing the serial port on personal computers (PC). It provides high speed flexible interconnectivity between a PC and its peripherals. It is a low cost solution which supports data transfer rates up to 12 Mbps (USB 1.0) and 480 Mbps (USB 2.0). It also provides 5V supply to the peripheral device. High level of emission was observed in the power supply wires of the USB while a satellite receiver (peripheral) was evaluated for its functionality. On analysis, it was observed that emission from USB can affect the performance of the peripheral unit depending on the sensitivity of peripheral device to the power supply spurious noise. In this paper, the emissions from a typical PC and methods towards improvement of the emissions are analysed. Precautions to be taken whenever any peripheral device is evaluated, for EMI performance, are discussed. USB, even though a powerful interface, should be carefully used for an overall performance of the system in which it is utilized.}
+      \field{booktitle}{8th {{International Conference}} on {{Electromagnetic Interference}} and {{Compatibility}}}
+      \field{eventtitle}{8th {{International Conference}} on {{Electromagnetic Interference}} and {{Compatibility}}}
+      \field{month}{12}
+      \field{title}{{{EMI}} Issues of Universal Serial Bus and Solutions}
+      \field{urlday}{5}
+      \field{urlmonth}{11}
+      \field{urlyear}{2023}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{97\bibrangedash 100}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/ICEMIC.2003.237887
+      \endverb
+      \verb{file}
+      \verb /home/micahflack/Zotero/storage/E5S22XPG/sridhar2003.pdf.pdf;/home/micahflack/Zotero/storage/JFVZQYHV/1287775.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/abstract/document/1287775
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/abstract/document/1287775
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
