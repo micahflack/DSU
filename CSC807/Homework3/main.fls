@@ -368,6 +368,8 @@ INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT ./MainContent/ProposedResearch.tex
 INPUT ./MainContent/ProposedResearch.tex
 INPUT MainContent/ProposedResearch.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT ./MainContent/Timeline.tex
 INPUT ./MainContent/Timeline.tex
 INPUT MainContent/Timeline.tex

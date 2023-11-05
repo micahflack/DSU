@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.22)  4 NOV 2023 23:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.22)  5 NOV 2023 15:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -923,7 +923,7 @@ Package biblatex Info: Reference section=0 on input line 81.
 Package biblatex Info: Reference segment=0 on input line 81.
 \c@lstlisting=\count471
  (./Additional/TitlePage.tex
-<Additional/DSULogo.png, id=73, 3012.25375pt x 876.27374pt>
+<Additional/DSULogo.png, id=85, 3012.25375pt x 876.27374pt>
 File: Additional/DSULogo.png Graphic file (type png)
 <use Additional/DSULogo.png>
 Package pdftex.def Info: Additional/DSULogo.png  used on input line 24.
@@ -939,15 +939,15 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2] (./main.lot)
+ [3] (./main.lot)
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [3
+ [4
 
 ] (./main.lof
 Overfull \hbox (3.75136pt too wide) detected at line 2
@@ -963,16 +963,16 @@ Overfull \hbox (3.75136pt too wide) detected at line 3
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [4
+ [5
 
 ] (./MainContent/Introduction.tex
 Chapter 1.
-<Figures/MidSquare.png, id=121, 301.125pt x 301.125pt>
+<Figures/MidSquare.png, id=140, 301.125pt x 301.125pt>
 File: Figures/MidSquare.png Graphic file (type png)
 <use Figures/MidSquare.png>
 Package pdftex.def Info: Figures/MidSquare.png  used on input line 14.
 (pdftex.def)             Requested size: 227.65062pt x 227.65813pt.
-<Figures/SurePOS.jpg, id=122, 301.125pt x 285.065pt>
+<Figures/SurePOS.jpg, id=141, 301.125pt x 285.065pt>
 File: Figures/SurePOS.jpg Graphic file (type jpg)
 <use Figures/SurePOS.jpg>
 Package pdftex.def Info: Figures/SurePOS.jpg  used on input line 16.
@@ -986,12 +986,12 @@ l.24
 
 
 ]
-<Figures/SNBC_S80.jpeg, id=138, 1204.5pt x 1204.5pt>
+<Figures/SNBC_S80.jpeg, id=157, 1204.5pt x 1204.5pt>
 File: Figures/SNBC_S80.jpeg Graphic file (type jpg)
 <use Figures/SNBC_S80.jpeg>
 Package pdftex.def Info: Figures/SNBC_S80.jpeg  used on input line 29.
 (pdftex.def)             Requested size: 182.1177pt x 182.11916pt.
-<Figures/SNBC_S80_IO.png, id=139, 479.7925pt x 359.3425pt>
+<Figures/SNBC_S80_IO.png, id=158, 479.7925pt x 359.3425pt>
 File: Figures/SNBC_S80_IO.png Graphic file (type png)
 <use Figures/SNBC_S80_IO.png>
 Package pdftex.def Info: Figures/SNBC_S80_IO.png  used on input line 31.
@@ -1052,24 +1052,24 @@ LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 26052557F2E232DD617D8DD10C10AF13;2292.
+(rerunfilecheck)             Checksum: 76C6BF7512540123B3E16AB8D7895D6A;2614.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25132 strings out of 474928
- 432091 string characters out of 5762085
+ 25144 strings out of 474928
+ 432285 string characters out of 5762085
  1935791 words of memory out of 5000000
- 46242 multiletter control sequences out of 15000+600000
- 568761 words of font info for 74 fonts, out of 8000000 for 9000
+ 46250 multiletter control sequences out of 15000+600000
+ 569366 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,9n,131p,1567b,1722s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (17 pages, 407940 bytes).
+Output written on main.pdf (18 pages, 408536 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 170 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 
