@@ -1,7 +1,7 @@
 
 # these are extensions ignored by git
 
-.code-workspace
+*.code-workspace
 
 
 # these are folders ignored by git
