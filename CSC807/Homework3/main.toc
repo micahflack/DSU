@@ -13,8 +13,7 @@
 \contentsline {section}{\numberline {3.2}Research Questions}{7}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Methodology}{7}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Design Science}{8}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Design Science}{8}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Reporting}{8}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.2}Data Collection}{8}{subsection.3.3.2}%
 \contentsline {chapter}{\numberline {4}\unhbox \voidb@x Timeline}{9}{chapter.4}%
 \contentsline {chapter}{\numberline {5}\unhbox \voidb@x Conclusion}{10}{chapter.5}%
 \contentsline {chapter}{References}{11}{chapter.5}%

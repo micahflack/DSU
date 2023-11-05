@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1699160441 "main.bcf" "main.bbl" "main" 1699222450 0
+["biber main"] 1699160441 "main.bcf" "main.bbl" "main" 1699223016 0
   "./Main.bib" 1698153675 2296 ea2c6789f2e9b8eab62f83011484e648 ""
-  "main.bcf" 1699222449 108944 050e9d6d83d54cd66227476fd76f02a9 "pdflatex"
+  "main.bcf" 1699223016 108944 050e9d6d83d54cd66227476fd76f02a9 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1699222448 "/home/micahflack/Documents/DSU/CSC807/Homework3/main.tex" "main.pdf" "main" 1699222450 0
+["pdflatex"] 1699223015 "/home/micahflack/Documents/DSU/CSC807/Homework3/main.tex" "main.pdf" "main" 1699223016 0
   "/etc/texmf/web2c/texmf.cnf" 1698009111 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/micahflack/Documents/DSU/CSC807/Homework3/main.tex" 1698146851 6166 8de9636eab030cfc8239a1b0a3380b63 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -182,17 +182,17 @@
   "Figures/SurePOS.jpg" 1698052159 13562 0cd2edea33c7f9377d702f70db203e70 ""
   "MainContent/Conclusion.tex" 1698272793 595 d7286915b9ca621223ea9c1502267d76 ""
   "MainContent/Introduction.tex" 1698272754 5030 efe5d0675325c158102cf9644996b0dc ""
-  "MainContent/ProposedResearch.tex" 1699222448 2332 4237f810555193423a989556d3d9dfb3 ""
+  "MainContent/ProposedResearch.tex" 1699223015 2813 61f47b05cb8ff904cf7494065881617c ""
   "MainContent/RelatedWorks.tex" 1699160655 6939 310388376236844674dde18b7a498275 ""
   "MainContent/Timeline.tex" 1698272783 2782 68138d0c9f8f508ade174f49b6b01448 ""
-  "main.aux" 1699222449 8185 e7bfd69589e961a13c7940d221b8fbc7 "pdflatex"
+  "main.aux" 1699223016 8066 7d461e95ee3535b67caf9a325524e350 "pdflatex"
   "main.bbl" 1699160442 40850 db012c56d2d43ed0271deb3d3e464d9e "biber main"
-  "main.lof" 1699222449 338 219e8129ad924852233b0ca64d08bda7 "pdflatex"
-  "main.lot" 1699222449 230 c8b534a5799b28c06dc70175e4ccdc54 "pdflatex"
-  "main.out" 1699222449 2614 76c6bf7512540123b3e16ab8d7895d6a "pdflatex"
-  "main.run.xml" 1699222449 2429 7e13ddf8371b99dc840da9e571e823c2 "pdflatex"
+  "main.lof" 1699223016 338 219e8129ad924852233b0ca64d08bda7 "pdflatex"
+  "main.lot" 1699223016 230 c8b534a5799b28c06dc70175e4ccdc54 "pdflatex"
+  "main.out" 1699223016 2512 e4ebb90933f02a5a8b99ac8ca23b0882 "pdflatex"
+  "main.run.xml" 1699223016 2429 7e13ddf8371b99dc840da9e571e823c2 "pdflatex"
   "main.tex" 1698146851 6166 8de9636eab030cfc8239a1b0a3380b63 ""
-  "main.toc" 1699222449 1529 1072d367ef56c54a2086a80b3aa94530 "pdflatex"
+  "main.toc" 1699223016 1451 f6d5d8462e54fa18678580f7cfb4edec "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
