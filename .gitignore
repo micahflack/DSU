@@ -17,6 +17,8 @@
 *.synctex.gz
 *.toc
 
+*-blx.bib
+
 # these are folders ignored by git
 
 
