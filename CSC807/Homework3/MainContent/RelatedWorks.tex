@@ -12,7 +12,7 @@
 
 % \section*{Real-Time Operating System: Software and Security}
 % \addcontentsline{toc}{section}{Real-Time Operating System: Software and Security}
-\section{RTOS: Software and Security}
+\section{RTOS: Software and Security}  \label{rtossoftwaresecurity}
 
 % discuss security protections inherent to RTOS
 % mention ReconOS as a possible solution to a modifiable RTOS with threading
@@ -21,7 +21,7 @@
 
 % \section*{Embedded Firmware Patching}
 % \addcontentsline{toc}{section}{Embedded Device Hot Patching}
-\section{Embedded Firmware Patching}
+\section{Embedded Firmware Patching} \label{embeddedfirmwarepatching}
 
 % can embedded devices firmware be hot patched? are there methods for this while a device is running
 % RapidPatch is a possible example for maliciously patching RTOS devices
@@ -31,7 +31,7 @@ Typically, updating the firmware for a device or even delivering patches require
 
 % \section*{BadUSB-like Devices}
 % \addcontentsline{toc}{section}{Embedded BadUSB-like Devices}
-\section{BadUSB-like Devices}
+\section{BadUSB-like Devices} \label{badusbdevices}
 
 % discuss what a BadUSB device is and how it operates...
 % what are the requirements for a BadUSB device...
@@ -54,6 +54,6 @@ In \autocite*{tianSoKPlugPray2018}, they describe several attacks at each of the
 
 % \section*{Summary}
 % \addcontentsline{toc}{section}{Summary}
-\section{Summary}
+\section{Summary} \label{introductionsummary}
 
 As demonstrated by the previous works, vulnerability assessment of an embedded device is a well documented process. However, the extent that a serial thermal printer (e.g., Figure \ref{fig:btp_s80}) can be maliciously expanded through a modified FreeRTOS image, while supporting original functionality, has not. And, given success in the assessment, it could suggest room for continual and improved research.
