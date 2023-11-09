@@ -19,6 +19,8 @@
 
 *-blx.bib
 
+*.~lock.*
+
 # these are folders ignored by git
 
 
