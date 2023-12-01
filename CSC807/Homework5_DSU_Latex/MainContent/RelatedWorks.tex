@@ -1,0 +1,59 @@
+%\chapter{\leavevmode}
+%\chapter{\leavevmode\newline Literature Review}
+%\chapter{Literature Review}
+% \chapter*{Related Works}
+% \addcontentsline{toc}{chapter}{Related Works}
+\chapter{\leavevmode Related Works}
+\label{chap:relatedworks}
+
+%%% The goal of this research is to assess different serial printers for their equipped hardware (input/output, architecture, memory type/capacity, processor), software (operating system, network stack library [think Treck TCP vulnerabilities or FreeRTOS specific]), featured capabilities (intended operation [think ESC/POS commands to printed paper over serial], network connectivity), and security protections. Then, with the information that has been gathered, make several determinations: what hardware/software protections can be relaxed, if modified how can firmware be pushed to the device, can memory be removed and reflashed, does the device have hardware debugging, is the hardware debugging enabled, is the native operating system open source, can we modify the operating system and save versions with debug symbol data, is the flash storage on the device enough for multiple functions (webserver and printing || BadUSB and printing || etc...).
+
+%%% Methodology: describe the process of identifying hardware debug ports/headers
+
+% \section*{Real-Time Operating System: Software and Security}
+% \addcontentsline{toc}{section}{Real-Time Operating System: Software and Security}
+\section{RTOS: Software and Security}  \label{rtossoftwaresecurity}
+
+% discuss security protections inherent to RTOS
+% mention ReconOS as a possible solution to a modifiable RTOS with threading
+
+\autocite{Benadjila2018WooKeyU} introduces several embedded kernels and discusses their differences in regard to developing a secure mass storage device. For this research, we are primarily interested in RTOS-like kernels because of existing support for a sample device like the SNBC BTP-S80 printer. However, the paper criticizes such operating systems because their "real-time driven design is barely compatible with the overhead produced by security mechanisms." For many applications, there is a trade off with RTOS where performance is the main criteria and security is not a priority. \autocite{yuRealTimeOperatingSystem} introduces several common RTOS and discusses their security issues. Notably, most RTOS are susceptible to code injection, cryptography inefficiency, unprotected shared memory, priority inversion, denial of service attacks, privilege escalation, and inter-process communication vulnerabilities. Depending on the MPU (microprocessor unit), the vendor has hardware protections like Intel SGX or Arm Trust Zone. These are all areas that can be used for pivoting onto the device, especially shared memory and privilege escalation. If the target device firmware is outdated (or, even libraries used by the firmware) and there are known CVEs that can be repeatedly exploited, persistence mechanisms are not a requirement to gain routine access.
+
+% \section*{Embedded Firmware Patching}
+% \addcontentsline{toc}{section}{Embedded Device Hot Patching}
+\section{Embedded Firmware Patching} \label{embeddedfirmwarepatching}
+
+% can embedded devices firmware be hot patched? are there methods for this while a device is running
+% RapidPatch is a possible example for maliciously patching RTOS devices
+% what is the limit for device hot patching? for what's required, is a complete reflash needed?
+
+Typically, updating the firmware for a device or even delivering patches requires a complete shutdown and hardware debug access (if supported). In some cases, the reflashing is unsupported through the operating system or bootloader and the flash memory needs to be reprogrammed. \autocite{heRapidPatchFirmwareHotpatching2022} describes a method for hotpatching downstream RTOS devices without needing to shutdown or reboot. Any changes made are permanent and as effective as traditional delivery methods. RapidPatch was capable of patching over 90\% of vulnerabilities for the affected device, only needing at least 64KB or more memory and 64 MHz MCU clock. This appears to be an effective method for attackers to sideload client or server implants without risking detection. 
+
+% \section*{BadUSB-like Devices}
+% \addcontentsline{toc}{section}{Embedded BadUSB-like Devices}
+\section{BadUSB-like Devices} \label{badusbdevices}
+
+% discuss what a BadUSB device is and how it operates...
+% what are the requirements for a BadUSB device...
+% what are some examples of BadUSB devices...
+% is there room for a RTOS based BadUSB?
+
+BadUSB is a well-known and documented attack vector. One of the most popular hacker tools is built-on the concept \autocite{hak5BashBunny}. However, there are some limitations:
+
+\begin{itemize}
+  \item Precision of attacks is limited since scripts or effects are typically deployed blind. There is no knowledge of the user environment nor ability to interact with functional user interface mechanisms (e.g., a mouse clicking a button). 
+  \item Limited to the USB 2.0 standard. Meaning, no support for video adapters like HDMI, DisplayPort, or PowerDelivery like with USB 3.0. 
+  \item There are existing methods for limiting USB access from the host, such as GoodUSB \autocite{tianDefendingMaliciousUSB2015}.
+\end{itemize}
+
+GoodUSB supports the Linux USB stack, so another solution would be required for Windows systems or RTOS. This all depends on the environment of the connected host, the PoS system. It is entirely possible that the PoS could have software like Crowdstrike Falcon deployed, which would monitor system behavior and mass storage device access \autocite{backer2021sdn}. Although the experiment environment will not use such software, it is an important distinction to make.
+
+In \autocite*{tianSoKPlugPray2018}, they describe several attacks at each of the applicable layers to USB attacks: the human, application, transport, and physical layers. These attacks would typically require some human element for deployment, but that is not the focus of the research (e.g., social engineering versus hardware hacking). Whereas the physical layer could allow signal eavesdropping or injection. This could enable a modified printer to overvolt the host (USBKiller \autocite{USBKillDevices}) to cause physical damage or perform other side-channel attacks \autocite*{sridharEMIIssuesUniversal2003}. Either of those methods would require investigating the device hardware to determine what level of control the bootloader or operating system has over power delivery.
+
+
+
+% \section*{Summary}
+% \addcontentsline{toc}{section}{Summary}
+\section{Summary} \label{introductionsummary}
+
+As demonstrated by the previous works, vulnerability assessment of an embedded device is a well documented process. However, the extent that a serial thermal printer (e.g., Figure \ref{fig:btp_s80}) can be maliciously expanded through a modified FreeRTOS image, while supporting original functionality, has not. And, given success in the assessment, it could suggest room for continual and improved research.

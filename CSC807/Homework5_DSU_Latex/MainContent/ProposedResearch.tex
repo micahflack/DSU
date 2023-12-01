@@ -1,0 +1,238 @@
+%\chapter{\leavevmode}
+\chapter{\leavevmode Proposed Research}
+% \chapter*{Proposed Research}
+% \addcontentsline{toc}{chapter}{Proposed Research}
+\label{chap:proposedresearch}
+
+
+% Research Objectives
+% The goal of the research is to get an idea of what the potential "threat map" looks like.
+% With the technical "specs" for the hardware and OS, can we manipulate device capabilities?
+% What capabilities can we extend or add?
+
+% \section*{Research Objectives }
+% \addcontentsline{toc}{section}{Research Objectives}
+\section{Research Objectives }  \label{researchobjectives}
+
+The goal of this research is to understand the hardware and software capabilities of serial print devices. Whether the hardware can support adding unintended functionality at the application and physical layers. And, with what we know about the USB standard and developing real time operating systems, can that functionality be used to create a dual purpose device?
+
+
+% \section*{Research Questions/Hypotheses}
+% \addcontentsline{toc}{section}{Research Questions/Hypotheses}
+\section{Research Questions}  \label{researchquestions}
+
+The research questions this study aims to answer are as follows:
+
+\begin{itemize}
+  \item \textbf{RQ1:} What is the baseline or minimum hardware these devices are running?
+  \item \textbf{RQ2:} What software is being used on these devices? OS, libraries...
+  \item \textbf{RQ3:} Can the software/firmware be modified? FreeRTOS/ReconOS/VXWorks.
+  \item \textbf{RQ4:} If so, how much can be modified in memory? Is manually reflashing possible?
+  \item \textbf{RQ5:} Assuming reflashing is possible, can the original OS keep original functions and be used as a HID clone or hub?
+\end{itemize}
+
+
+% \section*{Methodology}
+% \addcontentsline{toc}{section}{Methodology}
+\section{Methodology}  \label{methodology}
+
+There are several parts to the methodology of the proposed research. First, technical information and datasheets must be collected for each of the identified devices. Then, device capabilities will be verified before beginning teardown and flash recovery. During the disassembly, each component will be documented and further technical information will be gathered from respective manufacturers. The format for presenting the collected data is described later in section \ref{datacollectionprocess}.
+
+% Gather recent research within the last 5-10 years for manufacturer/device shares of the market
+% Gather technical sheets and specs for the most popular devices
+% Take note of the hardware specs for each device as well as firmware used
+% Create default/debug images of each popular devices' firmware - what is natively supported?
+% Is there room to add functionality without crippling original function
+
+
+\subsection{Research Approach} \label{researchapproach}
+
+For this research, the quantitative approach and survey research will be used \autocite{babbie2017basics,creswell2017research}. Because the goal of the research is to gather and examine, point-in-time, data across a sampled population of serial printer devices. By using quantitative survey research, it is possible to evaluate which devices are vulnerable to the attacks hypothesized, as well as, which devices are the most eligible for future design artifact research (i.e., creation of modified OS for HID cloning).
+
+
+\subsection{Cross-Sectional Survey} \label{casestudy}
+
+Using cross-sectional surveys \autocite{creswell2017research} has multiple benefits. It can be used to represent data as it is taken, rather than over a long period of time.  The study method also focuses on providing summaries that describe the patterns and context between collected data, and how it relates to the research questions.
+
+
+\subsection{Data Collection Process} \label{datacollectionprocess}
+
+The data collection process begins with gathering technical specifications from device manufacturers. Typically, these contain information about the capabilities of the intended device functions. For a printer, this could contain information ranging from hardware specifications (e.g., CPU, architecture, memory) to things like printed pages per minute. This information forms the baseline for the device survey. Afterwards, further specifications will be gathered for components as each device is disassembled and examined.
+
+Roughly, the types and format of gathered device specifications will appear as follows (e.g., SNBC BTP-S80 is used here):
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|p{4cm}|p{12cm}|}
+    \hline\rowcolor{gray!30}
+
+    \textbf{Specifications} &  \\
+    \hline
+
+    Max print speed & 120mm (Two-Color), 150mm (Grayscale), 250mm (Mono) \\
+    \hline
+
+    Printing method & Direct Thermal \\
+    \hline
+
+    Paper roll type & 9 x 7, 82.5 x 80 x 57.5mm \\
+    \hline
+
+    Bar code support & UPC-A, UPC-E, EAN8, EAN13, Code39, Code93, CODE128, CODABAR, ITF, PDF417, QR Code, Maxicode \\
+    \hline
+
+    Printer interpreter & ESC/POS \\
+    \hline
+
+    Interfaces & Serial+USB+Ethernet \\
+    &  USB+Parallel \\
+    &  USB+Serial \\
+    &  USB+Bluetooth \\
+    &  USB+WiFi \\
+    &  USB Only \\
+    \hline
+
+    Supported OS & 32-bit (Windows XP/2000/POSReady) \\
+    &  64bit (Windows XP/Server 2012) \\
+    &  32/64bit (Windows 10/8.1/8/7/Server 2008/Server 2003/Vista) \\
+    &  Other (Linux/OPOS/BYJavaPOS Windows/BYJavaPOS Linux) \\
+    \hline
+
+    Development Kit & Android, iOS \\
+    \hline
+
+    Data Buffer & Receive Buffer RAM: 64KB \\
+     &  RAM Bitmap: 128KB \\
+     &  Flash Bitmap: 512KB \\
+    \hline
+
+    Power Supply & AC 100 $\sim$ 240V, 50/60 Hz Adapter \\
+    \hline
+
+    Current/Power Usage & 2.0A / 60W \\
+    \hline
+
+    Safety and EMI & FCC/UL \\
+    \hline
+
+  \end{tabular}
+  \caption{Device specifications for SNBC BTP-S80}
+  \label{fig:device_specs}%
+\end{table}
+
+Following the previous example, the next step in the data collection process would be identifying the SoC. In the event that there is no beforehand knowledge, the SoC can be identified by comparing gathered datasheets during the components discovery. This is easily accomplished using an online service like FindChips \autocite{FindchipsElectronicPart}. The expected type and format for SoCs is described by Figure \ref{fig:soc_specs}.
+
+The process for gathering flash/memory chip specifications is similar; identify serial number and manufacturer, then find the component datasheet. Gathering the pin layouts and format is useful for later stages, should manual flash recovery be needed. The expected format for memory chips can be seen at Figure \ref{fig:memory_specs}.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|p{6cm}|p{9cm}|}
+    \hline\rowcolor{gray!30}
+
+    \textbf{Specifications} &  \\
+    \hline
+
+    Architecture & 32-bit ARM \\
+    \hline
+
+    Platform & ARM Cortex-M3 \\
+    \hline
+
+    Frequency & 80-MHz, 100DMIPS performance \\
+    \hline
+
+    Memory & 128KB single-cycle Flash memory \\
+     & 64KB single-cycle SRAM \\
+    \hline
+
+    Firmware & Internal ROM loaded with StellarisWare \\
+    \hline
+
+    Advanced Comm. Interfaces & UART, SSI, I2C, I2S, CAN \\
+    \hline
+
+    Debug Interfaces & JTAG, SWD \\
+    \hline
+
+    Package format & 100-pin LQFP \\
+    & 108-ball pin BGA \\
+    \hline
+
+  \end{tabular}
+  \caption{SoC technical specs example using Stellaris LM3S2793 Microcontroller}
+  \label{fig:soc_specs}%
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|p{6cm}|p{9cm}|}
+    \hline\rowcolor{gray!30}
+
+    \textbf{Specifications} &  \\
+    \hline
+
+    Single power supply operation & 2.7 to 3.6V \\
+    \hline
+
+    Software Features & SPI Bus Compatible Serial Interface \\
+    \hline
+
+    Memory architecture & Uniform 64KB sectors \\
+    & 256 byte page size \\
+    \hline
+
+    Programming & Page programming (up to 256 bytes) \\
+    & Operations are page-by-page basis \\
+    & Accelerated mode via 9V W\#/ACC pin \\
+    & Quad page programming \\
+    \hline
+
+    Erase commands & Bulk erase function \\
+     & Sector erase for 64KB sectors \\
+     & Sub-sector erase for 4KB and 8KB sectors \\
+    \hline
+
+    Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions andconfigure parts as read-only \\
+    & One time programmable area for permanent and secure identification \\
+    \hline
+
+    Package format & 16-pin SO \\
+    & 8-contact WSON \\
+    & 24-ball BGA, 5x5 pin config \\
+    & 24 ball BGA, 6x6 pin config \\
+    \hline
+
+  \end{tabular}
+  \caption{Memory specifications example using Infineon Technologies S25FL064P \autocite{S25FL064PSeriesFlash}}
+  \label{fig:memory_specs}%
+\end{table}
+
+A final report will be created detailing each of these tables for the devices and their identified core components. Operating system features and protections will be loosely summarized for each device, there is not set reporting format or requirements. Using the final report will aid in the process of designing an artifact for future research and testing.
+
+\subsection{Hardware Assessment} \label{hardwareassessment}
+
+NIST SP 800-115 \autocite{NISTSP8001152020} provides general guidelines for performing information security testing and assessment, however, there is little information regarding hardware reverse engineering and firmware analysis. Their guidelines are aimed more towards single/multi-tasking operating systems like Windows or Unix-like, those where network logging and listener agents is feasible. For the targeted devices in this research proposal, a different approach is needed that evaluates hardware protections of the SoC and flash memory. 
+
+Analysis of device components, once disassembled, requires using a hardware debugger tool with the correct interface. The majority of the targeted devices are expected to use joint test action group (JTAG) or single wire debugging (SWD). By referring to the manufacturer datasheet for a given SoC, it is possible to identify the pin layout for serial debugging access.
+
+\begin{figure}[ht]%
+  \centering
+  \includegraphics[keepaspectratio]{Figures/JTAGExample.png}
+  \caption{JTAG pin out example for Texas Instruments LM3S2793}%
+  \label{fig:jtag_pinout}%
+\end{figure}
+
+Figure \ref{fig:jtag_pinout} is an example showing what the physical SoC looks like on a PCB compared to the pin layout described in the datasheet. The dot in the top left of the SoC denotes the beginning of the pin layout. Counting in a counter-clockwise method indicates the pin number and the associated functions. For instance, to access the JTAG debug interface on the LM3S2793:
+
+\begin{itemize}
+  \item TDO: pin 77
+  \item TDI: pin 78
+  \item TMS: pin 79
+  \item TCK: pin 80
+  \item GND: pin 82
+  \item V\textsubscript{DD}: pin 68
+\end{itemize}
+
+Using this information, a device like the JTAGULATOR \autocite{JTAGulator2023} can be connected and enumerate or verify pin layouts as described. Ball joint SoCs require a different process and are much harder to debug if there is no visible header available on the board. Once an interface is connected, if debugger access is not disabled, the researcher can interact with the bootloader to further investigate enabled protections and recover flash storage.
+
+If the JTAG is disabled, the researcher will then attempt to recover flash manually using a device like the Segger J-Link \autocite{SEGGERJLinkDebug}. The Segger has pre-defined and existing support for working with flash memory and flash breakpoints, whereas using OpenOCD with the JTAGULATOR would require time crafting custom configurations. Assuming there are no access protections to the flash memory, the researcher can begin performing firmware analysis to identify the operating system or potential vulnerabilities. Documenting the size and address range of memory regions is a key part of the process.
