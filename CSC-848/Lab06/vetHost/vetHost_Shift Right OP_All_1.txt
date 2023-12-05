@@ -1,0 +1,48 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar edi, 0xe2				0x11002546 (offset 0x2546)
+add bh, 0xb				0x11002549 (offset 0x2549)
+adc esi, 0x1003b28c				0x1100254c (offset 0x254c)
+jmp ecx				0x11002552 (offset 0x2552)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar edi, 0xe2				0x11002569 (offset 0x2569)
+add esp, 0x14				0x1100256c (offset 0x256c)
+xor eax, eax				0x1100256f (offset 0x256f)
+pop edi				0x11002571 (offset 0x2571)
+pop esi				0x11002572 (offset 0x2572)
+jmp ebx				0x11002573 (offset 0x2573)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar edi, 1				0x11002648 (offset 0x2648)
+loopne 0x1607				0x1100264a (offset 0x264a)
+add byte ptr [eax], al				0x1100264c (offset 0x264c)
+add byte ptr [eax], al				0x1100264e (offset 0x264e)
+mov eax, ebx				0x11002650 (offset 0x2650)
+jmp ecx				0x11002652 (offset 0x2652)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar bh, cl				0x1100274a (offset 0x274a)
+and byte ptr [edx - 0xa4a6a6], dl				0x1100274c (offset 0x274c)
+loope 0x177e				0x11002752 (offset 0x2752)
+sal edi, 0xeb				0x11002754 (offset 0x2754)
+jmp ecx				0x11002757 (offset 0x2757)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar bh, 1				0x110069e1 (offset 0x69e1)
+loopne 0x5a3f				0x110069e3 (offset 0x69e3)
+add eax, 0x1234				0x110069e5 (offset 0x69e5)
+jmp ebx				0x110069ea (offset 0x69ea)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	.\vetHost.exe	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar bh, cl				0x11006a2c (offset 0x6a2c)
+out 0x89, al				0x11006a2e (offset 0x6a2e)
+cmp al, 2				0x11006a30 (offset 0x6a30)
+sub edi, 0x20				0x11006a32 (offset 0x6a32)
+jmp esi				0x11006a35 (offset 0x6a35)

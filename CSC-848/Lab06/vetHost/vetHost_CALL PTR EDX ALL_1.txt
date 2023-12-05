@@ -1,0 +1,5 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	ADVAPI32.dll	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov eax, 0x81000000				0x7ff7ff3e605L (offset 0x2e605)
+call dword ptr [edx]				0x7ff7ff3e60aL (offset 0x2e60a)

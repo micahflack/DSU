@@ -1,0 +1,11 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	vetHost.exe	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+or al, 0x85				0x11008bf3 (offset 0x8bf3)
+push dword ptr [ebp + eax - 0x7d]				0x11008bf5 (offset 0x8bf5)
+call dword ptr [eax]				0x11008bf9 (offset 0x8bf9)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	vetHost.exe	[Ops: 0x4]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+push dword ptr [ebp + eax - 0x7d]				0x11008bf5 (offset 0x8bf5)
+call dword ptr [eax]				0x11008bf9 (offset 0x8bf9)

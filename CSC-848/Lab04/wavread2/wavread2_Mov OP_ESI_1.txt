@@ -1,0 +1,13 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0xa]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov esi, edi				0x401549 (offset 0x1549)
+sub ebx, eax				0x40154b (offset 0x154b)
+inc ebx				0x40154d (offset 0x154d)
+jmp edx				0x40154e (offset 0x154e)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0x9]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov esi, 0x10102222				0x40159e (offset 0x159e)
+push ebx				0x4015a3 (offset 0x15a3)
+jmp eax				0x4015a4 (offset 0x15a4)

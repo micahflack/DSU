@@ -1,0 +1,94 @@
+
+**Empty JMP PTR [EAX] Gadgets **
+0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041d6e1, # (base + 0x1d6e1), # jmp dword ptr [eax] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041d6e1, # (base + 0x1d6e1), # jmp dword ptr [eax] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBX] Gadgets **
+0x0040167a, # (base + 0x167a), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00416fe4, # (base + 0x16fe4), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041d0a5, # (base + 0x1d0a5), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041d131, # (base + 0x1d131), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041def9, # (base + 0x1def9), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00422762, # (base + 0x22762), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00422943, # (base + 0x22943), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00423dc5, # (base + 0x23dc5), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00423e59, # (base + 0x23e59), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00423e73, # (base + 0x23e73), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00424198, # (base + 0x24198), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004258f6, # (base + 0x258f6), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00425947, # (base + 0x25947), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00426ba2, # (base + 0x26ba2), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00426c3c, # (base + 0x26c3c), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040167a, # (base + 0x167a), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00416fe4, # (base + 0x16fe4), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041d0a5, # (base + 0x1d0a5), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041d131, # (base + 0x1d131), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041def9, # (base + 0x1def9), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00422762, # (base + 0x22762), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00422943, # (base + 0x22943), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00423dc5, # (base + 0x23dc5), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00423e59, # (base + 0x23e59), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00423e73, # (base + 0x23e73), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00424198, # (base + 0x24198), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004258f6, # (base + 0x258f6), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00425947, # (base + 0x25947), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00426ba2, # (base + 0x26ba2), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00426c3c, # (base + 0x26c3c), # jmp dword ptr [ebx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+
+**Empty JMP PTR [ECX] Gadgets **
+0x0040158f, # (base + 0x158f), # jmp dword ptr [ecx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041959b, # (base + 0x1959b), # jmp dword ptr [ecx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00421c3e, # (base + 0x21c3e), # jmp dword ptr [ecx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040158f, # (base + 0x158f), # jmp dword ptr [ecx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041959b, # (base + 0x1959b), # jmp dword ptr [ecx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00421c3e, # (base + 0x21c3e), # jmp dword ptr [ecx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDX] Gadgets **
+0x004015b2, # (base + 0x15b2), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040169d, # (base + 0x169d), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412c39, # (base + 0x12c39), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041e50b, # (base + 0x1e50b), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004015b2, # (base + 0x15b2), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040169d, # (base + 0x169d), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412c39, # (base + 0x12c39), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0041e50b, # (base + 0x1e50b), # jmp dword ptr [edx] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDI] Gadgets **
+0x0040153b, # (base + 0x153b), # jmp dword ptr [edi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00410dfa, # (base + 0x10dfa), # jmp dword ptr [edi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040153b, # (base + 0x153b), # jmp dword ptr [edi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00410dfa, # (base + 0x10dfa), # jmp dword ptr [edi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+
+**Empty JMP PTR [ESI] Gadgets **
+0x0040167f, # (base + 0x167f), # jmp dword ptr [esi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004016c1, # (base + 0x16c1), # jmp dword ptr [esi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040167f, # (base + 0x167f), # jmp dword ptr [esi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004016c1, # (base + 0x16c1), # jmp dword ptr [esi] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+
+**Empty JMP PTR [ESP] Gadgets **
+0x004015b4, # (base + 0x15b4), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040c595, # (base + 0xc595), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040c59c, # (base + 0xc59c), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040c648, # (base + 0xc648), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040cb15, # (base + 0xcb15), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040cb1c, # (base + 0xcb1c), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040cbc8, # (base + 0xcbc8), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040e782, # (base + 0xe782), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412126, # (base + 0x12126), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412242, # (base + 0x12242), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412c1b, # (base + 0x12c1b), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004170fe, # (base + 0x170fe), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004015b4, # (base + 0x15b4), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040c595, # (base + 0xc595), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040c59c, # (base + 0xc59c), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040c648, # (base + 0xc648), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040cb15, # (base + 0xcb15), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040cb1c, # (base + 0xcb1c), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040cbc8, # (base + 0xcbc8), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x0040e782, # (base + 0xe782), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412126, # (base + 0x12126), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412242, # (base + 0x12242), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x00412c1b, # (base + 0x12c1b), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	
+0x004170fe, # (base + 0x170fe), # jmp dword ptr [esp] # wavread2.exe # DEP: True	 ASLR: False	SEH: False	CFG: False	

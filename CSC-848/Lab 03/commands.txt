@@ -1,0 +1,18 @@
+The wavread utility has a command line menu that can be used by running: 
+	wavread.exe <file.wav>
+
+In the menu, some available commands will be displayed. The current supported commands are:
+ -view
+ 	View metadata about the file such as bitrate.
+ -test
+ 	Listen to the file.
+ -exit
+ 	Exit the menu.
+
+
+ Alternatively, you can run:
+ 	wavread.exe <file.wav> <file.txt>
+
+ This will allow you to run a command without entering the menu. The only content in the text file should be the name of the command you wish to run.
+ For example, if you want to run the "test" command in this manner, use a text file with the word "test" as its only contents.
+ Currently, this functionality only works with one command at a time running on one .wav file.

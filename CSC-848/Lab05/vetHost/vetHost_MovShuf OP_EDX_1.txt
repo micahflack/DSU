@@ -1,0 +1,10 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ebp, edx				0x11007dc2 (offset 0x7dc2)
+xor eax, eax				0x11007dc4 (offset 0x7dc4)
+xor ebx, ebx				0x11007dc6 (offset 0x7dc6)
+xor edx, edx				0x11007dc8 (offset 0x7dc8)
+xor esi, esi				0x11007dca (offset 0x7dca)
+xor edi, edi				0x11007dcc (offset 0x7dcc)
+call ecx				0x11007dce (offset 0x7dce)

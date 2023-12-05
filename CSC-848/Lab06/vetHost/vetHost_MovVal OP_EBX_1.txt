@@ -1,0 +1,18 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ebx, 0				0x1100264b (offset 0x264b)
+mov eax, ebx				0x11002650 (offset 0x2650)
+jmp ecx				0x11002652 (offset 0x2652)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add byte ptr [eax], al				0x1100264e (offset 0x264e)
+mov eax, ebx				0x11002650 (offset 0x2650)
+jmp ecx				0x11002652 (offset 0x2652)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	ADVAPI32.dll	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ebx, 0x8b48ffff				0x7ff7ff39594L (offset 0x29594)
+into 				0x7ff7ff39599L (offset 0x29599)
+call ebp				0x7ff7ff3959aL (offset 0x2959a)

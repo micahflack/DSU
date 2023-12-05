@@ -1,0 +1,93 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, edx				0x11002633 (offset 0x2633)
+xchg edi, edx				0x11002634 (offset 0x2634)
+add eax, edi				0x11002636 (offset 0x2636)
+jmp ecx				0x11002638 (offset 0x2638)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, edx				0x1100274d (offset 0x274d)
+pop edx				0x1100274e (offset 0x274e)
+pop ecx				0x1100274f (offset 0x274f)
+pop ebx				0x11002750 (offset 0x2750)
+jmp ecx				0x11002751 (offset 0x2751)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+loop 0x16ca				0x11002745 (offset 0x2745)
+rcl byte ptr [edx], 0x33				0x11002747 (offset 0x2747)
+sar bh, cl				0x1100274a (offset 0x274a)
+and byte ptr [edx - 0xa4a6a6], dl				0x1100274c (offset 0x274c)
+loope 0x1754				0x11002752 (offset 0x2752)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	.\vetHost.exe	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	.\vetHost.exe	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, ebp				0x1100366c (offset 0x366c)
+rol dword ptr [ecx - 0x75], 0xc1				0x1100366d (offset 0x366d)
+jmp esi				0x11003671 (offset 0x3671)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	.\vetHost.exe	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, esp				0x110069b4 (offset 0x69b4)
+xor ecx, ecx				0x110069b5 (offset 0x69b5)
+neg edx				0x110069b7 (offset 0x69b7)
+jmp esi				0x110069b9 (offset 0x69b9)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	ADVAPI32.dll	[Ops: 0x8]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg esp, eax				0x7ff7ff23ed9L (offset 0x13ed9)
+inc edi				0x7ff7ff23edbL (offset 0x13edb)
+add dword ptr [eax], eax				0x7ff7ff23edcL (offset 0x13edc)
+dec eax				0x7ff7ff23edeL (offset 0x13ede)
+add ecx, edi				0x7ff7ff23edfL (offset 0x13edf)
+jmp ecx				0x7ff7ff23ee1L (offset 0x13ee1)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#8	ADVAPI32.dll	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, esp				0x7ff7ff46192L (offset 0x36192)
+and al, 0xd8				0x7ff7ff46193L (offset 0x36193)
+add byte ptr [eax], al				0x7ff7ff46195L (offset 0x36195)
+add cl, ch				0x7ff7ff46197L (offset 0x36197)
+jmp ecx				0x7ff7ff46199L (offset 0x36199)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#9	kernel32.dll	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, ecx				0x78d5c378 (offset 0x3c378)
+push 0x8d48fffd				0x78d5c379 (offset 0x3c379)
+dec esp				0x78d5c37e (offset 0x3c37e)
+and al, 0x38				0x78d5c37f (offset 0x3c37f)
+call edx				0x78d5c381 (offset 0x3c381)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#10	kernel32.dll	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, esp				0x78d5c3b0 (offset 0x3c3b0)
+cld 				0x78d5c3b1 (offset 0x3c3b1)
+dec dword ptr [eax - 0x75]				0x78d5c3b3 (offset 0x3c3b3)
+ror dword ptr [eax - 0x75], cl				0x78d5c3b6 (offset 0x3c3b6)
+dec esp				0x78d5c3b9 (offset 0x3c3b9)
+and al, 0x40				0x78d5c3ba (offset 0x3c3ba)
+call eax				0x78d5c3bc (offset 0x3c3bc)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#11	kernel32.dll	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, esp				0x78da3801 (offset 0x83801)
+and al, 0xe0				0x78da3802 (offset 0x83802)
+add byte ptr [eax], al				0x78da3804 (offset 0x83804)
+add byte ptr [ebx + ecx*4 - 0x3a], al				0x78da3806 (offset 0x83806)
+dec eax				0x78da380a (offset 0x8380a)
+mov ecx, edi				0x78da380b (offset 0x8380b)
+call ebp				0x78da380d (offset 0x8380d)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#12	WS2_32.dll	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xchg eax, esp				0x7ff724f9058L (offset 0x19058)
+and al, 0x88				0x7ff724f9059L (offset 0x19059)
+add byte ptr [eax], al				0x7ff724f905bL (offset 0x1905b)
+add byte ptr [ecx - 0x75], cl				0x7ff724f905dL (offset 0x1905d)
+iretd 				0x7ff724f9060L (offset 0x19060)
+call ebp				0x7ff724f9061L (offset 0x19061)

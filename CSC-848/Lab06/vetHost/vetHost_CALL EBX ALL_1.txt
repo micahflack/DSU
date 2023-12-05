@@ -1,0 +1,80 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+adc eax, 0x1101814c				0x11008921 (offset 0x8921)
+call ebx				0x11008926 (offset 0x8926)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+adc eax, 0x1101814c				0x1101016c (offset 0x1016c)
+call ebx				0x11010171 (offset 0x10171)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+adc eax, 0x1101814c				0x110101a0 (offset 0x101a0)
+call ebx				0x110101a5 (offset 0x101a5)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	.\vetHost.exe	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+dec dword ptr [ebx - 0x76f73]				0x110121b8 (offset 0x121b8)
+call ebx				0x110121be (offset 0x121be)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	.\vetHost.exe	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+dec dword ptr [ebx - 0x74f73]				0x11012399 (offset 0x12399)
+call ebx				0x1101239f (offset 0x1239f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	ADVAPI32.dll	[Ops: 0xb]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [esp + 0x118], 1				0x7ff7ff13e5aL (offset 0x3e5a)
+call ebx				0x7ff7ff13e65L (offset 0x3e65)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	kernel32.dll	[Ops: 0x4]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [esp + 0x20], esi				0x78d4c9b9 (offset 0x2c9b9)
+call ebx				0x78d4c9bd (offset 0x2c9bd)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	kernel32.dll	[Ops: 0x3]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+lea edx, [eax + 0x60]				0x78d55329 (offset 0x35329)
+call ebx				0x78d5532c (offset 0x3532c)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	kernel32.dll	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, dword ptr [esp + 0x88]				0x78d789e8 (offset 0x589e8)
+call ebx				0x78d789ef (offset 0x589ef)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	kernel32.dll	[Ops: 0xb]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [esp + 0xb0], 4				0x78d8c917 (offset 0x6c917)
+call ebx				0x78d8c922 (offset 0x6c922)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	kernel32.dll	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [esp + 0xb0], edi				0x78d8c946 (offset 0x6c946)
+call ebx				0x78d8c94d (offset 0x6c94d)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	kernel32.dll	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+lea ecx, [0x82a48]				0x78d9159a (offset 0x7159a)
+call ebx				0x78d915a0 (offset 0x715a0)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	kernel32.dll	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+or eax, 0x82a48				0x78d9159b (offset 0x7159b)
+call ebx				0x78d915a0 (offset 0x715a0)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#8	kernel32.dll	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov edx, dword ptr [esp + 0x118]				0x78db823e (offset 0x9823e)
+call ebx				0x78db8245 (offset 0x98245)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#9	kernel32.dll	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov edx, dword ptr [esp + 0x118]				0x78db835b (offset 0x9835b)
+call ebx				0x78db8362 (offset 0x98362)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	WS2_32.dll	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+lea edx, [esp + 0x140]				0x7ff724e6ab1L (offset 0x6ab1)
+call ebx				0x7ff724e6ab8L (offset 0x6ab8)

@@ -1,0 +1,90 @@
+
+**Empty JMP PTR [EAX] Gadgets **
+0x1100274b, # (base + 0x274b), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031a5, # (base + 0x31a5), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100ed0e, # (base + 0xed0e), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100ed25, # (base + 0xed25), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100274b, # (base + 0x274b), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031a5, # (base + 0x31a5), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100ed0e, # (base + 0xed0e), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100ed25, # (base + 0xed25), # jmp dword ptr [eax] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBX] Gadgets **
+0x1100255c, # (base + 0x255c), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031dd, # (base + 0x31dd), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11003508, # (base + 0x3508), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100478f, # (base + 0x478f), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100bb84, # (base + 0xbb84), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100f5ae, # (base + 0xf5ae), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110121b2, # (base + 0x121b2), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11012393, # (base + 0x12393), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110150e5, # (base + 0x150e5), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11015171, # (base + 0x15171), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110173b2, # (base + 0x173b2), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1101744c, # (base + 0x1744c), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100255c, # (base + 0x255c), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031dd, # (base + 0x31dd), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11003508, # (base + 0x3508), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100478f, # (base + 0x478f), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100bb84, # (base + 0xbb84), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100f5ae, # (base + 0xf5ae), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110121b2, # (base + 0x121b2), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11012393, # (base + 0x12393), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110150e5, # (base + 0x150e5), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11015171, # (base + 0x15171), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110173b2, # (base + 0x173b2), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1101744c, # (base + 0x1744c), # jmp dword ptr [ebx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ECX] Gadgets **
+0x110031cf, # (base + 0x31cf), # jmp dword ptr [ecx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100350f, # (base + 0x350f), # jmp dword ptr [ecx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1101153a, # (base + 0x1153a), # jmp dword ptr [ecx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031cf, # (base + 0x31cf), # jmp dword ptr [ecx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100350f, # (base + 0x350f), # jmp dword ptr [ecx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1101153a, # (base + 0x1153a), # jmp dword ptr [ecx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDX] Gadgets **
+0x110034fc, # (base + 0x34fc), # jmp dword ptr [edx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11006a41, # (base + 0x6a41), # jmp dword ptr [edx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110034fc, # (base + 0x34fc), # jmp dword ptr [edx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11006a41, # (base + 0x6a41), # jmp dword ptr [edx] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDI] Gadgets **
+0x11006a46, # (base + 0x6a46), # jmp dword ptr [edi] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11006a46, # (base + 0x6a46), # jmp dword ptr [edi] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ESI] Gadgets **
+0x11002577, # (base + 0x2577), # jmp dword ptr [esi] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031d6, # (base + 0x31d6), # jmp dword ptr [esi] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11002577, # (base + 0x2577), # jmp dword ptr [esi] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031d6, # (base + 0x31d6), # jmp dword ptr [esi] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ESP] Gadgets **
+0x110012cd, # (base + 0x12cd), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11002a29, # (base + 0x2a29), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100437e, # (base + 0x437e), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11005233, # (base + 0x5233), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11008b63, # (base + 0x8b63), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11009885, # (base + 0x9885), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110099a1, # (base + 0x99a1), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100a36e, # (base + 0xa36e), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016a35, # (base + 0x16a35), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016a3c, # (base + 0x16a3c), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016ae8, # (base + 0x16ae8), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016fb5, # (base + 0x16fb5), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016fbc, # (base + 0x16fbc), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11017068, # (base + 0x17068), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110012cd, # (base + 0x12cd), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11002a29, # (base + 0x2a29), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100437e, # (base + 0x437e), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11005233, # (base + 0x5233), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11008b63, # (base + 0x8b63), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11009885, # (base + 0x9885), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110099a1, # (base + 0x99a1), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100a36e, # (base + 0xa36e), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016a35, # (base + 0x16a35), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016a3c, # (base + 0x16a3c), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016ae8, # (base + 0x16ae8), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016fb5, # (base + 0x16fb5), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016fbc, # (base + 0x16fbc), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11017068, # (base + 0x17068), # jmp dword ptr [esp] # vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	

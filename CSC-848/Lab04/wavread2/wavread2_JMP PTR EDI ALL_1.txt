@@ -1,0 +1,22 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+sub edi, 0xc				0x401538 (offset 0x1538)
+jmp dword ptr [edi]				0x40153b (offset 0x153b)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0xa]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+les eax, ptr [ebx + eax*4]				0x401531 (offset 0x1531)
+mov dword ptr [edi + edi*8], 0xcef83e7				0x401534 (offset 0x1534)
+jmp dword ptr [edi]				0x40153b (offset 0x153b)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	wavread2.exe	[Ops: 0x9]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add al, 0x83				0x401532 (offset 0x1532)
+mov dword ptr [edi + edi*8], 0xcef83e7				0x401534 (offset 0x1534)
+jmp dword ptr [edi]				0x40153b (offset 0x153b)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	wavread2.exe	[Ops: 0x7]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov dword ptr [edi + edi*8], 0xcef83e7				0x401534 (offset 0x1534)
+jmp dword ptr [edi]				0x40153b (offset 0x153b)

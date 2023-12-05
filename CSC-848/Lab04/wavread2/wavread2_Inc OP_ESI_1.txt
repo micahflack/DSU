@@ -1,0 +1,7 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x5]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+inc esi				0x401572 (offset 0x1572)
+xor ecx, eax				0x401573 (offset 0x1573)
+mov ebx, ecx				0x401575 (offset 0x1575)
+jmp edx				0x401577 (offset 0x1577)

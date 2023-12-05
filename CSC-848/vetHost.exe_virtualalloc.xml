@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<db>
+<rop>
+  <compatibility>
+    <target>-1.0-</target>
+  </compatibility>
+
+  <gadgets base="0x11000000">
+    <gadget offset="0x00004043">POP EBP # RETN  ** ASLR</gadget>
+    <gadget offset="0x00004043">skip 4 bytes  ** ASLR</gadget>
+    <gadget offset="0x0000a41e">POP EBX # RETN  ** ASLR</gadget>
+    <gadget value="0x00000001">0x00000001-> ebx</gadget>
+    <gadget offset="0x00015353">POP EDX # RETN  ** ASLR</gadget>
+    <gadget value="0x00001000">0x00001000-> edx</gadget>
+    <gadget offset="0x0000d2f3">POP ECX # RETN  ** ASLR</gadget>
+    <gadget value="0x00000040">0x00000040-> ecx</gadget>
+    <gadget offset="0x0000817b">POP EDI # RETN  ** ASLR</gadget>
+    <gadget offset="0x00017086">RETN (ROP NOP)  ** ASLR</gadget>
+    <gadget offset="0x0000bace">POP ESI # RETN  ** ASLR</gadget>
+    <gadget offset="0x0000274b">JMP [EAX] </gadget>
+    <gadget offset="0x0000f277">POP EAX # POP EDI # POP ESI # POP EBP # RETN  ** ASLR</gadget>
+    <gadget value="0x00000000">[-] Unable to find ptr to VirtualAlloc()</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00000000">Unable to find PUSHAD gadget</gadget>
+    <gadget offset="0x00000000">Unable to find ptr to 'jmp esp'</gadget>
+  </gadgets>
+</rop>
+</db>

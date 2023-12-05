@@ -1,0 +1,5 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+pop eax				0x40169c (offset 0x169c)
+jmp dword ptr [edx]				0x40169d (offset 0x169d)

@@ -1,0 +1,9 @@
+Known Mitigations:
+.\vetHost.exe             DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+WS2_32.dll                DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+kernel32.dll              DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+ADVAPI32.dll              DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+
+
+Results show are only for the image executable itself and modules in the IAT.
+

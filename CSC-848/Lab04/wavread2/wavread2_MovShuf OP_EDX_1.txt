@@ -1,0 +1,6 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x9]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, edx				0x401695 (offset 0x1695)
+cld 				0x401697 (offset 0x1697)
+jmp edx				0x401698 (offset 0x1698)

@@ -1,0 +1,6 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	kernel32.dll	[Ops: 0x3]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop eax				0x78d47e16 (offset 0x27e16)
+test edi, edi				0x78d47e17 (offset 0x27e17)
+jmp dword ptr [ebp]				0x78d47e19 (offset 0x27e19)

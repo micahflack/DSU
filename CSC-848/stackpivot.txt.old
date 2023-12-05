@@ -1,0 +1,409 @@
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Module info :
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Base       | Top        | Size       | Rebase | SafeSEH | ASLR  | NXCompat | OS Dll | Version, Modulename & Path
+-----------------------------------------------------------------------------------------------------------------------------------------
+ 0x11000000 | 0x11025000 | 0x00025000 | False  | False   | True  |  True    | False  | -1.0- [vetHost.exe] (Z:\VM-Share\School\CSC848\Lab05\vetHost.exe)
+ 0x6f000000 | 0x6f04c000 | 0x0004c000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [apphelp.dll] (C:\Windows\system32\apphelp.dll)
+ 0x7dd60000 | 0x7de70000 | 0x00110000 | False  | True    | True  |  True    | True   | 6.1.7601.18015 [kernel32.dll] (C:\Windows\syswow64\kernel32.dll)
+ 0x6ff50000 | 0x6fffc000 | 0x000ac000 | False  | True    | True  |  True    | True   | 7.0.7601.17744 [msvcrt.dll] (C:\Windows\syswow64\msvcrt.dll)
+ 0x10000000 | 0x1000c000 | 0x0000c000 | False  | True    | True  |  True    | True   | 6.1.7601.24545 [CRYPTBASE.dll] (C:\Windows\syswow64\CRYPTBASE.dll)
+ 0x7de70000 | 0x7dff0000 | 0x00180000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [ntdll.dll] (C:\Windows\SysWOW64\ntdll.dll)
+ 0x02aa0000 | 0x02ab9000 | 0x00019000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [sechost.dll] (C:\Windows\SysWOW64\sechost.dll)
+ 0x7d910000 | 0x7d970000 | 0x00060000 | False  | True    | True  |  True    | True   | 6.1.7601.17514 [IMM32.DLL] (C:\Windows\system32\IMM32.DLL)
+ 0x7d620000 | 0x7d62a000 | 0x0000a000 | False  | True    | True  |  True    | True   | 6.1.7601.24537 [LPK.dll] (C:\Windows\syswow64\LPK.dll)
+ 0x6f8e0000 | 0x6f97d000 | 0x0009d000 | False  | True    | True  |  True    | True   | 1.0626.7601.24535 [USP10.dll] (C:\Windows\syswow64\USP10.dll)
+ 0x7d8a0000 | 0x7d900000 | 0x00060000 | False  | True    | True  |  True    | True   | 6.1.7601.24545 [SspiCli.dll] (C:\Windows\syswow64\SspiCli.dll)
+ 0x72540000 | 0x7269f000 | 0x0015f000 | False  | True    | True  |  True    | True   | 6.1.7601.24537 [ole32.dll] (C:\Windows\syswow64\ole32.dll)
+ 0x6de20000 | 0x6de77000 | 0x00057000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [SHLWAPI.dll] (C:\Windows\syswow64\SHLWAPI.dll)
+ 0x7dc50000 | 0x7dd50000 | 0x00100000 | False  | True    | True  |  True    | True   | 6.1.7601.17514 [USER32.dll] (C:\Windows\syswow64\USER32.dll)
+ 0x40bc0000 | 0x40bd2000 | 0x00012000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [MPR.dll] (C:\Windows\system32\MPR.dll)
+ 0x6fc30000 | 0x6fcc2000 | 0x00092000 | False  | True    | True  |  True    | True   | 6.1.7601.24537 [OLEAUT32.dll] (C:\Windows\syswow64\OLEAUT32.dll)
+ 0x019f0000 | 0x019fb000 | 0x0000b000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [profapi.dll] (C:\Windows\syswow64\profapi.dll)
+ 0x73800000 | 0x7444c000 | 0x00c4c000 | False  | True    | True  |  True    | True   | 6.1.7601.17514 [SHELL32.dll] (C:\Windows\syswow64\SHELL32.dll)
+ 0x7db50000 | 0x7dc40000 | 0x000f0000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [RPCRT4.dll] (C:\Windows\syswow64\RPCRT4.dll)
+ 0x406a0000 | 0x406b9000 | 0x00019000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [USERENV.dll] (C:\Windows\syswow64\USERENV.dll)
+ 0x40160000 | 0x40166000 | 0x00006000 | False  | True    | True  |  True    | True   | 6.1.7601.23889 [NSI.dll] (C:\Windows\syswow64\NSI.dll)
+ 0x70990000 | 0x70a5e000 | 0x000ce000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [MSCTF.dll] (C:\Windows\syswow64\MSCTF.dll)
+ 0x7d850000 | 0x7d897000 | 0x00047000 | False  | True    | True  |  True    | True   | 6.1.7601.18015 [KERNELBASE.dll] (C:\Windows\syswow64\KERNELBASE.dll)
+ 0x7dab0000 | 0x7db40000 | 0x00090000 | False  | True    | True  |  True    | True   | 6.1.7601.24540 [GDI32.dll] (C:\Windows\syswow64\GDI32.dll)
+ 0x71800000 | 0x7188d000 | 0x0008d000 | False  | True    | True  |  True    | True   | 6.1.7601.19050 [AcLayers.DLL] (C:\Windows\AppPatch\AcLayers.DLL)
+ 0x6d930000 | 0x6d981000 | 0x00051000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [WINSPOOL.DRV] (C:\Windows\system32\WINSPOOL.DRV)
+ 0x77c60000 | 0x77d01000 | 0x000a1000 | False  | True    | True  |  True    | True   | 6.1.7601.24545 [ADVAPI32.dll] (C:\Windows\syswow64\ADVAPI32.dll)
+ 0x41ac0000 | 0x41af5000 | 0x00035000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [WS2_32.dll] (C:\Windows\syswow64\WS2_32.dll)
+-----------------------------------------------------------------------------------------------------------------------------------------
+Stack pivots, minimum distance 8
+-------------------------------------
+Non-SafeSEH protected pivots :
+------------------------------
+0x1100943c : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN 0x0C    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001058 : {pivot 8 / 0x08} :  # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100105a : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110010a4 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110010dc : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001120 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001296 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110036b0 : {pivot 8 / 0x08} :  # ADD AL,5F # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110036b2 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110036da : {pivot 8 / 0x08} :  # ADD ESP,4 # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11003fae : {pivot 8 / 0x08} :  # ADD ESP,4 # MOV EAX,1 # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110050ea : {pivot 8 / 0x08} :  # ADD ESP,8 # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11006a48 : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11006ffc : {pivot 8 / 0x08} :  # POP ECX # POP ECX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007073 : {pivot 8 / 0x08} :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007075 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007590 : {pivot 8 / 0x08} :  # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110075bb : {pivot 8 / 0x08} :  # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007b11 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007d4d : {pivot 8 / 0x08} :  # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007dd2 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007e04 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007ed8 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007f59 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007f99 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007fdc : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008016 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100805f : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008091 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110080ce : {pivot 8 / 0x08} :  # ADC EAX,<&KERNEL32.TLSFREE> # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110080d3 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100810b : {pivot 8 / 0x08} :  # ADC EAX,<&KERNEL32.TLSSETVALUE> # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008110 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008151 : {pivot 8 / 0x08} :  # ADC EAX,<&KERNEL32.INITIALIZECRITICALSECTIONANDSPINCOUNT> # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008156 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110081a7 : {pivot 8 / 0x08} :  # ADC EAX,E0751102 # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110081ac : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008252 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008396 : {pivot 8 / 0x08} :  # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008e98 : {pivot 8 / 0x08} :  # POP EDI # XOR EAX,EAX # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008ef6 : {pivot 8 / 0x08} :  # POP ECX # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110093c7 : {pivot 8 / 0x08} :  # ADD EAX,EDI # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110093c9 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110094f2 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100951e : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110095f0 : {pivot 8 / 0x08} :  # POP ECX # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11009728 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110097b6 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100990b : {pivot 8 / 0x08} :  # POP EBX # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11009a27 : {pivot 8 / 0x08} :  # POP EBX # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100a377 : {pivot 8 / 0x08} :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100a7c5 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100a86f : {pivot 8 / 0x08} :  # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100a912 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b198 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b229 : {pivot 8 / 0x08} :  # MOV EAX,EDI # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b22b : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b32b : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b39e : {pivot 8 / 0x08} :  # POP EBX # POP EDI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b405 : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b420 : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b45c : {pivot 8 / 0x08} :  # POP ECX # POP ECX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b548 : {pivot 8 / 0x08} :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b635 : {pivot 8 / 0x08} :  # ADC EDI,EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b637 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b9db : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ba33 : {pivot 8 / 0x08} :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ba35 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bb5f : {pivot 8 / 0x08} :  # POP ECX # POP ECX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bb71 : {pivot 8 / 0x08} :  # POP ECX # POP ECX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bbce : {pivot 8 / 0x08} :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bbd0 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bc46 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bc92 : {pivot 8 / 0x08} :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bc94 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bcc4 : {pivot 8 / 0x08} :  # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bcc6 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bd8c : {pivot 8 / 0x08} :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bd8e : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bdb4 : {pivot 8 / 0x08} :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bdf4 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c1d3 : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c545 : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c5ba : {pivot 8 / 0x08} :  # MOV EAX,EDI # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c5bc : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c64c : {pivot 8 / 0x08} :  # POP ESI # MOV EAX,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c6c1 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c6ee : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c72f : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c844 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c8bf : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100cfc6 : {pivot 8 / 0x08} :  # PUSH ES # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100cfca : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d00f : {pivot 8 / 0x08} :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d011 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d130 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d29c : {pivot 8 / 0x08} :  # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d35f : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d59b : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d5cf : {pivot 8 / 0x08} :  # INC ESI # ADD AL,89 # PUSH ES # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d5d0 : {pivot 8 / 0x08} :  # ADD AL,89 # PUSH ES # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d5d2 : {pivot 8 / 0x08} :  # PUSH ES # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d5d4 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d628 : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d9dc : {pivot 8 / 0x08} :  # MOV EAX,ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d9de : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100dc01 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e460 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e9a6 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ea62 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ecb2 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f279 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f321 : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f6dd : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f79e : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f90d : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fa75 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fade : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fb1a : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fbfe : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fd98 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ff36 : {pivot 8 / 0x08} :  # MOV ESP,5959FFFF # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ff3b : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ffe5 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110100ac : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11010124 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010cd7 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101181e : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110118ea : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011a07 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013366 : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a25 : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d36 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013fca : {pivot 8 / 0x08} :  # PUSH ES # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fcc : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe7 : {pivot 8 / 0x08} :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe9 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014366 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110147bc : {pivot 8 / 0x08} :  # OR ECX,EDI # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110147be : {pivot 8 / 0x08} :  # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101491c : {pivot 8 / 0x08} :  # OR ECX,4000 # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014922 : {pivot 8 / 0x08} :  # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a3c : {pivot 8 / 0x08} :  # POP EBP # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a7e : {pivot 8 / 0x08} :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015b54 : {pivot 8 / 0x08} :  # POP EBP # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101604a : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110161ef : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016248 : {pivot 8 / 0x08} :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110162c1 : {pivot 8 / 0x08} :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016370 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016834 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a58 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a64 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a76 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a90 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b04 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b12 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b28 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b42 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016c28 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d14 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016db4 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd8 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fe4 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff6 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017010 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017084 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017092 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a8 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170c2 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110171a8 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017294 : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174fd : {pivot 8 / 0x08} :  # POP EDI # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101753a : {pivot 8 / 0x08} :  # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017541 : {pivot 8 / 0x08} :  # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017548 : {pivot 8 / 0x08} :  # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1100959d : {pivot 8 / 0x08} :  # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x18    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100959f : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN 0x18    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110095d2 : {pivot 8 / 0x08} :  # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x18    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110095d4 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN 0x18    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100a74f : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN 0x08    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001196 : {pivot 8 / 0x08} :  # POP EBX # POP EBP # RETN 0x24    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110166ca : {pivot 8 / 0x08} :  # POP ESI # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110081c6 : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110083df : {pivot 8 / 0x08} :  # POP ECX # POP EBX # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110085ad : {pivot 8 / 0x08} :  # MOV EAX,EDI # POP EDI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110085af : {pivot 8 / 0x08} :  # POP EDI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11009612 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11009b78 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11009bd9 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100a605 : {pivot 8 / 0x08} :  # POP EDI # POP ESI # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c44f : {pivot 8 / 0x08} :  # POP ECX # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e9d9 : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110103ac : {pivot 8 / 0x08} :  # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1100943b : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN 0x0C    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001057 : {pivot 12 / 0x0c} :  # POP EDI # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110010a3 : {pivot 12 / 0x0c} :  # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001295 : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110036b1 : {pivot 12 / 0x0c} :  # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100758f : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110075ba : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007b10 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007d4c : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007dd1 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007e03 : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007ed7 : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007f58 : {pivot 12 / 0x0c} :  # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007f98 : {pivot 12 / 0x0c} :  # POP EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007fdb : {pivot 12 / 0x0c} :  # POP EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008015 : {pivot 12 / 0x0c} :  # POP EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100805e : {pivot 12 / 0x0c} :  # POP EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008395 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008a7b : {pivot 12 / 0x0c} :  # ADD ESP,0C # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008a8a : {pivot 12 / 0x0c} :  # ADD ESP,0C # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110094f1 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100951d : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b195 : {pivot 12 / 0x0c} :  # MOV EAX,ESI # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b197 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b228 : {pivot 12 / 0x0c} :  # POP ECX # MOV EAX,EDI # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b32a : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b39b : {pivot 12 / 0x0c} :  # XOR EAX,EAX # POP ESI # POP EBX # POP EDI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b39d : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EDI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b9da : {pivot 12 / 0x0c} :  # POP ECX # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bbcd : {pivot 12 / 0x0c} :  # POP ECX # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c649 : {pivot 12 / 0x0c} :  # MOV EBX,EDI # POP EDI # POP ESI # MOV EAX,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c64b : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # MOV EAX,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c843 : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c8be : {pivot 12 / 0x0c} :  # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100cfc7 : {pivot 12 / 0x0c} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100cfc9 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d12f : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d29b : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d35e : {pivot 12 / 0x0c} :  # POP ECX # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d59a : {pivot 12 / 0x0c} :  # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d5d3 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d627 : {pivot 12 / 0x0c} :  # POP ECX # POP ECX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d9d9 : {pivot 12 / 0x0c} :  # SUB ECX,EDX # POP EDI # MOV EAX,ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d9db : {pivot 12 / 0x0c} :  # POP EDI # MOV EAX,ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100dc00 : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null,unicodereverse {PAGE_EXECUTE_READ}
+0x1100e45f : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e9a5 : {pivot 12 / 0x0c} :  # POP ECX # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ea5f : {pivot 12 / 0x0c} :  # MOV EAX,ESI # POP EBX # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ea61 : {pivot 12 / 0x0c} :  # POP EBX # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ecb1 : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f278 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f6da : {pivot 12 / 0x0c} :  # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f6dc : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f79d : {pivot 12 / 0x0c} :  # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f90c : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fa74 : {pivot 12 / 0x0c} :  # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fadd : {pivot 12 / 0x0c} :  # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fb19 : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fd97 : {pivot 12 / 0x0c} :  # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ff3a : {pivot 12 / 0x0c} :  # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ffe4 : {pivot 12 / 0x0c} :  # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110100a9 : {pivot 12 / 0x0c} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110100ab : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11010121 : {pivot 12 / 0x0c} :  # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010123 : {pivot 12 / 0x0c} :  # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010cd4 : {pivot 12 / 0x0c} :  # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010cd6 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101181d : {pivot 12 / 0x0c} :  # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110118e8 : {pivot 12 / 0x0c} :  # INC EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110118e9 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011a04 : {pivot 12 / 0x0c} :  # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a06 : {pivot 12 / 0x0c} :  # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013365 : {pivot 12 / 0x0c} :  # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a22 : {pivot 12 / 0x0c} :  # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a24 : {pivot 12 / 0x0c} :  # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d33 : {pivot 12 / 0x0c} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d35 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013fcb : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101411b : {pivot 12 / 0x0c} :  # ADD ESP,0C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016049 : {pivot 12 / 0x0c} :  # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101636f : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110174fc : {pivot 12 / 0x0c} :  # POP ESI # POP EDI # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017539 : {pivot 12 / 0x0c} :  # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017540 : {pivot 12 / 0x0c} :  # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017545 : {pivot 12 / 0x0c} :  # INC EDX # CLD # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017546 : {pivot 12 / 0x0c} :  # CLD # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017547 : {pivot 12 / 0x0c} :  # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1100a74e : {pivot 12 / 0x0c} :  # POP ESI # POP EBX # POP EBP # RETN 0x08    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001195 : {pivot 12 / 0x0c} :  # POP EDI # POP EBX # POP EBP # RETN 0x24    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110166c9 : {pivot 12 / 0x0c} :  # POP EBP # POP ESI # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110083da : {pivot 12 / 0x0c} :  # PUSH ECX # PUSH EAX # POP EAX # POP ECX # POP EBP # POP ECX # POP EBX # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110083de : {pivot 12 / 0x0c} :  # POP EBP # POP ECX # POP EBX # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c44e : {pivot 12 / 0x0c} :  # POP ECX # POP ECX # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e9d3 : {pivot 12 / 0x0c} :  # INC ESI # ADD AL,4 # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e9d4 : {pivot 12 / 0x0c} :  # ADD AL,4 # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e9d6 : {pivot 12 / 0x0c} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e9d8 : {pivot 12 / 0x0c} :  # POP EDI # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110010a2 : {pivot 16 / 0x10} :  # POP ECX # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001294 : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110036ae : {pivot 16 / 0x10} :  # ADD ESP,4 # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007c5b : {pivot 16 / 0x10} :  # ADD ESP,10 # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007dd0 : {pivot 16 / 0x10} :  # POP EBX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007e02 : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007ed4 : {pivot 16 / 0x10} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007ed6 : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007f50 : {pivot 16 / 0x10} :  # ADC EAX,<&KERNEL32.FREELIBRARY> # MOV EAX,ESI # POP ESI # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007f55 : {pivot 16 / 0x10} :  # MOV EAX,ESI # POP ESI # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007f57 : {pivot 16 / 0x10} :  # POP ESI # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008629 : {pivot 16 / 0x10} :  # ADD ESP,0C # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008643 : {pivot 16 / 0x10} :  # ADD ESP,0C # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008a9f : {pivot 16 / 0x10} :  # ADD ESP,0C # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008aed : {pivot 16 / 0x10} :  # ADD ESP,0C # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b329 : {pivot 16 / 0x10} :  # POP ECX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100bbcc : {pivot 16 / 0x10} :  # POP ECX # POP ECX # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c7a7 : {pivot 16 / 0x10} :  # ADD ESP,10 # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c840 : {pivot 16 / 0x10} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c842 : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c8b6 : {pivot 16 / 0x10} :  # ADC EAX,<&KERNEL32.FREELIBRARY> # MOV EAX,ESI # POP ESI # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c8bb : {pivot 16 / 0x10} :  # MOV EAX,ESI # POP ESI # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100c8bd : {pivot 16 / 0x10} :  # POP ESI # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d599 : {pivot 16 / 0x10} :  # POP EDI # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100dbfd : {pivot 16 / 0x10} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100dbff : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ea5e : {pivot 16 / 0x10} :  # POP ECX # MOV EAX,ESI # POP EBX # POP EDI # POP ESI # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ecb0 : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f277 : {pivot 16 / 0x10} :  # POP EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f6d7 : {pivot 16 / 0x10} :  # NEG ESI # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f6d9 : {pivot 16 / 0x10} :  # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f79c : {pivot 16 / 0x10} :  # POP EDI # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f908 : {pivot 16 / 0x10} :  # OR EAX,FFFFFFFF # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f90b : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fb18 : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ff39 : {pivot 16 / 0x10} :  # POP ECX # POP ECX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11010120 : {pivot 16 / 0x10} :  # POP EDI # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010cd3 : {pivot 16 / 0x10} :  # POP ECX # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011a03 : {pivot 16 / 0x10} :  # POP EDI # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013822 : {pivot 16 / 0x10} :  # ADD ESP,0C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014d62 : {pivot 16 / 0x10} :  # ADD ESP,10 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101636c : {pivot 16 / 0x10} :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101636e : {pivot 16 / 0x10} :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11007e17 : {pivot 16 / 0x10} :  # ADD ESP,0C # POP EBP # RETN 0x08    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11001194 : {pivot 16 / 0x10} :  # POP ESI # POP EDI # POP EBX # POP EBP # RETN 0x24    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007db7 : {pivot 16 / 0x10} :  # ADD ESP,0C # POP EBP # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110083db : {pivot 16 / 0x10} :  # PUSH EAX # POP EAX # POP ECX # POP EBP # POP ECX # POP EBX # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110083dd : {pivot 16 / 0x10} :  # POP ECX # POP EBP # POP ECX # POP EBX # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100ce90 : {pivot 20 / 0x14} :  # ADD ESP,14 # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d777 : {pivot 20 / 0x14} :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f2e8 : {pivot 20 / 0x14} :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100f79b : {pivot 20 / 0x14} :  # POP ECX # POP EDI # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x110138e7 : {pivot 20 / 0x14} :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013f0d : {pivot 20 / 0x14} :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f28 : {pivot 20 / 0x14} :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110083dc : {pivot 20 / 0x14} :  # POP EAX # POP ECX # POP EBP # POP ECX # POP EBX # RETN 0x04    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11006afa : {pivot 24 / 0x18} :  # ADD ESP,14 # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100b192 : {pivot 24 / 0x18} :  # ADD ESP,0C # MOV EAX,ESI # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100d8b5 : {pivot 24 / 0x18} :  # ADD ESP,14 # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100e45c : {pivot 24 / 0x18} :  # ADD ESP,0C # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11014363 : {pivot 24 / 0x18} :  # ADD ESP,10 # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11001054 : {pivot 28 / 0x1c} :  # ADD ESP,10 # POP EDI # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11006a84 : {pivot 28 / 0x1c} :  # ADD ESP,18 # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1101011d : {pivot 28 / 0x1c} :  # ADD ESP,0C # POP EDI # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a00 : {pivot 28 / 0x1c} :  # ADD ESP,0C # POP EDI # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11014e43 : {pivot 28 / 0x1c} :  # ADD ESP,1C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1100ac95 : {pivot 32 / 0x20} :  # ADD ESP,1C # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11015d57 : {pivot 32 / 0x20} :  # ADD ESP,1C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11007d44 : {pivot 36 / 0x24} :  # ADD EAX,0 # ADD ESP,18 # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007d49 : {pivot 36 / 0x24} :  # ADD ESP,18 # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100838b : {pivot 36 / 0x24} :  # MOV DWORD PTR FS:[0],ECX # ADD ESP,18 # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100838d : {pivot 36 / 0x24} :  # OR EAX,0 # ADD ESP,18 # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11008392 : {pivot 36 / 0x24} :  # ADD ESP,18 # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11007d42 : {pivot 40 / 0x28} :  # POP DWORD PTR FS:[0] # ADD ESP,18 # POP EDI # POP ESI # POP EBX # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x1100fbfb : {pivot 48 / 0x30} :  # ADD ESP,28 # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+0x11002886 : {pivot 8584 / 0x2188} :  # ADD ESP,2188 # RETN    ** [vetHost.exe] **   |  null {PAGE_EXECUTE_READ}
+
+
+SafeSEH protected pivots :
+--------------------------

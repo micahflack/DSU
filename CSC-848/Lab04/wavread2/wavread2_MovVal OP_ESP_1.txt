@@ -1,0 +1,10 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x7]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov esp, 0x435500				0x4016ed (offset 0x16ed)
+jmp edx				0x4016f2 (offset 0x16f2)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0xa]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add bh, bh				0x4016f1 (offset 0x16f1)
+loop 0x6f5				0x4016f3 (offset 0x16f3)

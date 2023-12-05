@@ -1,0 +1,151 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ebx, eax				0x11001c73 (offset 0x1c73)
+jmp edi				0x11001c75 (offset 0x1c75)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ebp, eax				0x11006a1c (offset 0x6a1c)
+shl eax, 2				0x11006a1e (offset 0x6a1e)
+jmp ecx				0x11006a21 (offset 0x6a21)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov bp, ax				0x11006a1b (offset 0x6a1b)
+shl eax, 2				0x11006a1e (offset 0x6a1e)
+jmp ecx				0x11006a21 (offset 0x6a21)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	ADVAPI32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x7ff7ff13e58L (offset 0x3e58)
+mov dword ptr [esp + 0x118], 1				0x7ff7ff13e5aL (offset 0x3e5a)
+call ebx				0x7ff7ff13e65L (offset 0x3e65)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	ADVAPI32.dll	[Ops: 0x4]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x7ff7ff13e67L (offset 0x3e67)
+call edi				0x7ff7ff13e69L (offset 0x3e69)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	ADVAPI32.dll	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x7ff7ff13e87L (offset 0x3e87)
+call edi				0x7ff7ff13e89L (offset 0x3e89)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	ADVAPI32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov edx, eax				0x7ff7ff13f1aL (offset 0x3f1a)
+dec eax				0x7ff7ff13f1cL (offset 0x3f1c)
+mov ecx, esi				0x7ff7ff13f1dL (offset 0x3f1d)
+inc ecx				0x7ff7ff13f1fL (offset 0x3f1f)
+call esi				0x7ff7ff13f20L (offset 0x3f20)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#8	ADVAPI32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x7ff7ff15c28L (offset 0x5c28)
+call eax				0x7ff7ff15c2aL (offset 0x5c2a)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#9	kernel32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d23b19 (offset 0x3b19)
+inc ecx				0x78d23b1b (offset 0x3b1b)
+call eax				0x78d23b1c (offset 0x3b1c)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#10	kernel32.dll	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d34569 (offset 0x14569)
+call edx				0x78d3456b (offset 0x1456b)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#11	kernel32.dll	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d412dd (offset 0x212dd)
+call edi				0x78d412df (offset 0x212df)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#12	kernel32.dll	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov edx, eax				0x78d58858 (offset 0x38858)
+inc ecx				0x78d5885a (offset 0x3885a)
+mov ecx, esp				0x78d5885b (offset 0x3885b)
+call eax				0x78d5885d (offset 0x3885d)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#13	kernel32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d5a415 (offset 0x3a415)
+inc ebp				0x78d5a417 (offset 0x3a417)
+xor eax, eax				0x78d5a418 (offset 0x3a418)
+inc ecx				0x78d5a41a (offset 0x3a41a)
+call edx				0x78d5a41b (offset 0x3a41b)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#14	kernel32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d5a5fd (offset 0x3a5fd)
+dec eax				0x78d5a5ff (offset 0x3a5ff)
+mov ecx, esi				0x78d5a600 (offset 0x3a600)
+inc ebp				0x78d5a602 (offset 0x3a602)
+xor eax, eax				0x78d5a603 (offset 0x3a603)
+inc ecx				0x78d5a605 (offset 0x3a605)
+call edx				0x78d5a606 (offset 0x3a606)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#15	kernel32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d5ae34 (offset 0x3ae34)
+dec ecx				0x78d5ae36 (offset 0x3ae36)
+mov edx, edi				0x78d5ae37 (offset 0x3ae37)
+inc ebp				0x78d5ae39 (offset 0x3ae39)
+xor eax, eax				0x78d5ae3a (offset 0x3ae3a)
+dec eax				0x78d5ae3c (offset 0x3ae3c)
+mov ecx, edi				0x78d5ae3d (offset 0x3ae3d)
+inc ecx				0x78d5ae3f (offset 0x3ae3f)
+call edx				0x78d5ae40 (offset 0x3ae40)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#16	kernel32.dll	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d5bdea (offset 0x3bdea)
+inc ecx				0x78d5bdec (offset 0x3bdec)
+call ecx				0x78d5bded (offset 0x3bded)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#17	kernel32.dll	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d5bee1 (offset 0x3bee1)
+inc ecx				0x78d5bee3 (offset 0x3bee3)
+call ecx				0x78d5bee4 (offset 0x3bee4)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#18	kernel32.dll	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d5c0a4 (offset 0x3c0a4)
+inc ecx				0x78d5c0a6 (offset 0x3c0a6)
+call ecx				0x78d5c0a7 (offset 0x3c0a7)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#19	kernel32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d5cab0 (offset 0x3cab0)
+inc ecx				0x78d5cab2 (offset 0x3cab2)
+call ecx				0x78d5cab3 (offset 0x3cab3)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#20	kernel32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78d78a03 (offset 0x58a03)
+call esi				0x78d78a05 (offset 0x58a05)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#21	kernel32.dll	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78db77d0 (offset 0x977d0)
+inc ecx				0x78db77d2 (offset 0x977d2)
+call eax				0x78db77d3 (offset 0x977d3)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#22	kernel32.dll	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x78db7e6a (offset 0x97e6a)
+inc ecx				0x78db7e6c (offset 0x97e6c)
+call eax				0x78db7e6d (offset 0x97e6d)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#23	WS2_32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, eax				0x7ff724f90a0L (offset 0x190a0)
+inc esp				0x7ff724f90a2L (offset 0x190a2)
+mov eax, ebp				0x7ff724f90a3L (offset 0x190a3)
+xor edx, edx				0x7ff724f90a5L (offset 0x190a5)
+dec ecx				0x7ff724f90a7L (offset 0x190a7)
+mov ecx, edi				0x7ff724f90a8L (offset 0x190a8)
+inc ecx				0x7ff724f90aaL (offset 0x190aa)
+call esi				0x7ff724f90abL (offset 0x190ab)
