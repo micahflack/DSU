@@ -37,7 +37,7 @@ From the rear of the device, we can see some of the available I/O. There are sev
     \label{fig:snbc_btp_s80_io}
 \end{figure}
 
-Removing each of the screws allows us to remove the chassis from the outer shell. Here we can see the motherboard (leftmost) and the expansion cards (topside, right of the motherboard). The expansion cards are divided into two parts, as shown in Figure \ref{fig:snbc_btp_s80_expansion}.
+Removing each of the screws allows us to slide the chassis out of the outer shell. Here we can see the motherboard (leftmost) and the expansion cards (topside, right of the motherboard). The expansion cards are divided into two parts, as shown in Figure \ref{fig:snbc_btp_s80_expansion}.
 
 \begin{figure}[ht]
     \centering
@@ -79,8 +79,8 @@ Component identification and analysis is divided into two parts. The first being
 
 The list of motherboard components, as shown in Figure \ref{fig:snbc_btp_s80_motherboard}:
 \begin{itemize}
-    \item NXP MPU, 
-    \item ESMT flash, 
+    \item NXP 32-bit ARM Cortex-M4 MCU, LPC4078FET208
+    \item ESMT Flash DRAM, M12L16161A-7T
 \end{itemize}
 
 \begin{figure}[ht]
@@ -93,25 +93,25 @@ The list of motherboard components, as shown in Figure \ref{fig:snbc_btp_s80_mot
 
 The list of expansion components, as shown in Figure \ref{fig:snbc_btp_s80_expansion_components}:
 \begin{itemize}
-    \item SIPEX RS-232 Transceiver, 
-    \item ASIX Ethernet Controller, 
+    \item SIPEX RS-232 Transceiver, SP2209E
+    \item ASIX Ethernet Controller, AX88796C
 \end{itemize}
 
-Some words...
+All of these parts can be identified by reading the labeled markings. Typically, there is a manufacturer logo, production date (e.g., YYMM), lot number, and part number. Using this information we cross reference a part database to validate the package of the component (e.g., QFP versus BGA types) and functionality. The records should tell us whether the component is the main processing unit, flash storage, or a micro-controller.  
 
 \subsection{Technical Resources} \label{technicalresources}
 
 % List and describe datasheets and  source - AllDataSheets.com
 
-\textbf{Outline}
-$\downarrow$
+% \textbf{Outline}
+% $\downarrow$
 
-\begin{itemize}
-    \item List datasheets and where they were sourced
-    \item Explanation of which sites/resources and why
-\end{itemize}
+% \begin{itemize}
+%     \item List datasheets and where they were sourced
+%     \item Explanation of which sites/resources and why
+% \end{itemize}
 
-pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim.
+All technical data and specifications sheets were procured through AllDataSheet or FindChips \autocite{ALLDATASHEETCOMElectronic,FindchipsElectronicPart}. There is a litany of other sources that can be used, however, these are the ones used by the researcher. There are no empirical reasons for using these sources instead of others, it was purely motivated by personal preference. Regardless of which datasheet aggregator is used, it should not harm replicability of the research.
 
 \subsection{Firmware Analysis} \label{firmwareanalysis}
 
