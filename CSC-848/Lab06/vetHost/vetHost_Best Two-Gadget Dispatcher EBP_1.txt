@@ -1,0 +1,8 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebp, 0x5f				0x110013be (offset 0x13be)
+xchg edx, ecx				0x110013c1 (offset 0x13c1)
+sub esi, 0x27				0x110013c3 (offset 0x13c3)
+pop edx				0x110013c6 (offset 0x13c6)
+jmp ebx				0x110013c7 (offset 0x13c7)

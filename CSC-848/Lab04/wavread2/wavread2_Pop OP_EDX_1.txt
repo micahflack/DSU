@@ -1,0 +1,8 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+pop edx				0x4016e2 (offset 0x16e2)
+pop eax				0x4016e3 (offset 0x16e3)
+push edx				0x4016e4 (offset 0x16e4)
+add ecx, 0x20007				0x4016e5 (offset 0x16e5)
+jmp ebx				0x4016eb (offset 0x16eb)

@@ -1,0 +1,45 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+adc edi, 0x10043190				0x1100128a (offset 0x128a)
+pop ecx				0x11001290 (offset 0x1290)
+pop ecx				0x11001291 (offset 0x1291)
+jmp esi				0x11001292 (offset 0x1292)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add edi, eax				0x11001676 (offset 0x1676)
+jmp ecx				0x11001678 (offset 0x1678)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+adc edi, 0xc7				0x11001687 (offset 0x1687)
+add esi, 0x41c924				0x1100168d (offset 0x168d)
+jmp ebx				0x11001693 (offset 0x1693)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	vetHost.exe	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+adc edi, edi				0x11002561 (offset 0x2561)
+out 0x83, eax				0x11002563 (offset 0x2563)
+loope 0x1569				0x11002565 (offset 0x2565)
+dec ecx				0x11002567 (offset 0x2567)
+mov eax, ecx				0x11002568 (offset 0x2568)
+jmp edx				0x1100256a (offset 0x256a)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	vetHost.exe	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+adc edi, edi				0x1100276e (offset 0x276e)
+loope 0x16fd				0x11002770 (offset 0x2770)
+fild word ptr [0x121123]				0x11002772 (offset 0x2772)
+jmp ecx				0x11002778 (offset 0x2778)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add edi, 0x1234				0x110069ed (offset 0x69ed)
+jmp esi				0x110069f3 (offset 0x69f3)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	vetHost.exe	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add edi, edi				0x1100b7e7 (offset 0xb7e7)
+adc eax, 0x1101814c				0x1100b7e9 (offset 0xb7e9)
+call esi				0x1100b7ee (offset 0xb7ee)

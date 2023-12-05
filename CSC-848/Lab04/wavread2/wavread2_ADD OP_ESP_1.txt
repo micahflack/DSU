@@ -1,0 +1,58 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x8]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 4				0x401530 (offset 0x1530)
+add edi, 4				0x401533 (offset 0x1533)
+jmp edi				0x401536 (offset 0x1536)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0x5]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 4				0x4015d0 (offset 0x15d0)
+jmp edx				0x4015d3 (offset 0x15d3)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	wavread2.exe	[Ops: 0x8]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+les eax, ptr [edi + edi*8]				0x4015d1 (offset 0x15d1)
+loop 0x5d6				0x4015d4 (offset 0x15d4)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	wavread2.exe	[Ops: 0xc]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 0x894				0x4015e6 (offset 0x15e6)
+mov ebp, esp				0x4015ec (offset 0x15ec)
+jmp edx				0x4015ee (offset 0x15ee)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	wavread2.exe	[Ops: 0x4]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 0xc				0x401622 (offset 0x1622)
+inc eax				0x401625 (offset 0x1625)
+jmp edx				0x401626 (offset 0x1626)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 0x10				0x4016ba (offset 0x16ba)
+jmp edx				0x4016bd (offset 0x16bd)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 0x18				0x4016dd (offset 0x16dd)
+jmp edx				0x4016e0 (offset 0x16e0)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#8	wavread2.exe	[Ops: 0x5]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 8				0x4016f4 (offset 0x16f4)
+jmp edx				0x4016f7 (offset 0x16f7)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#9	wavread2.exe	[Ops: 0x8]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+les ecx, ptr [eax]				0x4016f5 (offset 0x16f5)
+jmp edx				0x4016f7 (offset 0x16f7)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#10	wavread2.exe	[Ops: 0x5]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 0x10				0x4016f9 (offset 0x16f9)
+jmp edx				0x4016fc (offset 0x16fc)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#11	wavread2.exe	[Ops: 0x5]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add esp, 0x18				0x4016fe (offset 0x16fe)
+jmp edx				0x401701 (offset 0x1701)

@@ -1,0 +1,45 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebx, esi				0x1100255a (offset 0x255a)
+jmp dword ptr [ebx]				0x1100255c (offset 0x255c)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebx, 5				0x110031d8 (offset 0x31d8)
+xor eax, ebx				0x110031db (offset 0x31db)
+jmp dword ptr [ebx]				0x110031dd (offset 0x31dd)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebx, 5				0x110031d7 (offset 0x31d7)
+xor eax, ebx				0x110031db (offset 0x31db)
+jmp dword ptr [ebx]				0x110031dd (offset 0x31dd)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub ebx, 4				0x11003504 (offset 0x3504)
+inc eax				0x11003507 (offset 0x3507)
+jmp dword ptr [ebx]				0x11003508 (offset 0x3508)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebx, 0x10				0x110150e2 (offset 0x150e2)
+jmp dword ptr [ebx]				0x110150e5 (offset 0x150e5)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebx, eax				0x110150e0 (offset 0x150e0)
+add ebx, 0x10				0x110150e2 (offset 0x150e2)
+jmp dword ptr [ebx]				0x110150e5 (offset 0x150e5)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebx, 0x10				0x1101516e (offset 0x1516e)
+jmp dword ptr [ebx]				0x11015171 (offset 0x15171)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#8	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add ebx, eax				0x1101516c (offset 0x1516c)
+add ebx, 0x10				0x1101516e (offset 0x1516e)
+jmp dword ptr [ebx]				0x11015171 (offset 0x15171)

@@ -1,0 +1,45 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	vetHost.exe	[Ops: 0xb]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [ecx + 8], esi				0x11002388 (offset 0x2388)
+neg esi				0x1100238b (offset 0x238b)
+jmp ecx				0x1100238d (offset 0x238d)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	vetHost.exe	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov byte ptr [ecx], ah				0x11002540 (offset 0x2540)
+add byte ptr [eax], al				0x11002542 (offset 0x2542)
+popal 				0x11002544 (offset 0x2544)
+mov eax, ecx				0x11002545 (offset 0x2545)
+jmp edx				0x11002547 (offset 0x2547)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [ecx], edx				0x11002761 (offset 0x2761)
+jmp esi				0x11002763 (offset 0x2763)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [ecx], edx				0x1100276d (offset 0x276d)
+jmp ecx				0x1100276f (offset 0x276f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [ecx + 0xc], eax				0x11002a3e (offset 0x2a3e)
+jmp esi				0x11002a41 (offset 0x2a41)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+or al, 0xff				0x11002a40 (offset 0x2a40)
+out 0, al				0x11002a42 (offset 0x2a42)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	vetHost.exe	[Ops: 0xb]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, 0xdeadbeef				0x11003632 (offset 0x3632)
+jmp ebx				0x11003637 (offset 0x3637)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#8	vetHost.exe	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov ecx, dword ptr [ebp - 0x1b74]				0x11005592 (offset 0x5592)
+mov edx, dword ptr [ecx + 4]				0x11005598 (offset 0x5598)
+call edx				0x1100559b (offset 0x559b)

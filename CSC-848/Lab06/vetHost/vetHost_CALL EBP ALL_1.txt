@@ -1,0 +1,5 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	kernel32.dll	[Ops: 0xb]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov dword ptr [esp + 0xb0], 0x18				0x78d78a5b (offset 0x58a5b)
+call ebp				0x78d78a66 (offset 0x58a66)

@@ -1,0 +1,20 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x9]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+adc ch, byte ptr [esi + 0xbbffff]				0x40162f (offset 0x162f)
+add byte ptr [eax + 0x20], al				0x401635 (offset 0x1635)
+jmp edx				0x401638 (offset 0x1638)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0xc]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add byte ptr [ecx - 0x79], ah				0x401655 (offset 0x1655)
+sti 				0x401658 (offset 0x1658)
+xor edi, ebx				0x401659 (offset 0x1659)
+sub edx, esi				0x40165b (offset 0x165b)
+xor edi, ecx				0x40165d (offset 0x165d)
+jmp edx				0x40165f (offset 0x165f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+add ecx, 0x20007				0x4016e5 (offset 0x16e5)
+jmp ebx				0x4016eb (offset 0x16eb)

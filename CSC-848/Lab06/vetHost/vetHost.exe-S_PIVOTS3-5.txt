@@ -1,0 +1,245 @@
+.\vetHost.exe             DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+WS2_32.dll                DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+kernel32.dll              DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+ADVAPI32.dll              DEP: True      ASLR: True    SafeSEH: False      CFG: False    
+
+EAX
+4 bytes
+4 bytes
+ 	0x110013e7, # (base + 0x13e7), # pop esi # jmp eax # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002398, # (base + 0x2398), # pop ebp # jmp eax # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002644, # (base + 0x2644), # pop ecx # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002654, # (base + 0x2654), # pop ecx # xor ecx, eax # jmp eax # .\vetHost.exe  (4 bytes)
+8 bytes
+ 	0x110013e6, # (base + 0x13e6), # pop ecx # pop esi # jmp eax # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001c46, # (base + 0x1c46), # add esp, 8 # jmp eax # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11002397, # (base + 0x2397), # pop esi # pop ebp # jmp eax # .\vetHost.exe  (8 bytes)
+12 bytes
+ 	0x110013e5, # (base + 0x13e5), # pop ecx # pop ecx # pop esi # jmp eax # .\vetHost.exe  (12 bytes)
+12 bytes
+ 	0x11001c45, # (base + 0x1c45), # pop ebx # add esp, 8 # jmp eax # .\vetHost.exe  (12 bytes)
+16 bytes
+ 	0x11001c44, # (base + 0x1c44), # pop ebp # pop ebx # add esp, 8 # jmp eax # .\vetHost.exe  (16 bytes)
+EBX
+4 bytes
+4 bytes
+ 	0x11001271, # (base + 0x1271), # pop ecx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100127a, # (base + 0x127a), # pop edi # pop esi # and eax, edi # push eax # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110013bb, # (base + 0x13bb), # pop eax # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110013c6, # (base + 0x13c6), # pop edx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002398, # (base + 0x2398), # pop ebp # jmp eax # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100239e, # (base + 0x239e), # pop ebp # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002572, # (base + 0x2572), # pop esi # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a47, # (base + 0x2a47), # pop ecx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a51, # (base + 0x2a51), # pop eax # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110034f2, # (base + 0x34f2), # pop ebx # xor eax, eax # xor edx, edx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11003501, # (base + 0x3501), # pop eax # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100362f, # (base + 0x362f), # add esp, 4 # mov ecx, 0xdeadbeef # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110069e4, # (base + 0x69e4), # pop edx # add eax, 0x1234 # jmp ebx # .\vetHost.exe  (4 bytes)
+8 bytes
+ 	0x1100126e, # (base + 0x126e), # pop esi # mov eax, esi # pop ecx # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x110013c0, # (base + 0x13c0), # pop edi # xchg edx, ecx # sub esi, 0x27 # pop edx # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11002397, # (base + 0x2397), # pop esi # pop ebp # jmp eax # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x1100239d, # (base + 0x239d), # pop esi # pop ebp # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11002571, # (base + 0x2571), # pop edi # pop esi # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11002a44, # (base + 0x2a44), # pop esi # add byte ptr [eax], al # pop ecx # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x110034ef, # (base + 0x34ef), # add esp, 4 # pop ebx # xor eax, eax # xor edx, edx # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x110034fe, # (base + 0x34fe), # pop edi # and edi, eax # pop eax # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x1100362c, # (base + 0x362c), # pop ecx # add byte ptr [eax], al # add esp, 4 # mov ecx, 0xdeadbeef # jmp ebx # .\vetHost.exe  (8 bytes)
+28 bytes
+ 	0x1100256c, # (base + 0x256c), # add esp, 0x14 # xor eax, eax # pop edi # pop esi # jmp ebx # .\vetHost.exe  (28 bytes)
+ECX
+4 bytes
+4 bytes
+ 	0x11001287, # (base + 0x1287), # pop ebp # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110013c6, # (base + 0x13c6), # pop edx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110013cd, # (base + 0x13cd), # pop esi # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100166f, # (base + 0x166f), # pop ecx # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001675, # (base + 0x1675), # pop esi # add edi, eax # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001c5f, # (base + 0x1c5f), # pop ebx # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001c6b, # (base + 0x1c6b), # pop esi # mov eax, ebx # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002750, # (base + 0x2750), # pop ebx # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110031b9, # (base + 0x31b9), # pop esi # jmp edx # .\vetHost.exe  (4 bytes)
+8 bytes
+ 	0x11001286, # (base + 0x1286), # pop esi # pop ebp # jmp ecx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001674, # (base + 0x1674), # pop edi # pop esi # add edi, eax # jmp ecx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001c5e, # (base + 0x1c5e), # pop esi # pop ebx # jmp ecx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001c6a, # (base + 0x1c6a), # pop edi # pop esi # mov eax, ebx # jmp ecx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x1100274f, # (base + 0x274f), # pop ecx # pop ebx # jmp ecx # .\vetHost.exe  (8 bytes)
+12 bytes
+ 	0x11001285, # (base + 0x1285), # pop edi # pop esi # pop ebp # jmp ecx # .\vetHost.exe  (12 bytes)
+12 bytes
+ 	0x1100274e, # (base + 0x274e), # pop edx # pop ecx # pop ebx # jmp ecx # .\vetHost.exe  (12 bytes)
+16 bytes
+ 	0x11003193, # (base + 0x3193), # add esp, 0x10 # mov eax, 0x10024c38 # jmp ecx # .\vetHost.exe  (16 bytes)
+20 bytes
+ 	0x11001c59, # (base + 0x1c59), # add esp, 0xc # xor eax, eax # pop esi # pop ebx # jmp ecx # .\vetHost.exe  (20 bytes)
+EDX
+4 bytes
+4 bytes
+ 	0x110013da, # (base + 0x13da), # pop esi # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002620, # (base + 0x2620), # pop ebx # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002644, # (base + 0x2644), # pop ecx # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a47, # (base + 0x2a47), # pop ecx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a4e, # (base + 0x2a4e), # pop ecx # push 1 # pop eax # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a51, # (base + 0x2a51), # pop eax # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110031b9, # (base + 0x31b9), # pop esi # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100363d, # (base + 0x363d), # pop edi # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110069bc, # (base + 0x69bc), # pop edi # neg eax # xor eax, ebx # mov dword ptr [eax], edi # jmp edx # .\vetHost.exe  (4 bytes)
+8 bytes
+ 	0x110013d9, # (base + 0x13d9), # pop ecx # pop esi # jmp edx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x1100261a, # (base + 0x261a), # pop esi # mov eax, 1 # pop ebx # jmp edx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x110031b6, # (base + 0x31b6), # pop ecx # mov eax, esi # pop esi # jmp edx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x110069bb, # (base + 0x69bb), # pop eax # pop edi # neg eax # xor eax, ebx # mov dword ptr [eax], edi # jmp edx # .\vetHost.exe  (8 bytes)
+12 bytes
+ 	0x110013d8, # (base + 0x13d8), # pop ecx # pop ecx # pop esi # jmp edx # .\vetHost.exe  (12 bytes)
+12 bytes
+ 	0x11002619, # (base + 0x2619), # pop edi # pop esi # mov eax, 1 # pop ebx # jmp edx # .\vetHost.exe  (12 bytes)
+16 bytes
+ 	0x110013b0, # (base + 0x13b0), # add esp, 0x10 # jmp edx # .\vetHost.exe  (16 bytes)
+17 bytes
+ 	0x1100255f, # (base + 0x255f), # add esp, 0x11 # jmp edi # .\vetHost.exe  (17 bytes)
+20 bytes
+ 	0x110013af, # (base + 0x13af), # pop ebx # add esp, 0x10 # jmp edx # .\vetHost.exe  (20 bytes)
+21 bytes
+ 	0x1100255e, # (base + 0x255e), # pop ebx # add esp, 0x11 # jmp edi # .\vetHost.exe  (21 bytes)
+24 bytes
+ 	0x110013ac, # (base + 0x13ac), # pop esi # xor ecx, ecx # pop ebx # add esp, 0x10 # jmp edx # .\vetHost.exe  (24 bytes)
+60 bytes
+ 	0x110031b1, # (base + 0x31b1), # add esp, 0x3c # jmp esi # .\vetHost.exe  (60 bytes)
+8616 bytes
+ 	0x1100253e, # (base + 0x253e), # add esp, 0x2188 # popal  # mov eax, ecx # jmp edx # .\vetHost.exe  (8616 bytes)
+EDI
+4 bytes
+4 bytes
+ 	0x11001c5f, # (base + 0x1c5f), # pop ebx # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001c6b, # (base + 0x1c6b), # pop esi # mov eax, ebx # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001c72, # (base + 0x1c72), # pop eax # mov ebx, eax # jmp edi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110031b9, # (base + 0x31b9), # pop esi # jmp edx # .\vetHost.exe  (4 bytes)
+8 bytes
+ 	0x11001c46, # (base + 0x1c46), # add esp, 8 # jmp eax # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001c5e, # (base + 0x1c5e), # pop esi # pop ebx # jmp ecx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001c6a, # (base + 0x1c6a), # pop edi # pop esi # mov eax, ebx # jmp ecx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001c71, # (base + 0x1c71), # pop esi # pop eax # mov ebx, eax # jmp edi # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x110031b6, # (base + 0x31b6), # pop ecx # mov eax, esi # pop esi # jmp edx # .\vetHost.exe  (8 bytes)
+12 bytes
+ 	0x11001c45, # (base + 0x1c45), # pop ebx # add esp, 8 # jmp eax # .\vetHost.exe  (12 bytes)
+16 bytes
+ 	0x11001c44, # (base + 0x1c44), # pop ebp # pop ebx # add esp, 8 # jmp eax # .\vetHost.exe  (16 bytes)
+17 bytes
+ 	0x1100255f, # (base + 0x255f), # add esp, 0x11 # jmp edi # .\vetHost.exe  (17 bytes)
+21 bytes
+ 	0x1100255e, # (base + 0x255e), # pop ebx # add esp, 0x11 # jmp edi # .\vetHost.exe  (21 bytes)
+ESI
+4 bytes
+4 bytes
+ 	0x11001271, # (base + 0x1271), # pop ecx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001287, # (base + 0x1287), # pop ebp # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001291, # (base + 0x1291), # pop ecx # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110013bb, # (base + 0x13bb), # pop eax # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100166f, # (base + 0x166f), # pop ecx # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11001675, # (base + 0x1675), # pop esi # add edi, eax # jmp ecx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100239e, # (base + 0x239e), # pop ebp # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002398, # (base + 0x2398), # pop ebp # jmp eax # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a47, # (base + 0x2a47), # pop ecx # jmp ebx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a4e, # (base + 0x2a4e), # pop ecx # push 1 # pop eax # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11002a51, # (base + 0x2a51), # pop eax # jmp edx # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11003188, # (base + 0x3188), # pop edi # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11003190, # (base + 0x3190), # pop edi # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x1100363d, # (base + 0x363d), # pop edi # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x110069ec, # (base + 0x69ec), # pop edx # add edi, 0x1234 # jmp esi # .\vetHost.exe  (4 bytes)
+4 bytes
+ 	0x11006a2a, # (base + 0x6a2a), # pop edi # xor edx, edx # jmp esi # .\vetHost.exe  (4 bytes)
+8 bytes
+ 	0x1100126e, # (base + 0x126e), # pop esi # mov eax, esi # pop ecx # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001286, # (base + 0x1286), # pop esi # pop ebp # jmp ecx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11001290, # (base + 0x1290), # pop ecx # pop ecx # jmp esi # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x1100239d, # (base + 0x239d), # pop esi # pop ebp # jmp ebx # .\vetHost.exe  (8 bytes)
+8 bytes
+ 	0x11002a44, # (base + 0x2a44), # pop esi # add byte ptr [eax], al # pop ecx # jmp ebx # .\vetHost.exe  (8 bytes)
+12 bytes
+ 	0x11001285, # (base + 0x1285), # pop edi # pop esi # pop ebp # jmp ecx # .\vetHost.exe  (12 bytes)
+16 bytes
+ 	0x110013b0, # (base + 0x13b0), # add esp, 0x10 # jmp edx # .\vetHost.exe  (16 bytes)
+20 bytes
+ 	0x110013af, # (base + 0x13af), # pop ebx # add esp, 0x10 # jmp edx # .\vetHost.exe  (20 bytes)
+24 bytes
+ 	0x11003182, # (base + 0x3182), # add esp, 0x14 # or eax, 0xffffffff # pop edi # jmp esi # .\vetHost.exe  (24 bytes)
+40 bytes
+ 	0x1100318b, # (base + 0x318b), # add esp, 0x24 # xor eax, eax # pop edi # jmp esi # .\vetHost.exe  (40 bytes)
+60 bytes
+ 	0x110031b1, # (base + 0x31b1), # add esp, 0x3c # jmp esi # .\vetHost.exe  (60 bytes)
+
+JOP ROCKET

@@ -1,0 +1,6 @@
+Do you have an MD5 hash that needs to be cracked? Well you're in luck!
+Simply run: hashCracker.exe <wordlist.txt>
+Then, enter your top secret hash!
+
+Your wordlist should contain a list of strings with one entry per line.
+

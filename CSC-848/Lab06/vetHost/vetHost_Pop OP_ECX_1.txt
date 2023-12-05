@@ -1,0 +1,137 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11001271 (offset 0x1271)
+jmp ebx				0x11001272 (offset 0x1272)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11001290 (offset 0x1290)
+pop ecx				0x11001291 (offset 0x1291)
+jmp esi				0x11001292 (offset 0x1292)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11001291 (offset 0x1291)
+jmp esi				0x11001292 (offset 0x1292)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x110013d9 (offset 0x13d9)
+pop esi				0x110013da (offset 0x13da)
+jmp edx				0x110013db (offset 0x13db)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	.\vetHost.exe	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x110013d8 (offset 0x13d8)
+pop ecx				0x110013d9 (offset 0x13d9)
+pop esi				0x110013da (offset 0x13da)
+jmp edx				0x110013db (offset 0x13db)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x110013e6 (offset 0x13e6)
+pop esi				0x110013e7 (offset 0x13e7)
+jmp eax				0x110013e8 (offset 0x13e8)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#8	.\vetHost.exe	[Ops: 0x5]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x110013e5 (offset 0x13e5)
+pop ecx				0x110013e6 (offset 0x13e6)
+pop esi				0x110013e7 (offset 0x13e7)
+jmp eax				0x110013e8 (offset 0x13e8)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#9	.\vetHost.exe	[Ops: 0x8]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+or edx, 0x59000000				0x110013e0 (offset 0x13e0)
+pop ecx				0x110013e6 (offset 0x13e6)
+pop esi				0x110013e7 (offset 0x13e7)
+jmp eax				0x110013e8 (offset 0x13e8)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#10	.\vetHost.exe	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add byte ptr [ecx + 0x59], bl				0x110013e4 (offset 0x13e4)
+pop esi				0x110013e7 (offset 0x13e7)
+jmp eax				0x110013e8 (offset 0x13e8)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#11	.\vetHost.exe	[Ops: 0x8]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11001665 (offset 0x1665)
+push 0xf0				0x11001666 (offset 0x1666)
+jmp esi				0x1100166b (offset 0x166b)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#12	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+lock add byte ptr [eax], al				0x11001667 (offset 0x1667)
+add bh, bh				0x1100166a (offset 0x166a)
+out 0, al				0x1100166c (offset 0x166c)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#13	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x1100166f (offset 0x166f)
+jmp esi				0x11001670 (offset 0x1670)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#14	.\vetHost.exe	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sbb byte ptr [ecx - 1], bl				0x1100166e (offset 0x166e)
+out 0, al				0x11001671 (offset 0x1671)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#15	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11002644 (offset 0x2644)
+jmp edx				0x11002645 (offset 0x2645)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#16	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11002654 (offset 0x2654)
+xor ecx, eax				0x11002655 (offset 0x2655)
+jmp eax				0x11002657 (offset 0x2657)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#17	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x1100274f (offset 0x274f)
+pop ebx				0x11002750 (offset 0x2750)
+jmp ecx				0x11002751 (offset 0x2751)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#18	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar bh, cl				0x1100274a (offset 0x274a)
+and byte ptr [edx - 0xa4a6a6], dl				0x1100274c (offset 0x274c)
+loope 0x1754				0x11002752 (offset 0x2752)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#19	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11002a47 (offset 0x2a47)
+jmp ebx				0x11002a48 (offset 0x2a48)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#20	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x11002a4e (offset 0x2a4e)
+push 1				0x11002a4f (offset 0x2a4f)
+pop eax				0x11002a51 (offset 0x2a51)
+jmp edx				0x11002a52 (offset 0x2a52)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#21	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x110031b6 (offset 0x31b6)
+mov eax, esi				0x110031b7 (offset 0x31b7)
+pop esi				0x110031b9 (offset 0x31b9)
+jmp edx				0x110031ba (offset 0x31ba)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#22	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+out 0x59, al				0x110031b5 (offset 0x31b5)
+mov eax, esi				0x110031b7 (offset 0x31b7)
+pop esi				0x110031b9 (offset 0x31b9)
+jmp edx				0x110031ba (offset 0x31ba)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#23	.\vetHost.exe	[Ops: 0xb]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop ecx				0x1100362c (offset 0x362c)
+add byte ptr [eax], al				0x1100362d (offset 0x362d)
+add esp, 4				0x1100362f (offset 0x362f)
+mov ecx, 0xdeadbeef				0x11003632 (offset 0x3632)
+jmp ebx				0x11003637 (offset 0x3637)

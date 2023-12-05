@@ -1,0 +1,43 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x8]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, esp				0x401585 (offset 0x1585)
+jmp edx				0x401587 (offset 0x1587)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0x9]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, edx				0x401695 (offset 0x1695)
+cld 				0x401697 (offset 0x1697)
+jmp edx				0x401698 (offset 0x1698)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, ebx				0x4016a7 (offset 0x16a7)
+pushal 				0x4016a9 (offset 0x16a9)
+jmp eax				0x4016aa (offset 0x16aa)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	wavread2.exe	[Ops: 0xa]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, dword ptr [ecx*4 + 0x40c5a4]				0x40c55e (offset 0xc55e)
+jmp eax				0x40c565 (offset 0xc565)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	wavread2.exe	[Ops: 0xa]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, dword ptr [ecx*4 + 0x40cb24]				0x40cade (offset 0xcade)
+jmp eax				0x40cae5 (offset 0xcae5)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	wavread2.exe	[Ops: 0xc]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, dword ptr [ebp + 8]				0x40d25c (offset 0xd25c)
+mov ebx, dword ptr [ebp + 0xc]				0x40d25f (offset 0xd25f)
+mov ebp, dword ptr [ebp - 4]				0x40d262 (offset 0xd262)
+mov esp, dword ptr [ebx - 4]				0x40d265 (offset 0xd265)
+jmp eax				0x40d268 (offset 0xd268)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	wavread2.exe	[Ops: 0xc]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov eax, dword ptr [ebp - 4]				0x40d412 (offset 0xd412)
+mov ebx, dword ptr [ebp + 0xc]				0x40d415 (offset 0xd415)
+mov esp, dword ptr [ebx + 0x1c]				0x40d418 (offset 0xd418)
+mov ebp, dword ptr [ebx + 0x20]				0x40d41b (offset 0xd41b)
+jmp eax				0x40d41e (offset 0xd41e)

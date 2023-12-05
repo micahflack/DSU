@@ -1,0 +1,341 @@
+
+**Empty JMP PTR [EAX] Gadgets **
+0x1100274b, # (base + 0x274b), # jmp dword ptr [eax] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031a5, # (base + 0x31a5), # jmp dword ptr [eax] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100ed0e, # (base + 0xed0e), # jmp dword ptr [eax] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100ed25, # (base + 0xed25), # jmp dword ptr [eax] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EAX] Gadgets **
+0x7ff7ff1514b, # (base + 0x514b), # jmp dword ptr [eax] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EAX] Gadgets **
+0x78d25fee, # (base + 0x5fee), # jmp dword ptr [eax] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d26034, # (base + 0x6034), # jmp dword ptr [eax] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d2608e, # (base + 0x608e), # jmp dword ptr [eax] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EAX] Gadgets **
+0x7ff724ec3cf, # (base + 0xc3cf), # jmp dword ptr [eax] # WS2_32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBX] Gadgets **
+0x1100255c, # (base + 0x255c), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031dd, # (base + 0x31dd), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11003508, # (base + 0x3508), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100478f, # (base + 0x478f), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100bb84, # (base + 0xbb84), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100f5ae, # (base + 0xf5ae), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110121b2, # (base + 0x121b2), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11012393, # (base + 0x12393), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110150e5, # (base + 0x150e5), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11015171, # (base + 0x15171), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110173b2, # (base + 0x173b2), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1101744c, # (base + 0x1744c), # jmp dword ptr [ebx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBX] Gadgets **
+0x7ff7ff13028, # (base + 0x3028), # jmp dword ptr [ebx] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff49c27, # (base + 0x39c27), # jmp dword ptr [ebx] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBX] Gadgets **
+0x78d653ee, # (base + 0x453ee), # jmp dword ptr [ebx] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ECX] Gadgets **
+0x110031cf, # (base + 0x31cf), # jmp dword ptr [ecx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100350f, # (base + 0x350f), # jmp dword ptr [ecx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1101153a, # (base + 0x1153a), # jmp dword ptr [ecx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ECX] Gadgets **
+0x78d81348, # (base + 0x61348), # jmp dword ptr [ecx] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d957c9, # (base + 0x757c9), # jmp dword ptr [ecx] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ECX] Gadgets **
+0x7ff72509570, # (base + 0x29570), # jmp dword ptr [ecx] # WS2_32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7250e933, # (base + 0x2e933), # jmp dword ptr [ecx] # WS2_32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDX] Gadgets **
+0x110034fc, # (base + 0x34fc), # jmp dword ptr [edx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11006a41, # (base + 0x6a41), # jmp dword ptr [edx] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDX] Gadgets **
+0x78d4dd85, # (base + 0x2dd85), # jmp dword ptr [edx] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d6e2bd, # (base + 0x4e2bd), # jmp dword ptr [edx] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDX] Gadgets **
+0x7ff724f06ad, # (base + 0x106ad), # jmp dword ptr [edx] # WS2_32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EDI] Gadgets **
+0x11006a46, # (base + 0x6a46), # jmp dword ptr [edi] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ESI] Gadgets **
+0x11002577, # (base + 0x2577), # jmp dword ptr [esi] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110031d6, # (base + 0x31d6), # jmp dword ptr [esi] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBP] Gadgets **
+0x7ff7ff20452, # (base + 0x10452), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff21518, # (base + 0x11518), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff296a0, # (base + 0x196a0), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff34553, # (base + 0x24553), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff34959, # (base + 0x24959), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff382e0, # (base + 0x282e0), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff383d3, # (base + 0x283d3), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3a7c2, # (base + 0x2a7c2), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3a7f7, # (base + 0x2a7f7), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3ade4, # (base + 0x2ade4), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3ae2a, # (base + 0x2ae2a), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3c38e, # (base + 0x2c38e), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3c5b0, # (base + 0x2c5b0), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3c928, # (base + 0x2c928), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3d3d2, # (base + 0x2d3d2), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3db69, # (base + 0x2db69), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3dbbc, # (base + 0x2dbbc), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3dc40, # (base + 0x2dc40), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e011, # (base + 0x2e011), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e0de, # (base + 0x2e0de), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e12c, # (base + 0x2e12c), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e159, # (base + 0x2e159), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e1ef, # (base + 0x2e1ef), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e3a7, # (base + 0x2e3a7), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e3da, # (base + 0x2e3da), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3e433, # (base + 0x2e433), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3ea5d, # (base + 0x2ea5d), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3eb9c, # (base + 0x2eb9c), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3ef32, # (base + 0x2ef32), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3ef65, # (base + 0x2ef65), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3f2aa, # (base + 0x2f2aa), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3f664, # (base + 0x2f664), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3f7a2, # (base + 0x2f7a2), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3f7e9, # (base + 0x2f7e9), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3f862, # (base + 0x2f862), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3f980, # (base + 0x2f980), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff40254, # (base + 0x30254), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff4097f, # (base + 0x3097f), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff409a6, # (base + 0x309a6), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff409cd, # (base + 0x309cd), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff4150e, # (base + 0x3150e), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff430df, # (base + 0x330df), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff46877, # (base + 0x36877), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff4ec0f, # (base + 0x3ec0f), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff4ec44, # (base + 0x3ec44), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff4ec87, # (base + 0x3ec87), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff4ee06, # (base + 0x3ee06), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff4f2ab, # (base + 0x3f2ab), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff562dd, # (base + 0x462dd), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff59fe9, # (base + 0x49fe9), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff5b69d, # (base + 0x4b69d), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff5d826, # (base + 0x4d826), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff5f7a2, # (base + 0x4f7a2), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff60a1a, # (base + 0x50a1a), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff634ba, # (base + 0x534ba), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff634eb, # (base + 0x534eb), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff665f4, # (base + 0x565f4), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff672a9, # (base + 0x572a9), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff67465, # (base + 0x57465), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff67acf, # (base + 0x57acf), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff68177, # (base + 0x58177), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff686fa, # (base + 0x586fa), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff68cb0, # (base + 0x58cb0), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff68ce9, # (base + 0x58ce9), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff68d1d, # (base + 0x58d1d), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff691dc, # (base + 0x591dc), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff693ed, # (base + 0x593ed), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff732fd, # (base + 0x632fd), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff741f1, # (base + 0x641f1), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff7ae4d, # (base + 0x6ae4d), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff7b38f, # (base + 0x6b38f), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff7eb42, # (base + 0x6eb42), # jmp dword ptr [ebp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBP] Gadgets **
+0x78d23ecd, # (base + 0x3ecd), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d2d935, # (base + 0xd935), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d35833, # (base + 0x15833), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d37d96, # (base + 0x17d96), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d38761, # (base + 0x18761), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d3b6db, # (base + 0x1b6db), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4016c, # (base + 0x2016c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d40209, # (base + 0x20209), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d41dfc, # (base + 0x21dfc), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d427fe, # (base + 0x227fe), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4284d, # (base + 0x2284d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d42a40, # (base + 0x22a40), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4683d, # (base + 0x2683d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d469b5, # (base + 0x269b5), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d46a4c, # (base + 0x26a4c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d46f44, # (base + 0x26f44), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d46f6c, # (base + 0x26f6c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47515, # (base + 0x27515), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d477cb, # (base + 0x277cb), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47802, # (base + 0x27802), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d478d6, # (base + 0x278d6), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47904, # (base + 0x27904), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47a0f, # (base + 0x27a0f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47bf2, # (base + 0x27bf2), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47e19, # (base + 0x27e19), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47e33, # (base + 0x27e33), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47e4d, # (base + 0x27e4d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d47f22, # (base + 0x27f22), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d48031, # (base + 0x28031), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d482f8, # (base + 0x282f8), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d48355, # (base + 0x28355), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d48699, # (base + 0x28699), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d48b09, # (base + 0x28b09), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d48b30, # (base + 0x28b30), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4c851, # (base + 0x2c851), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4d5bd, # (base + 0x2d5bd), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4d602, # (base + 0x2d602), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4d647, # (base + 0x2d647), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d4dc71, # (base + 0x2dc71), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d52fe4, # (base + 0x32fe4), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d53185, # (base + 0x33185), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d531ef, # (base + 0x331ef), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d53243, # (base + 0x33243), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d53442, # (base + 0x33442), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d53591, # (base + 0x33591), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d535b1, # (base + 0x335b1), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d537f3, # (base + 0x337f3), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d53b5a, # (base + 0x33b5a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d53bb2, # (base + 0x33bb2), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d53bfc, # (base + 0x33bfc), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5400e, # (base + 0x3400e), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d544c6, # (base + 0x344c6), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d54d70, # (base + 0x34d70), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d54e26, # (base + 0x34e26), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d54e40, # (base + 0x34e40), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d54e5a, # (base + 0x34e5a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55800, # (base + 0x35800), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55a37, # (base + 0x35a37), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55bd8, # (base + 0x35bd8), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55c9f, # (base + 0x35c9f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55d23, # (base + 0x35d23), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55e64, # (base + 0x35e64), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55e7e, # (base + 0x35e7e), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d55e98, # (base + 0x35e98), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56549, # (base + 0x36549), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56edb, # (base + 0x36edb), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56ef5, # (base + 0x36ef5), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56f0f, # (base + 0x36f0f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56f56, # (base + 0x36f56), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56f70, # (base + 0x36f70), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56f8a, # (base + 0x36f8a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56fc3, # (base + 0x36fc3), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d56fdd, # (base + 0x36fdd), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d570a5, # (base + 0x370a5), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d57271, # (base + 0x37271), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5728b, # (base + 0x3728b), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d572a5, # (base + 0x372a5), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d572e8, # (base + 0x372e8), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d57302, # (base + 0x37302), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5731c, # (base + 0x3731c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d57828, # (base + 0x37828), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5787f, # (base + 0x3787f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d578a0, # (base + 0x378a0), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d578f7, # (base + 0x378f7), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5791a, # (base + 0x3791a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d57d1a, # (base + 0x37d1a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d57d92, # (base + 0x37d92), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d57e84, # (base + 0x37e84), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d57ed5, # (base + 0x37ed5), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5846a, # (base + 0x3846a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d58484, # (base + 0x38484), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5849e, # (base + 0x3849e), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5860d, # (base + 0x3860d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d587c1, # (base + 0x387c1), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d587e4, # (base + 0x387e4), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d588c0, # (base + 0x388c0), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5a13b, # (base + 0x3a13b), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5a4be, # (base + 0x3a4be), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5a51b, # (base + 0x3a51b), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5a575, # (base + 0x3a575), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5a758, # (base + 0x3a758), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5ab9f, # (base + 0x3ab9f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5abdd, # (base + 0x3abdd), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5abff, # (base + 0x3abff), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5b116, # (base + 0x3b116), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5b4bc, # (base + 0x3b4bc), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5b61c, # (base + 0x3b61c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5bf7b, # (base + 0x3bf7b), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5c13e, # (base + 0x3c13e), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5c283, # (base + 0x3c283), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5ccd2, # (base + 0x3ccd2), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d5cde3, # (base + 0x3cde3), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d72d6d, # (base + 0x52d6d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d75696, # (base + 0x55696), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7587a, # (base + 0x5587a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d77b2d, # (base + 0x57b2d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d796c9, # (base + 0x596c9), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7b27a, # (base + 0x5b27a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7b371, # (base + 0x5b371), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7b43d, # (base + 0x5b43d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7b8b8, # (base + 0x5b8b8), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7b9c1, # (base + 0x5b9c1), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7bea4, # (base + 0x5bea4), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7cf1d, # (base + 0x5cf1d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7f7aa, # (base + 0x5f7aa), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7f7db, # (base + 0x5f7db), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d7f9a0, # (base + 0x5f9a0), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d81318, # (base + 0x61318), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d84b6c, # (base + 0x64b6c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d84d33, # (base + 0x64d33), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d85048, # (base + 0x65048), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d864eb, # (base + 0x664eb), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d867ca, # (base + 0x667ca), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d86872, # (base + 0x66872), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d86b2c, # (base + 0x66b2c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d89a0f, # (base + 0x69a0f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d8a2c2, # (base + 0x6a2c2), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d8a30c, # (base + 0x6a30c), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d8c09d, # (base + 0x6c09d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d8c115, # (base + 0x6c115), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d8f8cd, # (base + 0x6f8cd), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d8f96d, # (base + 0x6f96d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d91712, # (base + 0x71712), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d92a71, # (base + 0x72a71), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d9c1af, # (base + 0x7c1af), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d9c5c7, # (base + 0x7c5c7), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d9d660, # (base + 0x7d660), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d9dc40, # (base + 0x7dc40), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78d9de48, # (base + 0x7de48), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da67ca, # (base + 0x867ca), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da76b2, # (base + 0x876b2), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da777a, # (base + 0x8777a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da843a, # (base + 0x8843a), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da88e0, # (base + 0x888e0), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da8987, # (base + 0x88987), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da89b0, # (base + 0x889b0), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da904f, # (base + 0x8904f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78da92f3, # (base + 0x892f3), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78dacb9d, # (base + 0x8cb9d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78dacd36, # (base + 0x8cd36), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78dacdbd, # (base + 0x8cdbd), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78dacf56, # (base + 0x8cf56), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78dafd18, # (base + 0x8fd18), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db1571, # (base + 0x91571), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db16f8, # (base + 0x916f8), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db2f51, # (base + 0x92f51), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db3dfc, # (base + 0x93dfc), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db3f48, # (base + 0x93f48), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db473d, # (base + 0x9473d), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db665f, # (base + 0x9665f), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db66e1, # (base + 0x966e1), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x78db88c5, # (base + 0x988c5), # jmp dword ptr [ebp] # kernel32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [EBP] Gadgets **
+0x7ff724f2cee, # (base + 0x12cee), # jmp dword ptr [ebp] # WS2_32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ESP] Gadgets **
+0x110012cd, # (base + 0x12cd), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11002a29, # (base + 0x2a29), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100437e, # (base + 0x437e), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11005233, # (base + 0x5233), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11008b63, # (base + 0x8b63), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11009885, # (base + 0x9885), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x110099a1, # (base + 0x99a1), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x1100a36e, # (base + 0xa36e), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016a35, # (base + 0x16a35), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016a3c, # (base + 0x16a3c), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016ae8, # (base + 0x16ae8), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016fb5, # (base + 0x16fb5), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11016fbc, # (base + 0x16fbc), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x11017068, # (base + 0x17068), # jmp dword ptr [esp] # .\vetHost.exe # DEP: True	 ASLR: True	SEH: False	CFG: False	
+
+**Empty JMP PTR [ESP] Gadgets **
+0x7ff7ff3d652, # (base + 0x2d652), # jmp dword ptr [esp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3d6f6, # (base + 0x2d6f6), # jmp dword ptr [esp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	
+0x7ff7ff3d72e, # (base + 0x2d72e), # jmp dword ptr [esp] # ADVAPI32.dll # DEP: True	 ASLR: True	SEH: False	CFG: False	

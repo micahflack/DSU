@@ -1,0 +1,5 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+sub edi, 0xc				0x401538 (offset 0x1538)
+jmp dword ptr [edi]				0x40153b (offset 0x153b)

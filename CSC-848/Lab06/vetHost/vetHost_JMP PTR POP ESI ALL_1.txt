@@ -1,0 +1,6 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	kernel32.dll	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+pop esi				0x78d557fd (offset 0x357fd)
+add bh, ch				0x78d557fe (offset 0x357fe)
+jmp dword ptr [ebp]				0x78d55800 (offset 0x35800)

@@ -1,0 +1,27 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub esp, 4				0x110069cf (offset 0x69cf)
+add eax, ebx				0x110069d2 (offset 0x69d2)
+jmp esi				0x110069d4 (offset 0x69d4)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub esp, 4				0x110069d6 (offset 0x69d6)
+add ecx, ebx				0x110069d9 (offset 0x69d9)
+jmp edi				0x110069db (offset 0x69db)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub esp, 0x12				0x110069dd (offset 0x69dd)
+add edx, eax				0x110069e0 (offset 0x69e0)
+jmp eax				0x110069e2 (offset 0x69e2)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	ADVAPI32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub esp, 0x28				0x7ff7ff15c21L (offset 0x5c21)
+dec eax				0x7ff7ff15c24L (offset 0x5c24)
+mov eax, ecx				0x7ff7ff15c25L (offset 0x5c25)
+dec ecx				0x7ff7ff15c27L (offset 0x5c27)
+mov ecx, eax				0x7ff7ff15c28L (offset 0x5c28)
+call eax				0x7ff7ff15c2aL (offset 0x5c2a)

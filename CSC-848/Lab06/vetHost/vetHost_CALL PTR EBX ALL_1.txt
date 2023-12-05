@@ -1,0 +1,42 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar al, 0xff				0x11012a2a (offset 0x12a2a)
+dec dword ptr [ebx - 0x7436b]				0x11012a2d (offset 0x12a2d)
+call dword ptr [ebx]				0x11012a33 (offset 0x12a33)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+dec dword ptr [ebx - 0x7436b]				0x11012a2d (offset 0x12a2d)
+call dword ptr [ebx]				0x11012a33 (offset 0x12a33)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0x9]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sar al, 0xff				0x11012e66 (offset 0x12e66)
+dec dword ptr [ebx - 0x7436b]				0x11012e69 (offset 0x12e69)
+call dword ptr [ebx]				0x11012e6f (offset 0x12e6f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	.\vetHost.exe	[Ops: 0x6]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+dec dword ptr [ebx - 0x7436b]				0x11012e69 (offset 0x12e69)
+call dword ptr [ebx]				0x11012e6f (offset 0x12e6f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	ADVAPI32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add byte ptr [edi], cl				0x7ff7ff399c0L (offset 0x299c0)
+test byte ptr [edi], bh				0x7ff7ff399c2L (offset 0x299c2)
+add dword ptr [eax], eax				0x7ff7ff399c4L (offset 0x299c4)
+add byte ptr [ebp - 0x75], cl				0x7ff7ff399c6L (offset 0x299c6)
+dec byte ptr [ebp + ecx*4 + 0x35]				0x7ff7ff399c9L (offset 0x299c9)
+call dword ptr [ebx]				0x7ff7ff399cdL (offset 0x299cd)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	ADVAPI32.dll	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add byte ptr [ebp - 0x75], cl				0x7ff7ff399c6L (offset 0x299c6)
+dec byte ptr [ebp + ecx*4 + 0x35]				0x7ff7ff399c9L (offset 0x299c9)
+call dword ptr [ebx]				0x7ff7ff399cdL (offset 0x299cd)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	ADVAPI32.dll	[Ops: 0x4]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+dec byte ptr [ebp + ecx*4 + 0x35]				0x7ff7ff399c9L (offset 0x299c9)
+call dword ptr [ebx]				0x7ff7ff399cdL (offset 0x299cd)

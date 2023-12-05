@@ -1,0 +1,42 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0xc]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+xor eax, eax				0x401589 (offset 0x1589)
+xor ecx, ecx				0x40158b (offset 0x158b)
+pushal 				0x40158d (offset 0x158d)
+pop ecx				0x40158e (offset 0x158e)
+jmp dword ptr [ecx]				0x40158f (offset 0x158f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0x7]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+loop 0x5bd				0x401588 (offset 0x1588)
+sal byte ptr [ebx], 0xc9				0x40158a (offset 0x158a)
+pushal 				0x40158d (offset 0x158d)
+pop ecx				0x40158e (offset 0x158e)
+jmp dword ptr [ecx]				0x40158f (offset 0x158f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	wavread2.exe	[Ops: 0x3]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+leave 				0x40158c (offset 0x158c)
+pushal 				0x40158d (offset 0x158d)
+pop ecx				0x40158e (offset 0x158e)
+jmp dword ptr [ecx]				0x40158f (offset 0x158f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	wavread2.exe	[Ops: 0x9]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+rol byte ptr [edx + eax*8 - 0x5417e38b], 1				0x421c35 (offset 0x21c35)
+sbb edi, edi				0x421c3c (offset 0x21c3c)
+jmp dword ptr [ecx]				0x421c3e (offset 0x21c3e)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	wavread2.exe	[Ops: 0x5]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+sbb al, 0xe8				0x421c39 (offset 0x21c39)
+stosd dword ptr es:[edi], eax				0x421c3b (offset 0x21c3b)
+sbb edi, edi				0x421c3c (offset 0x21c3c)
+jmp dword ptr [ecx]				0x421c3e (offset 0x21c3e)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	wavread2.exe	[Ops: 0x3]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+stosd dword ptr es:[edi], eax				0x421c3b (offset 0x21c3b)
+sbb edi, edi				0x421c3c (offset 0x21c3c)
+jmp dword ptr [ecx]				0x421c3e (offset 0x21c3e)

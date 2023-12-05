@@ -1,0 +1,12 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+lea edi, [edi + 8]				0x110169fb (offset 0x169fb)
+mov eax, dword ptr [ecx*4 + 0x11016a44]				0x110169fe (offset 0x169fe)
+jmp eax				0x11016a05 (offset 0x16a05)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+lea edi, [edi + 8]				0x11016f7b (offset 0x16f7b)
+mov eax, dword ptr [ecx*4 + 0x11016fc4]				0x11016f7e (offset 0x16f7e)
+jmp eax				0x11016f85 (offset 0x16f85)

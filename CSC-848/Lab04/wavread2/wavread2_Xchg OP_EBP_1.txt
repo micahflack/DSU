@@ -1,0 +1,5 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x4]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+xchg esp, ebp				0x401673 (offset 0x1673)
+jmp ebx				0x401675 (offset 0x1675)

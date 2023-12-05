@@ -1,0 +1,21 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0x7]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+cld 				0x40157d (offset 0x157d)
+jmp eax				0x40157e (offset 0x157e)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+sub eax, 0xc				0x4016ad (offset 0x16ad)
+mov esp, eax				0x4016b0 (offset 0x16b0)
+jmp edx				0x4016b2 (offset 0x16b2)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+sbb al, 0x8b				0x40d411 (offset 0xd411)
+inc ebp				0x40d413 (offset 0xd413)
+cld 				0x40d414 (offset 0xd414)
+mov ebx, dword ptr [ebp + 0xc]				0x40d415 (offset 0xd415)
+mov esp, dword ptr [ebx + 0x1c]				0x40d418 (offset 0xd418)
+mov ebp, dword ptr [ebx + 0x20]				0x40d41b (offset 0xd41b)
+jmp eax				0x40d41e (offset 0xd41e)

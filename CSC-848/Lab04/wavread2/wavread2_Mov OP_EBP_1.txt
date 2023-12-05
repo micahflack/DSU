@@ -1,0 +1,16 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	wavread2.exe	[Ops: 0xc]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov ebp, esp				0x4015ec (offset 0x15ec)
+jmp edx				0x4015ee (offset 0x15ee)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	wavread2.exe	[Ops: 0xc]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov ebp, dword ptr [ebp - 4]				0x40d262 (offset 0xd262)
+mov esp, dword ptr [ebx - 4]				0x40d265 (offset 0xd265)
+jmp eax				0x40d268 (offset 0xd268)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	wavread2.exe	[Ops: 0xd]	DEP: True	 ASLR: False	SEH: False	CFG: False	
+mov ebp, dword ptr [ebx + 0x20]				0x40d41b (offset 0xd41b)
+jmp eax				0x40d41e (offset 0xd41e)

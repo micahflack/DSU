@@ -1,0 +1,626 @@
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Module info :
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Base       | Top        | Size       | Rebase | SafeSEH | ASLR  | NXCompat | OS Dll | Version, Modulename & Path
+-----------------------------------------------------------------------------------------------------------------------------------------
+ 0x77640000 | 0x77687000 | 0x00047000 | True   | True    | True  |  True    | True   | 6.1.7601.18015 [KERNELBASE.dll] (C:\Windows\syswow64\KERNELBASE.dll)
+ 0x11220000 | 0x11247000 | 0x00027000 | False  | True    | False |  True    | False  | -1.0- [hashCracker.exe] (C:\Users\mflack\Desktop\School\CSC848\Lab01-ROP\hashCracker.exe)
+ 0x76a90000 | 0x76ba0000 | 0x00110000 | True   | True    | True  |  True    | True   | 6.1.7601.18015 [kernel32.dll] (C:\Windows\syswow64\kernel32.dll)
+ 0x76fc0000 | 0x7706c000 | 0x000ac000 | True   | True    | True  |  True    | True   | 7.0.7601.17744 [msvcrt.dll] (C:\Windows\syswow64\msvcrt.dll)
+ 0x75180000 | 0x7518c000 | 0x0000c000 | True   | True    | True  |  True    | True   | 6.1.7601.24545 [CRYPTBASE.dll] (C:\Windows\syswow64\CRYPTBASE.dll)
+ 0x75190000 | 0x751f0000 | 0x00060000 | True   | True    | True  |  True    | True   | 6.1.7601.24545 [SspiCli.dll] (C:\Windows\syswow64\SspiCli.dll)
+ 0x77a70000 | 0x77bf0000 | 0x00180000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [ntdll.dll] (C:\Windows\SysWOW64\ntdll.dll)
+ 0x77460000 | 0x77501000 | 0x000a1000 | True   | True    | True  |  True    | True   | 6.1.7601.24545 [ADVAPI32.dll] (C:\Windows\syswow64\ADVAPI32.dll)
+ 0x77540000 | 0x77630000 | 0x000f0000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [RPCRT4.dll] (C:\Windows\syswow64\RPCRT4.dll)
+ 0x76d00000 | 0x76d19000 | 0x00019000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [sechost.dll] (C:\Windows\SysWOW64\sechost.dll)
+-----------------------------------------------------------------------------------------------------------------------------------------
+Suggestions
+-----------
+[dec ebx]
+0x76fc9f10 (RVA : 0x00009f10) : # DEC EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fc35e4 (RVA : 0x000035e4) : # DEC EBX # RETN 0x00    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704868d (RVA : 0x0008868d) : # DEC EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77045a8d (RVA : 0x00085a8d) : # DEC EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move ebp -> ebx]
+0x77041607 (RVA : 0x00081607) : # ADD EBX,EBP # ADD CL,BYTE PTR DS:[ECX+C95B5E11] # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+[inc edi]
+0x76fdcd92 (RVA : 0x0001cd92) : # INC EDI # TEST AL,2 # ADD CL,CL # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdd28b (RVA : 0x0001d28b) : # INC EDI # ADD AL,3B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76febee2 (RVA : 0x0002bee2) : # INC EDI # ADD AL,3B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[dec edx]
+0x7704ea4a (RVA : 0x0008ea4a) : # DEC EDX # TEST DH,DH # NOP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[dec ebp]
+0x76fe059f (RVA : 0x0002059f) : # DEC EBP # TEST AL,2A # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move eax -> ecx]
+0x76feb984 (RVA : 0x0002b984) : # XCHG EAX,ECX # ADD AL,5D # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move ecx -> edx]
+0x77026162 (RVA : 0x00066162) : # MOV EDX,ECX # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+[move esi -> eax]
+0x77015a80 (RVA : 0x00055a80) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fead01 (RVA : 0x0002ad01) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea582 (RVA : 0x0002a582) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77012504 (RVA : 0x00052504) : # MOV EAX,ESI # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77015b16 (RVA : 0x00055b16) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76feb201 (RVA : 0x0002b201) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77026c08 (RVA : 0x00066c08) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701716c (RVA : 0x0005716c) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fca68b (RVA : 0x0000a68b) : # MOV EAX,ESI # POP ESI # RETN 0x10    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe368f (RVA : 0x0002368f) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea014 (RVA : 0x0002a014) : # MOV EAX,ESI # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015896 (RVA : 0x00055896) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015798 (RVA : 0x00055798) : # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77022599 (RVA : 0x00062599) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701599b (RVA : 0x0005599b) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feb81c (RVA : 0x0002b81c) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015a39 (RVA : 0x00055a39) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fca5a0 (RVA : 0x0000a5a0) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015a9c (RVA : 0x00055a9c) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdd424 (RVA : 0x0001d424) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77021ca8 (RVA : 0x00061ca8) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea329 (RVA : 0x0002a329) : # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701572d (RVA : 0x0005572d) : # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701582f (RVA : 0x0005582f) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77026bb2 (RVA : 0x00066bb2) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe7033 (RVA : 0x00027033) : # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770158b8 (RVA : 0x000558b8) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015874 (RVA : 0x00055874) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fca53b (RVA : 0x0000a53b) : # MOV EAX,ESI # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016e1c (RVA : 0x00056e1c) : # MOV EAX,ESI # POP EDI # POP ESI # POP EBX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fec440 (RVA : 0x0002c440) : # MOV EAX,ESI # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016fc2 (RVA : 0x00056fc2) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701c8c3 (RVA : 0x0005c8c3) : # MOV EAX,ESI # POP EDI # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77017146 (RVA : 0x00057146) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x08    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76feb3c7 (RVA : 0x0002b3c7) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feaa49 (RVA : 0x0002aa49) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe6b4b (RVA : 0x00026b4b) : # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea24d (RVA : 0x0002a24d) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea5ce (RVA : 0x0002a5ce) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701590b (RVA : 0x0005590b) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x770159e2 (RVA : 0x000559e2) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015852 (RVA : 0x00055852) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe98d3 (RVA : 0x000298d3) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015af3 (RVA : 0x00055af3) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770128da (RVA : 0x000528da) : # MOV EAX,ESI # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea65d (RVA : 0x0002a65d) : # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77035cde (RVA : 0x00075cde) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feb35f (RVA : 0x0002b35f) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fca5e0 (RVA : 0x0000a5e0) : # MOV EAX,ESI # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770157e1 (RVA : 0x000557e1) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcb0e2 (RVA : 0x0000b0e2) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe97bb (RVA : 0x000297bb) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd4ee5 (RVA : 0x00014ee5) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe9868 (RVA : 0x00029868) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701939c (RVA : 0x0005939c) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdd5eb (RVA : 0x0001d5eb) : # MOV EAX,ESI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe896c (RVA : 0x0002896c) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770283ed (RVA : 0x000683ed) : # MOV EAX,ESI # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe7a6e (RVA : 0x00027a6e) : # MOV EAX,ESI # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701fd70 (RVA : 0x0005fd70) : # MOV EAX,ESI # POP EDI # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77021cf1 (RVA : 0x00061cf1) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea073 (RVA : 0x0002a073) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015b74 (RVA : 0x00055b74) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fee0f6 (RVA : 0x0002e0f6) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdb177 (RVA : 0x0001b177) : # MOV EAX,ESI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015b52 (RVA : 0x00055b52) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701597f (RVA : 0x0005597f) : # MOV EAX,ESI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+[move ebx -> edx]
+0x76fd151f (RVA : 0x0001151f) : # ADD EDX,EBX # POP EBX # RETN 0x10    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move edi -> eax]
+0x76ff3080 (RVA : 0x00033080) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77044502 (RVA : 0x00084502) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77043084 (RVA : 0x00083084) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcfa53 (RVA : 0x0000fa53) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77042819 (RVA : 0x00082819) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77040ec4 (RVA : 0x00080ec4) : # MOV EAX,EDI # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704311a (RVA : 0x0008311a) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76ff4f30 (RVA : 0x00034f30) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe992d (RVA : 0x0002992d) : # MOV EAX,EDI # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd4cb0 (RVA : 0x00014cb0) : # MOV EAX,EDI # POP EDI # POP EBX # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff2eb2 (RVA : 0x00032eb2) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdb537 (RVA : 0x0001b537) : # MOV EAX,EDI # POP EDI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0443 (RVA : 0x00030443) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702ea44 (RVA : 0x0006ea44) : # MOV EAX,EDI # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdedf6 (RVA : 0x0001edf6) : # MOV EAX,EDI # POP EDI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fca846 (RVA : 0x0000a846) : # MOV EAX,EDI # POP EDI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770425c8 (RVA : 0x000825c8) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcffcc (RVA : 0x0000ffcc) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fc9d4f (RVA : 0x00009d4f) : # MOV EAX,EDI # POP EDI # POP EBX # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcae50 (RVA : 0x0000ae50) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd50d2 (RVA : 0x000150d2) : # MOV EAX,EDI # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd94d3 (RVA : 0x000194d3) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fed45b (RVA : 0x0002d45b) : # MOV EAX,EDI # POP EDI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701595c (RVA : 0x0005595c) : # MOV EAX,EDI # POP EDI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fcf5de (RVA : 0x0000f5de) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77047360 (RVA : 0x00087360) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x770446d0 (RVA : 0x000846d0) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff4d62 (RVA : 0x00034d62) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701e6e4 (RVA : 0x0005e6e4) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77047192 (RVA : 0x00087192) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe47f3 (RVA : 0x000247f3) : # MOV EAX,EDI # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770334f6 (RVA : 0x000734f6) : # MOV EAX,EDI # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701f577 (RVA : 0x0005f577) : # MOV EAX,EDI # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0a79 (RVA : 0x00030a79) : # MOV EAX,EDI # POP ESI # POP EBX # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move eax -> edi]
+0x76ff3080 (RVA : 0x00033080) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff4f30 (RVA : 0x00034f30) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff4d62 (RVA : 0x00034d62) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77044502 (RVA : 0x00084502) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76ff2eb2 (RVA : 0x00032eb2) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770446d0 (RVA : 0x000846d0) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77047192 (RVA : 0x00087192) : # XCHG EAX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77047360 (RVA : 0x00087360) : # XCHG EAX,EDI # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fcf5db (RVA : 0x0000f5db) : # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[inc ebx]
+0x76ff1db3 (RVA : 0x00031db3) : # INC EBX # FPATAN # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[inc esi]
+0x77042291 (RVA : 0x00082291) : # INC ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd3d6f (RVA : 0x00013d6f) : # INC ESI # ADD AL,5E # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77039235 (RVA : 0x00079235) : # INC ESI # SUB AL,3B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe8841 (RVA : 0x00028841) : # INC ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move edx -> eax]
+0x76fed9a9 (RVA : 0x0002d9a9) : # MOV EAX,EDX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016f35 (RVA : 0x00056f35) : # MOV EAX,EDX # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe892e (RVA : 0x0002892e) : # MOV EAX,EDX # XOR EDX,EDX # POP EBX # RETN 0x10    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fc9e09 (RVA : 0x00009e09) : # MOV EAX,EDX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pop esi]
+0x76fe9b08 (RVA : 0x00029b08) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fda10a (RVA : 0x0001a10a) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fca68d (RVA : 0x0000a68d) : # POP ESI # RETN 0x10    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704158e (RVA : 0x0008158e) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702078f (RVA : 0x0006078f) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea016 (RVA : 0x0002a016) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77057c98 (RVA : 0x00097c98) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feaf1b (RVA : 0x0002af1b) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701e325 (RVA : 0x0005e325) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd232d (RVA : 0x0001232d) : # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[inc ebp]
+0x770361f6 (RVA : 0x000761f6) : # INC EBP # TEST AL,3B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015ef7 (RVA : 0x00055ef7) : # INC EBP # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move ebx -> esp]
+0x76ff3f6e (RVA : 0x00033f6e) : # ADD ESP,EBX # ADD EAX,msvcrt.770660A0 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705c40f (RVA : 0x0009c40f) : # MOV ESP,EBX # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770597d1 (RVA : 0x000997d1) : # MOV ESP,EBX # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770596f4 (RVA : 0x000996f4) : # MOV ESP,EBX # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77058918 (RVA : 0x00098918) : # MOV ESP,EBX # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcf09b (RVA : 0x0000f09b) : # MOV ESP,EBX # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705ae3f (RVA : 0x0009ae3f) : # MOV ESP,EBX # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pushad]
+0x7705bd0c (RVA : 0x0009bd0c) : # PUSHAD # ADD AL,0EF # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fda99b (RVA : 0x0001a99b) : # PUSHAD # RETN 0x02    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77025cfc (RVA : 0x00065cfc) : # PUSHAD # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move ecx -> eax]
+0x77029ce0 (RVA : 0x00069ce0) : # MOV EAX,ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77039861 (RVA : 0x00079861) : # MOV EAX,ECX # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77019342 (RVA : 0x00059342) : # MOV EAX,ECX # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feb984 (RVA : 0x0002b984) : # XCHG EAX,ECX # ADD AL,5D # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701e005 (RVA : 0x0005e005) : # MOV EAX,ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703b966 (RVA : 0x0007b966) : # MOV EAX,ECX # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fec547 (RVA : 0x0002c547) : # MOV EAX,ECX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feebca (RVA : 0x0002ebca) : # MOV EAX,ECX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770164ec (RVA : 0x000564ec) : # MOV EAX,ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770161ce (RVA : 0x000561ce) : # MOV EAX,ECX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705ae13 (RVA : 0x0009ae13) : # MOV EAX,ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016633 (RVA : 0x00056633) : # MOV EAX,ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77039734 (RVA : 0x00079734) : # MOV EAX,ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fefdb6 (RVA : 0x0002fdb6) : # MOV EAX,ECX # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705adf7 (RVA : 0x0009adf7) : # MOV EAX,ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe4438 (RVA : 0x00024438) : # ADD EAX,ECX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770192ff (RVA : 0x000592ff) : # MOV EAX,ECX # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move eax -> ebx]
+0x7702d3a5 (RVA : 0x0006d3a5) : # XCHG EAX,EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[dec eax]
+0x76fea4e1 (RVA : 0x0002a4e1) : # DEC EAX # ADD AL,5E # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770156c2 (RVA : 0x000556c2) : # DEC EAX # ADD AL,5D # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770401a6 (RVA : 0x000801a6) : # DEC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe9787 (RVA : 0x00029787) : # DEC EAX # ADD AL,5D # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77025bcb (RVA : 0x00065bcb) : # DEC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdd34c (RVA : 0x0001d34c) : # DEC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdcf62 (RVA : 0x0001cf62) : # DEC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770401ce (RVA : 0x000801ce) : # DEC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77045b78 (RVA : 0x00085b78) : # DEC EAX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+[move eax -> ebp]
+0x76fc3388 (RVA : 0x00003388) : # XCHG EAX,EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd2830 (RVA : 0x00012830) : # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # MOV ECX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[ECX],EAX # XOR EAX,EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[dec ecx]
+0x76fcb605 (RVA : 0x0000b605) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fec406 (RVA : 0x0002c406) : # DEC ECX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013808 (RVA : 0x00053808) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe1d92 (RVA : 0x00021d92) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704340f (RVA : 0x0008340f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77026818 (RVA : 0x00066818) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7702fc1a (RVA : 0x0006fc1a) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd6a1b (RVA : 0x00016a1b) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701321c (RVA : 0x0005321c) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701441d (RVA : 0x0005441d) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77013422 (RVA : 0x00053422) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7702ac24 (RVA : 0x0006ac24) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe3029 (RVA : 0x00023029) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701162e (RVA : 0x0005162e) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77012e38 (RVA : 0x00052e38) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fd1a3b (RVA : 0x00011a3b) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702f8b5 (RVA : 0x0006f8b5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd5a43 (RVA : 0x00015a43) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feb044 (RVA : 0x0002b044) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702ca48 (RVA : 0x0006ca48) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77029a62 (RVA : 0x00069a62) : # DEC ECX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd984f (RVA : 0x0001984f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77033451 (RVA : 0x00073451) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77032853 (RVA : 0x00072853) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7702ad0e (RVA : 0x0006ad0e) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703ce0f (RVA : 0x0007ce0f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701bf65 (RVA : 0x0005bf65) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd5262 (RVA : 0x00015262) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fed063 (RVA : 0x0002d063) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703e068 (RVA : 0x0007e068) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77049a6c (RVA : 0x00089a6c) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77012a6f (RVA : 0x00052a6f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fd4070 (RVA : 0x00014070) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77017074 (RVA : 0x00057074) : # DEC ECX # RETN 0x08    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7703cc7d (RVA : 0x0007cc7d) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fde07e (RVA : 0x0001e07e) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd1c7f (RVA : 0x00011c7f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77020280 (RVA : 0x00060280) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77020683 (RVA : 0x00060683) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77058088 (RVA : 0x00098088) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702ec98 (RVA : 0x0006ec98) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdb69c (RVA : 0x0001b69c) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe92a2 (RVA : 0x000292a2) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe54a3 (RVA : 0x000254a3) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77012cc6 (RVA : 0x00052cc6) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770126a8 (RVA : 0x000526a8) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701f6ac (RVA : 0x0005f6ac) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd1d72 (RVA : 0x00011d72) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdfaae (RVA : 0x0001faae) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea81d (RVA : 0x0002a81d) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd60b5 (RVA : 0x000160b5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd58c9 (RVA : 0x000158c9) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcbcbe (RVA : 0x0000bcbe) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770136bf (RVA : 0x000536bf) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fef2c2 (RVA : 0x0002f2c2) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701b8c5 (RVA : 0x0005b8c5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77040ec6 (RVA : 0x00080ec6) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77014cc9 (RVA : 0x00054cc9) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770280ce (RVA : 0x000680ce) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770116d0 (RVA : 0x000516d0) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770130d3 (RVA : 0x000530d3) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feecd5 (RVA : 0x0002ecd5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770344e4 (RVA : 0x000744e4) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770112ed (RVA : 0x000512ed) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770122ee (RVA : 0x000522ee) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe56f5 (RVA : 0x000256f5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770150f6 (RVA : 0x000550f6) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015ef8 (RVA : 0x00055ef8) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe88fa (RVA : 0x000288fa) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe06fb (RVA : 0x000206fb) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe5d81 (RVA : 0x00025d81) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77041b0c (RVA : 0x00081b0c) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe170d (RVA : 0x0002170d) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe410e (RVA : 0x0002410e) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77017111 (RVA : 0x00057111) : # DEC ECX # RETN 0x08    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7703cf14 (RVA : 0x0007cf14) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fccf17 (RVA : 0x0000cf17) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdd91b (RVA : 0x0001d91b) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdcf1e (RVA : 0x0001cf1e) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77029920 (RVA : 0x00069920) : # DEC ECX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77027322 (RVA : 0x00067322) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77030928 (RVA : 0x00070928) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fded2a (RVA : 0x0001ed2a) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77014335 (RVA : 0x00054335) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77031539 (RVA : 0x00071539) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fef945 (RVA : 0x0002f945) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701354d (RVA : 0x0005354d) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701554f (RVA : 0x0005554f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77013951 (RVA : 0x00053951) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7704355c (RVA : 0x0008355c) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77040160 (RVA : 0x00080160) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701ed65 (RVA : 0x0005ed65) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702dd6b (RVA : 0x0006dd6b) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703856c (RVA : 0x0007856c) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fed76d (RVA : 0x0002d76d) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77042370 (RVA : 0x00082370) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7702e972 (RVA : 0x0006e972) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703917a (RVA : 0x0007917a) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdbb81 (RVA : 0x0001bb81) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77012f8a (RVA : 0x00052f8a) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703ab8f (RVA : 0x0007ab8f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703f592 (RVA : 0x0007f592) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fddd93 (RVA : 0x0001dd93) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77012b9b (RVA : 0x00052b9b) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702999e (RVA : 0x0006999e) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701299f (RVA : 0x0005299f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702eba0 (RVA : 0x0006eba0) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770423a5 (RVA : 0x000823a5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013daf (RVA : 0x00053daf) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe7bb0 (RVA : 0x00027bb0) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702afb1 (RVA : 0x0006afb1) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fde5b5 (RVA : 0x0001e5b5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77017bb6 (RVA : 0x00057bb6) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770113b7 (RVA : 0x000513b7) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe0bbc (RVA : 0x00020bbc) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe19c0 (RVA : 0x000219c0) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe67c2 (RVA : 0x000267c2) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703d1c6 (RVA : 0x0007d1c6) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770203ca (RVA : 0x000603ca) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770269cd (RVA : 0x000669cd) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701e1cf (RVA : 0x0005e1cf) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe51d2 (RVA : 0x000251d2) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcdfd4 (RVA : 0x0000dfd4) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd55d5 (RVA : 0x000155d5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcf74f (RVA : 0x0000f74f) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd6fe6 (RVA : 0x00016fe6) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770127e7 (RVA : 0x000527e7) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770355e9 (RVA : 0x000755e9) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fce9eb (RVA : 0x0000e9eb) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703b7ee (RVA : 0x0007b7ee) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770217f1 (RVA : 0x000617f1) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feeff3 (RVA : 0x0002eff3) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770117f5 (RVA : 0x000517f5) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77028bf6 (RVA : 0x00068bf6) : # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77033655 (RVA : 0x00073655) : # DEC ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+[move ebp -> eax]
+0x76fc3388 (RVA : 0x00003388) : # XCHG EAX,EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pop ebp]
+0x76fda803 (RVA : 0x0001a803) : # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77019004 (RVA : 0x00059004) : # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd1009 (RVA : 0x00011009) : # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe400b (RVA : 0x0002400b) : # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701480d (RVA : 0x0005480d) : # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7702180e (RVA : 0x0006180e) : # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77021011 (RVA : 0x00061011) : # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe4816 (RVA : 0x00024816) : # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd2817 (RVA : 0x00012817) : # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcf818 (RVA : 0x0000f818) : # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[inc edx]
+0x76fd6fe3 (RVA : 0x00016fe3) : # INC EDX # SUB BH,BH # DEC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770599ed (RVA : 0x000999ed) : # INC EDX # ADD AL,5F # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move eax -> esp]
+0x76ff9e75 (RVA : 0x00039e75) : # XCHG EAX,ESP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704e165 (RVA : 0x0008e165) : # XCHG EAX,ESP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd49e6 (RVA : 0x000149e6) : # XCHG EAX,ESP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fec5af (RVA : 0x0002c5af) : # XCHG EAX,ESP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[add ebx -> edx]
+0x76fd151f (RVA : 0x0001151f) : # ADD EDX,EBX # POP EBX # RETN 0x10    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move edi -> edx]
+0x77047361 (RVA : 0x00087361) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x770446d1 (RVA : 0x000846d1) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff4f31 (RVA : 0x00034f31) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff3081 (RVA : 0x00033081) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[clear eax]
+0x76fd26a0 (RVA : 0x000126a0) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77025f03 (RVA : 0x00065f03) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe98ed (RVA : 0x000298ed) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe8d31 (RVA : 0x00028d31) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701bfd9 (RVA : 0x0005bfd9) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702070d (RVA : 0x0006070d) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701c44e (RVA : 0x0005c44e) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701694f (RVA : 0x0005694f) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7701df10 (RVA : 0x0005df10) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd8b51 (RVA : 0x00018b51) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcde8d (RVA : 0x0000de8d) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd9493 (RVA : 0x00019493) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd1ab5 (RVA : 0x00011ab5) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcee39 (RVA : 0x0000ee39) : # SUB EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd518d (RVA : 0x0001518d) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0799 (RVA : 0x00030799) : # SUB EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016efa (RVA : 0x00056efa) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd57db (RVA : 0x000157db) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcdc4d (RVA : 0x0000dc4d) : # XOR EAX,EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[add ecx -> eax]
+0x76fe4438 (RVA : 0x00024438) : # ADD EAX,ECX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pop eax]
+0x76ff17eb (RVA : 0x000317eb) : # POP EAX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff1808 (RVA : 0x00031808) : # POP EAX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff1698 (RVA : 0x00031698) : # POP EAX # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff16d4 (RVA : 0x000316d4) : # POP EAX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff1798 (RVA : 0x00031798) : # POP EAX # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff162f (RVA : 0x0003162f) : # POP EAX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff17d4 (RVA : 0x000317d4) : # POP EAX # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff181f (RVA : 0x0003181f) : # POP EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff16a0 (RVA : 0x000316a0) : # POP EAX # RETN 0x08    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015db0 (RVA : 0x00055db0) : # POP EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[inc eax]
+0x76fece01 (RVA : 0x0002ce01) : # INC EAX # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe1904 (RVA : 0x00021904) : # INC EAX # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fca505 (RVA : 0x0000a505) : # INC EAX # POP EDI # POP ESI # POP EBP # RETN 0x04    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77059501 (RVA : 0x00099501) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feaa88 (RVA : 0x0002aa88) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702f989 (RVA : 0x0006f989) : # INC EAX # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015c8a (RVA : 0x00055c8a) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe360c (RVA : 0x0002360c) : # INC EAX # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff5742 (RVA : 0x00035742) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76febfec (RVA : 0x0002bfec) : # INC EAX # ADD AL,3B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff3892 (RVA : 0x00033892) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77059ec3 (RVA : 0x00099ec3) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77059e01 (RVA : 0x00099e01) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705bc18 (RVA : 0x0009bc18) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701121a (RVA : 0x0005121a) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77057dac (RVA : 0x00097dac) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77024685 (RVA : 0x00064685) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77059da0 (RVA : 0x00099da0) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701c4c0 (RVA : 0x0005c4c0) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705d2a4 (RVA : 0x0009d2a4) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd232c (RVA : 0x0001232c) : # INC EAX # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe98f2 (RVA : 0x000298f2) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770419c3 (RVA : 0x000819c3) : # INC EAX # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe68b3 (RVA : 0x000268b3) : # INC EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705a3b7 (RVA : 0x0009a3b7) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702a8b9 (RVA : 0x0006a8b9) : # INC EAX # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701bfba (RVA : 0x0005bfba) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77021c3c (RVA : 0x00061c3c) : # INC EAX # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe3a0c (RVA : 0x00023a0c) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013e56 (RVA : 0x00053e56) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x77011240 (RVA : 0x00051240) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7704e041 (RVA : 0x0008e041) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd15c2 (RVA : 0x000115c2) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705bc43 (RVA : 0x0009bc43) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcf3c4 (RVA : 0x0000f3c4) : # INC EAX # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd6c45 (RVA : 0x00016c45) : # INC EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe354c (RVA : 0x0002354c) : # INC EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd234b (RVA : 0x0001234b) : # INC EAX # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704accc (RVA : 0x0008accc) : # INC EAX # PUSH EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77059e62 (RVA : 0x00099e62) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705d2ce (RVA : 0x0009d2ce) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff9d51 (RVA : 0x00039d51) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705a356 (RVA : 0x0009a356) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe97da (RVA : 0x000297da) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd255b (RVA : 0x0001255b) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015cdc (RVA : 0x00055cdc) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77044ee2 (RVA : 0x00084ee2) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdd3e6 (RVA : 0x0001d3e6) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770148e8 (RVA : 0x000548e8) : # INC EAX # POP ESI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77021c69 (RVA : 0x00061c69) : # INC EAX # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7702986c (RVA : 0x0006986c) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77059ff0 (RVA : 0x00099ff0) : # INC EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705bbe8 (RVA : 0x0009bbe8) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77047b72 (RVA : 0x00087b72) : # INC EAX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7705d2f3 (RVA : 0x0009d2f3) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016274 (RVA : 0x00056274) : # INC EAX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7705a2f5 (RVA : 0x0009a2f5) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016ef8 (RVA : 0x00056ef8) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770161f9 (RVA : 0x000561f9) : # INC EAX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe8b7d (RVA : 0x00028b7d) : # INC EAX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pickup pointer into eax]
+0x76fcf30c (RVA : 0x0000f30c) : # MOV EAX,DWORD PTR DS:[EAX] # POP ESI # POP EDI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe4776 (RVA : 0x00024776) : # MOV EAX,DWORD PTR DS:[EAX] # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe4436 (RVA : 0x00024436) : # MOV EAX,DWORD PTR DS:[EAX] # ADD EAX,ECX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77035ab6 (RVA : 0x00075ab6) : # MOV EAX,DWORD PTR DS:[EAX] # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pop edx]
+0x76fdc00f (RVA : 0x0001c00f) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77056e13 (RVA : 0x00096e13) : # POP EDX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76ff1d17 (RVA : 0x00031d17) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff401c (RVA : 0x0003401c) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff1da0 (RVA : 0x00031da0) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd14a2 (RVA : 0x000114a2) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff4023 (RVA : 0x00034023) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fee625 (RVA : 0x0002e625) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff1da7 (RVA : 0x00031da7) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0eb6 (RVA : 0x00030eb6) : # POP EDX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pop ecx]
+0x76fe9f80 (RVA : 0x00029f80) : # POP ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd3804 (RVA : 0x00013804) : # POP ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704b205 (RVA : 0x0008b205) : # POP ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77037209 (RVA : 0x00077209) : # POP ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fdc40a (RVA : 0x0001c40a) : # POP ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701fe56 (RVA : 0x0005fe56) : # POP ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ffa80e (RVA : 0x0003a80e) : # POP ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77015e0f (RVA : 0x00055e0f) : # POP ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fe7618 (RVA : 0x00027618) : # POP ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7703681d (RVA : 0x0007681d) : # POP ECX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+[inc ecx]
+0x76fd1003 (RVA : 0x00011003) : # INC ECX # AND EAX,107 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704f108 (RVA : 0x0008f108) : # INC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701117b (RVA : 0x0005117b) : # INC ECX # AND EAX,117 # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fd0fcf (RVA : 0x00010fcf) : # INC ECX # AND EAX,103 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdc1f1 (RVA : 0x0001c1f1) : # INC ECX # AND EAX,1 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fc9f14 (RVA : 0x00009f14) : # INC ECX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe8635 (RVA : 0x00028635) : # INC ECX # AND EAX,10 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd1097 (RVA : 0x00011097) : # INC ECX # AND EAX,80 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcb438 (RVA : 0x0000b438) : # INC ECX # AND EAX,4 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdd5b9 (RVA : 0x0001d5b9) : # INC ECX # AND EAX,20 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe23db (RVA : 0x000223db) : # INC ECX # AND EAX,157 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcc3bc (RVA : 0x0000c3bc) : # INC ECX # AND EAX,8 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pop ebx]
+0x76fea181 (RVA : 0x0002a181) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0886 (RVA : 0x00030886) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705c411 (RVA : 0x0009c411) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fde197 (RVA : 0x0001e197) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705891a (RVA : 0x0009891a) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcf09d (RVA : 0x0000f09d) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77016e20 (RVA : 0x00056e20) : # POP EBX # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fd1521 (RVA : 0x00011521) : # POP EBX # RETN 0x10    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcdea3 (RVA : 0x0000dea3) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fed924 (RVA : 0x0002d924) : # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[add value to eax]
+0x77020680 (RVA : 0x00060680) : # ADD EAX,C9FFC883 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013b6b (RVA : 0x00053b6b) : # ADD EAX,0C8 # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76ff0882 (RVA : 0x00030882) : # ADD EAX,1 # POP ESI # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe7a6b (RVA : 0x00027a6b) : # ADD EAX,C68B0002 # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdc204 (RVA : 0x0001c204) : # ADD EAX,20 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77035be6 (RVA : 0x00075be6) : # SUB EAX,59FFF997 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7704fd82 (RVA : 0x0008fd82) : # SUB EAX,C1560F66 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705950f (RVA : 0x0009950f) : # ADD EAX,5D58036A # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe7614 (RVA : 0x00027614) : # ADC EAX,59FFFE2E # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705bc15 (RVA : 0x0009bc15) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdc998 (RVA : 0x0001c998) : # ADD EAX,74C83B66 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff4b19 (RVA : 0x00034b19) : # ADD EAX,B3E4FBE1 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fee29a (RVA : 0x0002e29a) : # ADD EAX,100 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013b2f (RVA : 0x00053b2f) : # ADD EAX,0AC # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7702aa9c (RVA : 0x0006aa9c) : # ADD EAX,59590000 # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd191e (RVA : 0x0001191e) : # ADD EAX,8 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff6021 (RVA : 0x00036021) : # ADD EAX,42444DD # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd25a4 (RVA : 0x000125a4) : # ADD EAX,C940C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76feeff0 (RVA : 0x0002eff0) : # XOR EAX,C9FFFDA8 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702b8a1 (RVA : 0x0006b8a1) : # ADD EAX,5DFFC883 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770555dd (RVA : 0x000955dd) : # ADD EAX,280F6677 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe6030 (RVA : 0x00026030) : # ADD EAX,0C # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77059cb2 (RVA : 0x00099cb2) : # ADD EAX,5F000000 # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd04b5 (RVA : 0x000104b5) : # ADD EAX,0C # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701bfb7 (RVA : 0x0005bfb7) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702b938 (RVA : 0x0006b938) : # ADD EAX,2C # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770442b9 (RVA : 0x000842b9) : # ADD EAX,B3E4FBE1 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcacbb (RVA : 0x0000acbb) : # SUB EAX,30 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705bc40 (RVA : 0x0009bc40) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770592c1 (RVA : 0x000992c1) : # ADC EAX,84000005 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770203c2 (RVA : 0x000603c2) : # ADD EAX,C9FC458B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701fbcb (RVA : 0x0005fbcb) : # XOR EAX,59FFFAF6 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fca5c5 (RVA : 0x0000a5c5) : # ADD EAX,8 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705d2a1 (RVA : 0x0009d2a1) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77046f49 (RVA : 0x00086f49) : # ADD EAX,B3E4FBE1 # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7705d2cb (RVA : 0x0009d2cb) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcb94c (RVA : 0x0000b94c) : # ADD EAX,5D5F0000 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fea9cd (RVA : 0x0002a9cd) : # XOR EAX,F6000191 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770315cf (RVA : 0x000715cf) : # ADD EAX,5DFF0E83 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0353 (RVA : 0x00030353) : # ADD EAX,51890189 # ADD AL,0C9 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77035ede (RVA : 0x00075ede) : # XOR EAX,59FFF994 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe7124 (RVA : 0x00027124) : # ADD EAX,59FFFE33 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013bdb (RVA : 0x00053bdb) : # ADD EAX,5D580C6A # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702bcdc (RVA : 0x0006bcdc) : # ADD EAX,2C # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7701ed5d (RVA : 0x0005ed5d) : # ADD EAX,C9FC458B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fedc5e (RVA : 0x0002dc5e) : # ADD EAX,5D5B5E5F # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705bbe5 (RVA : 0x0009bbe5) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcc50f (RVA : 0x0000c50f) : # ADD EAX,20 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe3fe4 (RVA : 0x00023fe4) : # ADD EAX,0 # ADD ESP,18 # POP EDI # POP ESI # POP EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770148e5 (RVA : 0x000548e5) : # ADD EAX,5E40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770122e6 (RVA : 0x000522e6) : # ADD EAX,C9FC458B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fec5e7 (RVA : 0x0002c5e7) : # ADD EAX,17407A8 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff2c69 (RVA : 0x00032c69) : # ADD EAX,B3E4FBE1 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdcc67 (RVA : 0x0001cc67) : # ADD EAX,4000 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77025cec (RVA : 0x00065cec) : # ADD EAX,64 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe3b49 (RVA : 0x00023b49) : # ADC EAX,3B14468B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7702027d (RVA : 0x0006027d) : # ADD EAX,C9FFC883 # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x7705d2f0 (RVA : 0x0009d2f0) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd8b71 (RVA : 0x00018b71) : # ADD EAX,1 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013e53 (RVA : 0x00053e53) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x770289f4 (RVA : 0x000689f4) : # XOR EAX,59FFFA1A # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x7705a275 (RVA : 0x0009a275) : # ADD EAX,5B5E5F58 # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fdb176 (RVA : 0x0001b176) : # ADD EAX,5D5EC68B # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77057da9 (RVA : 0x00097da9) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe06f8 (RVA : 0x000206f8) : # SUB EAX,C9FFFE91 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77025cfa (RVA : 0x00065cfa) : # ADD EAX,60 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fee3fc (RVA : 0x0002e3fc) : # ADD EAX,5D58026A # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77013bfd (RVA : 0x00053bfd) : # ADD EAX,5D580C6A # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x770594fe (RVA : 0x000994fe) : # ADD EAX,5D40C033 # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcd0ff (RVA : 0x0000d0ff) : # XOR EAX,5E0003EB # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[move ebx -> eax]
+0x7702d3a5 (RVA : 0x0006d3a5) : # XCHG EAX,EBX # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77026cba (RVA : 0x00066cba) : # MOV EAX,EBX # POP EBX # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd3d37 (RVA : 0x00013d37) : # MOV EAX,EBX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x77026d72 (RVA : 0x00066d72) : # MOV EAX,EBX # POP EBX # POP EDI # POP ESI # POP EBP # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x76fcf17f (RVA : 0x0000f17f) : # MOV EAX,EBX # POP EBX # POP EBP # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[add edi -> edx]
+0x77047361 (RVA : 0x00087361) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |  ascii {PAGE_EXECUTE_READ}
+0x770446d1 (RVA : 0x000846d1) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff4f31 (RVA : 0x00034f31) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff3081 (RVA : 0x00033081) : # ADD EDX,EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+[pop edi]
+0x76fc9f08 (RVA : 0x00009f08) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fda989 (RVA : 0x0001a989) : # POP EDI # RETN 0x02    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd8e0d (RVA : 0x00018e0d) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd8e15 (RVA : 0x00018e15) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fcdf18 (RVA : 0x0000df18) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0a21 (RVA : 0x00030a21) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff09db (RVA : 0x000309db) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fe992f (RVA : 0x0002992f) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76ff0a31 (RVA : 0x00030a31) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+0x76fd093a (RVA : 0x0001093a) : # POP EDI # RETN    ** [msvcrt.dll] **   |   {PAGE_EXECUTE_READ}
+

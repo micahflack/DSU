@@ -1,0 +1,44 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub edx, ebx				0x11001266 (offset 0x1266)
+xor eax, eax				0x11001268 (offset 0x1268)
+mov edx, dword ptr [ebx]				0x1100126a (offset 0x126a)
+jmp ebx				0x1100126c (offset 0x126c)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	.\vetHost.exe	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub edx, 0x1003b324				0x110013b5 (offset 0x13b5)
+pop eax				0x110013bb (offset 0x13bb)
+jmp esi				0x110013bc (offset 0x13bc)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub edx, ebx				0x1100169b (offset 0x169b)
+xor eax, eax				0x1100169d (offset 0x169d)
+mov dword ptr [ebx], edx				0x1100169f (offset 0x169f)
+jmp ebx				0x110016a1 (offset 0x16a1)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub edx, 0x8182a				0x11002759 (offset 0x2759)
+xor eax, eax				0x1100275f (offset 0x275f)
+mov dword ptr [ecx], edx				0x11002761 (offset 0x2761)
+jmp esi				0x11002763 (offset 0x2763)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub edx, 0x8182a				0x11002765 (offset 0x2765)
+xor eax, eax				0x1100276b (offset 0x276b)
+mov dword ptr [ecx], edx				0x1100276d (offset 0x276d)
+jmp ecx				0x1100276f (offset 0x276f)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#6	.\vetHost.exe	[Ops: 0xc]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub dword ptr [edx], eax				0x110069cb (offset 0x69cb)
+jmp edi				0x110069cd (offset 0x69cd)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#7	.\vetHost.exe	[Ops: 0x7]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sub word ptr [edx], ax				0x110069ca (offset 0x69ca)
+jmp edi				0x110069cd (offset 0x69cd)

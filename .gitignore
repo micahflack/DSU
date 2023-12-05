@@ -21,7 +21,14 @@
 
 *.~lock.*
 
-# these are folders ignored by git
+# large files
+*.mp4
+*.dat
 
+# files added by syncthing
+*sync-conflict*
+
+# these are folders ignored by git
+.git
 
 # these are files ignored by git

@@ -1,0 +1,1358 @@
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Module info :
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Base       | Top        | Size       | Rebase | SafeSEH | ASLR  | NXCompat | OS Dll | Version, Modulename & Path
+-----------------------------------------------------------------------------------------------------------------------------------------
+ 0x11000000 | 0x11025000 | 0x00025000 | False  | False   | True  |  True    | False  | -1.0- [vetHost.exe] (Z:\VM-Share\School\CSC848\Lab05\vetHost.exe)
+ 0x6f000000 | 0x6f04c000 | 0x0004c000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [apphelp.dll] (C:\Windows\system32\apphelp.dll)
+ 0x7dd60000 | 0x7de70000 | 0x00110000 | False  | True    | True  |  True    | True   | 6.1.7601.18015 [kernel32.dll] (C:\Windows\syswow64\kernel32.dll)
+ 0x6ff50000 | 0x6fffc000 | 0x000ac000 | False  | True    | True  |  True    | True   | 7.0.7601.17744 [msvcrt.dll] (C:\Windows\syswow64\msvcrt.dll)
+ 0x10000000 | 0x1000c000 | 0x0000c000 | False  | True    | True  |  True    | True   | 6.1.7601.24545 [CRYPTBASE.dll] (C:\Windows\syswow64\CRYPTBASE.dll)
+ 0x7de70000 | 0x7dff0000 | 0x00180000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [ntdll.dll] (C:\Windows\SysWOW64\ntdll.dll)
+ 0x02aa0000 | 0x02ab9000 | 0x00019000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [sechost.dll] (C:\Windows\SysWOW64\sechost.dll)
+ 0x7d910000 | 0x7d970000 | 0x00060000 | False  | True    | True  |  True    | True   | 6.1.7601.17514 [IMM32.DLL] (C:\Windows\system32\IMM32.DLL)
+ 0x7d620000 | 0x7d62a000 | 0x0000a000 | False  | True    | True  |  True    | True   | 6.1.7601.24537 [LPK.dll] (C:\Windows\syswow64\LPK.dll)
+ 0x6f8e0000 | 0x6f97d000 | 0x0009d000 | False  | True    | True  |  True    | True   | 1.0626.7601.24535 [USP10.dll] (C:\Windows\syswow64\USP10.dll)
+ 0x7d8a0000 | 0x7d900000 | 0x00060000 | False  | True    | True  |  True    | True   | 6.1.7601.24545 [SspiCli.dll] (C:\Windows\syswow64\SspiCli.dll)
+ 0x72540000 | 0x7269f000 | 0x0015f000 | False  | True    | True  |  True    | True   | 6.1.7601.24537 [ole32.dll] (C:\Windows\syswow64\ole32.dll)
+ 0x6de20000 | 0x6de77000 | 0x00057000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [SHLWAPI.dll] (C:\Windows\syswow64\SHLWAPI.dll)
+ 0x7dc50000 | 0x7dd50000 | 0x00100000 | False  | True    | True  |  True    | True   | 6.1.7601.17514 [USER32.dll] (C:\Windows\syswow64\USER32.dll)
+ 0x40bc0000 | 0x40bd2000 | 0x00012000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [MPR.dll] (C:\Windows\system32\MPR.dll)
+ 0x6fc30000 | 0x6fcc2000 | 0x00092000 | False  | True    | True  |  True    | True   | 6.1.7601.24537 [OLEAUT32.dll] (C:\Windows\syswow64\OLEAUT32.dll)
+ 0x019f0000 | 0x019fb000 | 0x0000b000 | True   | True    | True  |  True    | True   | 6.1.7600.16385 [profapi.dll] (C:\Windows\syswow64\profapi.dll)
+ 0x73800000 | 0x7444c000 | 0x00c4c000 | False  | True    | True  |  True    | True   | 6.1.7601.17514 [SHELL32.dll] (C:\Windows\syswow64\SHELL32.dll)
+ 0x7db50000 | 0x7dc40000 | 0x000f0000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [RPCRT4.dll] (C:\Windows\syswow64\RPCRT4.dll)
+ 0x406a0000 | 0x406b9000 | 0x00019000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [USERENV.dll] (C:\Windows\syswow64\USERENV.dll)
+ 0x40160000 | 0x40166000 | 0x00006000 | False  | True    | True  |  True    | True   | 6.1.7601.23889 [NSI.dll] (C:\Windows\syswow64\NSI.dll)
+ 0x70990000 | 0x70a5e000 | 0x000ce000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [MSCTF.dll] (C:\Windows\syswow64\MSCTF.dll)
+ 0x7d850000 | 0x7d897000 | 0x00047000 | False  | True    | True  |  True    | True   | 6.1.7601.18015 [KERNELBASE.dll] (C:\Windows\syswow64\KERNELBASE.dll)
+ 0x7dab0000 | 0x7db40000 | 0x00090000 | False  | True    | True  |  True    | True   | 6.1.7601.24540 [GDI32.dll] (C:\Windows\syswow64\GDI32.dll)
+ 0x71800000 | 0x7188d000 | 0x0008d000 | False  | True    | True  |  True    | True   | 6.1.7601.19050 [AcLayers.DLL] (C:\Windows\AppPatch\AcLayers.DLL)
+ 0x6d930000 | 0x6d981000 | 0x00051000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [WINSPOOL.DRV] (C:\Windows\system32\WINSPOOL.DRV)
+ 0x77c60000 | 0x77d01000 | 0x000a1000 | False  | True    | True  |  True    | True   | 6.1.7601.24545 [ADVAPI32.dll] (C:\Windows\syswow64\ADVAPI32.dll)
+ 0x41ac0000 | 0x41af5000 | 0x00035000 | False  | True    | True  |  True    | True   | 6.1.7600.16385 [WS2_32.dll] (C:\Windows\syswow64\WS2_32.dll)
+-----------------------------------------------------------------------------------------------------------------------------------------
+Interesting gadgets
+-------------------
+0x11015809 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101700a :  # INC EDI # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101700b :  # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101700c :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017010 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017011 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101181d :  # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101181e :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101181f :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013822 :  # ADD ESP,0C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013825 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101482b :  # PUSH ES # OR ECX,200 # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101482c :  # OR ECX,200 # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016830 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015031 :  # MOV EAX,1 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014832 :  # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014033 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014834 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016835 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101103a :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016fe4 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016049 :  # POP EDI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101604a :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101604b :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152ba :  # ADD EAX,vetHost.1101CAD0 # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101206d :  # XCHG EAX,EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101607a :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017080 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014082 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017084 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017085 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101708c :  # INC EDI # ADD ECX,DWORD PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101708d :  # ADD ECX,DWORD PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101708e :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017092 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017093 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101489c :  # PUSH ES # OR ECX,800 # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101489d :  # OR ECX,800 # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a2 :  # INC EDI # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110148a3 :  # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a4 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110148a5 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110110a7 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a8 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a9 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138b2 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170be :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138c0 :  # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170c2 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170c3 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138e7 :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110118e8 :  # INC EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110118e9 :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110118ea :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110118eb :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016c29 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101411b :  # ADD ESP,0C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101611c :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101111d :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010120 :  # POP EDI # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010121 :  # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014922 :  # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014923 :  # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010124 :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010125 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015932 :  # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015934 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011935 :  # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011937 :  # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011938 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016834 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101194a :  # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101194c :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101011d :  # ADD ESP,0C # POP EDI # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014980 :  # ADD EAX,DWORD PTR DS:[EBX+C18B20C9] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014981 :  # OR ECX,20 # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014984 :  # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014986 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015c41 :  # ADD DH,DH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110166ec :  # XOR EDX,EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b24 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110171a4 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110171a8 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110171a9 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139b4 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151c2 :  # ADD AH,BL # ADD EAX,vetHost.1101CAAE # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110101c3 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151c4 :  # ADD EAX,vetHost.1101CAAE # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139d1 :  # OR EAX,FFFFFFFF # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139d4 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161dd :  # AND EDI,7FF # SUB EDI,3FE # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110141de :  # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139e0 :  # ADC EDI,EDI # ADC EAX,<&KERNEL32.HeapSize> # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110149e1 :  # ADD EAX,DWORD PTR DS:[EBX+C18B20C9] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110149e2 :  # OR ECX,20 # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161e3 :  # SUB EDI,3FE # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110149e5 :  # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110102ba :  # POP ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161e9 :  # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161ea :  # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161ed :  # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161ef :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161f0 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110111fc :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011a03 :  # POP EDI # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a04 :  # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a06 :  # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a07 :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a08 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c57 :  # MOV EAX,DWORD PTR DS:[EAX*8+11019E50] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010210 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b04 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101621f :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110165b0 :  # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013a22 :  # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a24 :  # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a25 :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a26 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a2a :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a30 :  # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a32 :  # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016236 :  # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016237 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a3c :  # POP EBP # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a3d :  # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a3f :  # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016245 :  # ADD EAX,5D58026A # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016247 :  # ADD BL,BYTE PTR DS:[EAX+5D] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016248 :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101630c :  # LEA EAX,DWORD PTR DS:[ECX+40] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b0d :  # ADD ECX,DWORD PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a54 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101170e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a58 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a59 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a5a :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a5f :  # POP ES # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a60 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a64 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a65 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010268 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a6a :  # ADD EAX,5D40C033 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a6b :  # XOR EAX,EAX # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a6d :  # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a6e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a72 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a76 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a77 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101327b :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a7d :  # ADD EBX,DWORD PTR DS:[EAX+5D] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a7e :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a7f :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a84 :  # AND EAX,2 # ADD EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a87 :  # ADD EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a89 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a8a :  # INC EDI # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a8b :  # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a8c :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101728d :  # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101606d :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a90 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a91 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017294 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017295 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013a96 :  # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013a99 :  # XOR EAX,EAX # INC EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013a9b :  # INC EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152aa :  # PUSH ES # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152b2 :  # PUSH ES # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152b3 :  # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162b5 :  # ADD EAX,5D40C033 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162b6 :  # XOR EAX,EAX # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162b8 :  # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162b9 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011aba :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162bc :  # ADD CH,BL # ADD CH,BYTE PTR DS:[EDX+4] # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162be :  # ADD CH,BYTE PTR DS:[EDX+4] # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152bf :  # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162c0 :  # ADD AL,58 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162c1 :  # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162c2 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162c4 :  # MOV EAX,200 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010ac5 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162c9 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ad2 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b23 :  # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013ad4 :  # MOV EDI,E58BFC45 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ad9 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110142db :  # ADD EAX,vetHost.1101C910 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139e7 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110112ea :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162ec :  # AND ECX,FFFFFF90 # LEA EAX,DWORD PTR DS:[ECX+80] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162ee :  # NOP # LEA EAX,DWORD PTR DS:[ECX+80] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162ef :  # LEA EAX,DWORD PTR DS:[ECX+80] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162f5 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b29 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152fa :  # SUB AL,24 # ADD ESP,0A # TEST EAX,0 # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152fc :  # ADD ESP,0A # TEST EAX,0 # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152ff :  # TEST EAX,0 # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015304 :  # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b05 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011b07 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016309 :  # AND ECX,FFFFFFE0 # LEA EAX,DWORD PTR DS:[ECX+40] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b0c :  # INC EDI # ADD ECX,DWORD PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101630d :  # INC ECX # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101630e :  # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101630f :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b12 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b13 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010314 :  # POP ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016315 :  # AND ECX,FFFFFF08 # LEA EAX,DWORD PTR DS:[ECX+100] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015317 :  # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015319 :  # MOV EAX,DWORD PTR SS:[ESP+8] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101631b :  # LEA EAX,DWORD PTR DS:[ECX+100] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b1c :  # INC EDI # ADD ECX,DWORD PTR DS:[EDX+47880246] # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b1d :  # ADD ECX,DWORD PTR DS:[EDX+47880246] # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016321 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b22 :  # INC EDI # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015323 :  # ADD DH,BYTE PTR DS:[EBX+EAX-27] # SUB AL,24 # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013324 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015325 :  # ADD EBX,ECX # SUB AL,24 # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015327 :  # SUB AL,24 # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b28 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015329 :  # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101033c :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b3e :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b42 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b43 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110139e2 :  # ADC EAX,<&KERNEL32.HeapSize> # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101534e :  # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015351 :  # SUB AL,24 # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b52 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015353 :  # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015b54 :  # POP EBP # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015b55 :  # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015b57 :  # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b59 :  # OR EAX,1000 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b5e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b60 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010362 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014363 :  # ADD ESP,10 # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010364 :  # MOV EAX,vetHost.11021C14 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013365 :  # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014366 :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013367 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010369 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110149e7 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101636c :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b6d :  # MOV EDI,E58BFC45 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101636e :  # POP EDI # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101636f :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016370 :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016371 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b72 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010375 :  # ADD DL,BYTE PTR DS:[ECX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010377 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010379 :  # MOV EAX,vetHost.11021C0C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b7a :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101037c :  # ADD DL,BYTE PTR DS:[ECX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101037e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015b9e :  # ADD DH,DH # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101709c :  # INC EDI # ADD ECX,DWORD PTR DS:[EDX+47880246] # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110153ac :  # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011bad :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101709d :  # ADD ECX,DWORD PTR DS:[EDX+47880246] # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110153b3 :  # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110153b6 :  # SUB AL,24 # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110153b8 :  # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110133cb :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bd2 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a3 :  # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110103d5 :  # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110103d7 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010bd9 :  # OR ESP,DWORD PTR DS:[ESI+3B] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bde :  # ADD DL,BYTE PTR DS:[ECX] # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014be0 :  # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110103ee :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013bf4 :  # POP ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011c03 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014c05 :  # ADD CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016407 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017410 :  # ADD CL,BYTE PTR DS:[EBX+C95FFCC7] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011417 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016419 :  # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013c1c :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101441e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016c24 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016c28 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010429 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011207 :  # ADD AL,CH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010430 :  # ADD EAX,8 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c36 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016438 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010360 :  # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016450 :  # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016452 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014c53 :  # PUSH ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015c57 :  # PUSH ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c5e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c60 :  # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c62 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013366 :  # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014367 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101646f :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b05 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101036b :  # MOV EAX,vetHost.11021C10 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101036e :  # ADD DL,BYTE PTR DS:[ECX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013c9b :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010370 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010372 :  # MOV EAX,vetHost.11021C18 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010cd3 :  # POP ECX # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010cd4 :  # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010cd6 :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010cd7 :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010cd8 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010224 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110114e1 :  # POP ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174fc :  # POP ESI # POP EDI # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174fd :  # POP EDI # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174fe :  # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174ff :  # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017502 :  # LEA EAX,DWORD PTR DS:[EDX-1] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017505 :  # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016507 :  # MOV ECX,EDX # MOV EDX,EBX # MOV EBX,ECX # MOV ECX,EAX # MOV EAX,ESI # POP ESI # RETN 0x10    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016509 :  # MOV EDX,EBX # MOV EBX,ECX # MOV ECX,EAX # MOV EAX,ESI # POP ESI # RETN 0x10    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101650b :  # MOV EBX,ECX # MOV ECX,EAX # MOV EAX,ESI # POP ESI # RETN 0x10    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d0d :  # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101650f :  # MOV EAX,ESI # POP ESI # RETN 0x10    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d10 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016511 :  # POP ESI # RETN 0x10    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d14 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d15 :  # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101752e :  # XCHG EAX,ECX # POP ESI # POP EDI # LEA EAX,DWORD PTR DS:[EDX-1] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101752f :  # POP ESI # POP EDI # LEA EAX,DWORD PTR DS:[EDX-1] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017530 :  # POP EDI # LEA EAX,DWORD PTR DS:[EDX-1] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017531 :  # LEA EAX,DWORD PTR DS:[EDX-1] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d33 :  # XOR EAX,EAX # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017534 :  # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d35 :  # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d36 :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d37 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017539 :  # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101753a :  # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101753b :  # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101753d :  # LEA EAX,DWORD PTR DS:[EDX-3] # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017540 :  # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017541 :  # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017542 :  # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017544 :  # LEA EAX,DWORD PTR DS:[EDX-4] # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017545 :  # INC EDX # CLD # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017546 :  # CLD # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017547 :  # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017548 :  # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017549 :  # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d57 :  # ADD ESP,1C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010d58 :  # POP ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d5a :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014d62 :  # ADD ESP,10 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016566 :  # ADD DL,DH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d72 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110138ea :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101627b :  # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110165ae :  # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016db0 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016db4 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016db5 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016249 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014dbe :  # ADD EAX,vetHost.1101C9D8 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010df0 :  # POP ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a55 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010601 :  # POP ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110103ac :  # POP ESI # POP EBP # RETN 0x04    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110103ad :  # POP EBP # RETN 0x04    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010e18 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010367 :  # ADD DL,BYTE PTR DS:[ECX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014e43 :  # ADD ESP,1C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101650d :  # MOV ECX,EAX # MOV EAX,ESI # POP ESI # RETN 0x10    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013e52 :  # POP ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015679 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010e87 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a6e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101491b :  # PUSH ES # OR ECX,4000 # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101491c :  # OR ECX,4000 # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11012eaf :  # DEC EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110146c6 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110166c9 :  # POP EBP # POP ESI # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110166ca :  # POP ESI # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110166cb :  # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010123 :  # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110106d4 :  # OR EAX,8000 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106d9 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106db :  # OR EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106dd :  # INC EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106de :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014925 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110106e0 :  # OR EAX,8040 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a7b :  # ADD EAX,5D58036A # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110106e5 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110166ea :  # XOR EAX,EAX # XOR EDX,EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011eec :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101627d :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013ef5 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b0e :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013708 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101670a :  # XOR EAX,EAX # XOR EDX,EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101670c :  # XOR EDX,EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f0d :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101470e :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f10 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014f1e :  # SUB EAX,vetHost.1101CA3A # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014f27 :  # PUSH EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f28 :  # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f2b :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101472c :  # ADD DL,BYTE PTR DS:[ECX] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015732 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014740 :  # ADC EAX,<&KERNEL32.CloseHandle> # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017536 :  # LEA EAX,DWORD PTR DS:[EDX-2] # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d37 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013759 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017290 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013f70 :  # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110147bc :  # OR ECX,EDI # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110147be :  # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110147bf :  # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110147c1 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110107c3 :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fc8 :  # SUB EAX,vetHost.1101CA30 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc9 :  # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fca :  # PUSH ES # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fcb :  # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fcc :  # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fcd :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd4 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd8 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd9 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fdf :  # POP ES # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fe0 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe4 :  # MOV DWORD PTR DS:[ESI+4],EAX # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fe5 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe7 :  # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe9 :  # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fea :  # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff2 :  # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff6 :  # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff7 :  # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+
+Other gadgets
+-------------
+0x11017001 :  # INC ESI # ADD DWORD PTR DS:[EAX+468A0147],ECX # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017002 :  # ADD DWORD PTR DS:[EAX+468A0147],ECX # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017003 :  # MOV BYTE PTR DS:[EDI+1],AL # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017004 :  # INC EDI # ADD DWORD PTR DS:[EDX+47880246],ECX # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015805 :  # XOR EAX,EAX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017006 :  # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015007 :  # MOV EBP,-0A0 # FABS # F2XM1 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013808 :  # INC ESI # INC DWORD PTR DS:[EBX+C95E20C4] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013809 :  # INC DWORD PTR DS:[EBX+C95E20C4] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101380c :  # AND BYTE PTR DS:[ESI-37],BL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101700d :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101500e :  # F2XM1 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101700f :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016403 :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011814 :  # OR BYTE PTR DS:[EBX+3EBFFC8],AL # MOVZX EAX,BL # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011819 :  # ADD ECX,DWORD PTR DS:[EDI] # MOV DH,0C3 # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101181a :  # MOVZX EAX,BL # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101181b :  # MOV DH,0C3 # POP EBX # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016405 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013820 :  # ADD BYTE PTR DS:[EAX],AL # ADD ESP,0C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013824 :  # OR AL,5D # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110174f3 :  # OR BYTE PTR DS:[ECX+E6],AL # XOR BYTE PTR SS:[EBP-3C],5E # POP EDI # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015807 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101402d :  # XOR EAX,EAX # INC EAX # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101482e :  # ADD BYTE PTR DS:[EDX],AL # ADD BYTE PTR DS:[EAX],AL # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101402f :  # INC EAX # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014030 :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014031 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015032 :  # ADD DWORD PTR DS:[EAX],EAX # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016833 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015034 :  # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017009 :  # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011038 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101728e :  # DEC ECX # ADD BYTE PTR DS:[EBX+5E0C2444],CL # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152b5 :  # ADD BYTE PTR DS:[EAX],AL # ADD BL,AL # FADD QWORD PTR DS:[1101CAD0] # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152b6 :  # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014d61 :  # ADD AL,83 # LES EDX,FWORD PTR DS:[EAX] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101500c :  # FABS # F2XM1 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152b7 :  # ADD BL,AL # FADD QWORD PTR DS:[1101CAD0] # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101700e :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016564 :  # ADD BYTE PTR DS:[EAX],AL # ADD DL,DH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101728f :  # ADD BYTE PTR DS:[EBX+5E0C2444],CL # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014f21 :  # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11012065 :  # DEC DWORD PTR DS:[ECX+FFFE34BD] # DEC DWORD PTR DS:[EDI] # XCHG EAX,EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016067 :  # MOV DWORD PTR DS:[EAX],22 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016069 :  # AND AL,BYTE PTR DS:[EAX] # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110170a1 :  # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101206b :  # DEC DWORD PTR DS:[EDI] # XCHG EAX,EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152bd :  # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015074 :  # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152be :  # ADC DWORD PTR DS:[EAX],EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016076 :  # AND DWORD PTR DS:[EAX],EAX # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016078 :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101407a :  # IMUL EAX,ESI,C033FFFF # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101707b :  # ADC DWORD PTR DS:[EAX+ESI*2+448B1101],EBP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101407e :  # XOR EAX,EAX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101707f :  # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014080 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152c0 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017082 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017083 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017087 :  # NOP # MOV AL,BYTE PTR DS:[ESI+3] # MOV BYTE PTR DS:[EDI+3],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017088 :  # MOV AL,BYTE PTR DS:[ESI+3] # MOV BYTE PTR DS:[EDI+3],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017089 :  # INC ESI # ADD ECX,DWORD PTR DS:[EAX+448B0347] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101708a :  # ADD ECX,DWORD PTR DS:[EAX+448B0347] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101708b :  # MOV BYTE PTR DS:[EDI+3],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ac2 :  # PUSH ES # OR ECX,1000001 # OR EAX,ECX # AND EAX,1F1F001F # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101708f :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017090 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017091 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ac3 :  # OR ECX,1000001 # OR EAX,ECX # AND EAX,1F1F001F # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017098 :  # MOV AL,BYTE PTR DS:[ESI+3] # MOV BYTE PTR DS:[EDI+3],AL # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017099 :  # INC ESI # ADD ECX,DWORD PTR DS:[EAX+468A0347] # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101709a :  # ADD ECX,DWORD PTR DS:[EAX+468A0347] # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101709b :  # MOV BYTE PTR DS:[EDI+3],AL # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101441a :  # XOR EAX,EAX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101109e :  # MOV DWORD PTR DS:[ESI],EAX # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101109f :  # PUSH ES # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110110a0 :  # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110110a1 :  # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138a2 :  # OR CL,BYTE PTR DS:[EBX+A183F04D] # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110110a3 :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110110a4 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110110a5 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138a6 :  # AND DWORD PTR DS:[ECX+350],FFFFFFFD # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138a7 :  # MOV EAX,DWORD PTR DS:[350] # STD # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138a8 :  # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138a9 :  # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138aa :  # ADD BYTE PTR DS:[EAX],AL # STD # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138ab :  # ADD CH,BH # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138ac :  # STD # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138ad :  # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138af :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138b0 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170b2 :  # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170b3 :  # INC ESI # ADD CL,BYTE PTR DS:[EAX+468A0247] # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170b4 :  # ADD CL,BYTE PTR DS:[EAX+468A0247] # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170b5 :  # MOV BYTE PTR DS:[EDI+2],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170b6 :  # INC EDI # ADD CL,BYTE PTR DS:[EDX+47880146] # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170b7 :  # ADD CL,BYTE PTR DS:[EDX+47880146] # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170b8 :  # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138b9 :  # XOR ECX,ECX # TEST AL,AL # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170ba :  # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138bb :  # TEST AL,AL # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170bc :  # INC EDI # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138bd :  # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170bf :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170c0 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170c1 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016430 :  # ADD BYTE PTR DS:[EAX],AL # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013ee5 :  # MOV ECX,DWORD PTR DS:[ECX*4+110219C8] # AND BYTE PTR DS:[ECX+ESI+28],0FD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110150d6 :  # MOV ESI,4E181C0 # ADD AL,0 # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110150db :  # ADD AL,0 # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110150dd :  # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138e1 :  # OR AL,CH # ADD EAX,83000000 # LES EDX,FWORD PTR DS:[EAX] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138e3 :  # ADD EAX,83000000 # LES EDX,FWORD PTR DS:[EAX] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138e5 :  # ADD BYTE PTR DS:[EAX],AL # ADD ESP,10 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138e8 :  # LES EDX,FWORD PTR DS:[EAX] # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fe3 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010119 :  # ARPL WORD PTR DS:[EAX-1],DI # INC DWORD PTR DS:[EBX+8B5F0CC4] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016432 :  # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110142d6 :  # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110142d7 :  # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014729 :  # MOV DWORD PTR DS:[11021100],EAX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101110f :  # ADC EAX,<&KERNEL32.GetConsoleMode> # TEST EAX,EAX # SETNE AL # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011110 :  # AND AL,80 # ADD DWORD PTR DS:[ECX],EDX # TEST EAX,EAX # SETNE AL # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011111 :  # ADD BYTE PTR DS:[ECX],11 # TEST EAX,EAX # SETNE AL # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011112 :  # ADD DWORD PTR DS:[ECX],EDX # TEST EAX,EAX # SETNE AL # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011113 :  # ADC DWORD PTR SS:[EBP+C0950FC0],EAX # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011114 :  # TEST EAX,EAX # SETNE AL # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016115 :  # INC EBP # AND BYTE PTR DS:[EBX+E58B0CC4],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010116 :  # ADD BYTE PTR DS:[EAX-18],DL # ARPL WORD PTR DS:[EAX-1],DI # INC DWORD PTR DS:[EBX+8B5F0CC4] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016117 :  # ADD ESP,0C # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014119 :  # ADD BYTE PTR DS:[EAX],AL # ADD ESP,0C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101111a :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101111b :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101011c :  # INC DWORD PTR DS:[EBX+8B5F0CC4] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101011e :  # LES ECX,FWORD PTR DS:[EDI+EBX*2] # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101011f :  # OR AL,5F # MOV EAX,EBX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014920 :  # ADD BYTE PTR DS:[EAX],AL # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014830 :  # ADD BYTE PTR DS:[EAX],AL # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011116 :  # SETNE AL # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016832 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011924 :  # CLC # PUSH ES # IMUL ECX,ECX,30 # MOV EAX,DWORD PTR DS:[EAX*4+110219C8] # MOVZX EAX,BYTE PTR DS:[EAX+ECX+28] # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011925 :  # PUSH ES # IMUL ECX,ECX,30 # MOV EAX,DWORD PTR DS:[EAX*4+110219C8] # MOVZX EAX,BYTE PTR DS:[EAX+ECX+28] # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011926 :  # IMUL ECX,ECX,30 # MOV EAX,DWORD PTR DS:[EAX*4+110219C8] # MOVZX EAX,BYTE PTR DS:[EAX+ECX+28] # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016431 :  # ADD BYTE PTR DS:[ECX+5F],BL # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011928 :  # XOR BYTE PTR DS:[EBX+19C88504],CL # ADD DL,BYTE PTR DS:[ECX] # MOVZX EAX,BYTE PTR DS:[EAX+ECX+28] # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011929 :  # MOV EAX,DWORD PTR DS:[EAX*4+110219C8] # MOVZX EAX,BYTE PTR DS:[EAX+ECX+28] # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101012a :  # ADD DWORD PTR DS:[ECX],A3C08511 # ADD AL,1C # ADD DL,BYTE PTR DS:[ECX] # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101012b :  # ADD DWORD PTR DS:[ECX],EDX # TEST EAX,EAX # MOV DWORD PTR DS:[11021C04],EAX # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101012c :  # ADC DWORD PTR SS:[EBP+1C04A3C0],EAX # ADD DL,BYTE PTR DS:[ECX] # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101012d :  # TEST EAX,EAX # MOV DWORD PTR DS:[11021C04],EAX # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101192e :  # ADD DL,BYTE PTR DS:[ECX] # MOVZX EAX,BYTE PTR DS:[EAX+ECX+28] # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101192f :  # ADC DWORD PTR DS:[EDI],ECX # MOV DH,44 # OR BYTE PTR DS:[EAX],CH # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011930 :  # MOVZX EAX,BYTE PTR DS:[EAX+ECX+28] # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011931 :  # MOV DH,44 # OR BYTE PTR DS:[EAX],CH # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011932 :  # INC ESP # OR BYTE PTR DS:[EAX],CH # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011933 :  # OR BYTE PTR DS:[EAX],CH # AND EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010134 :  # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010138 :  # AND DWORD PTR DS:[11021C04],0 # MOV AL,1 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016434 :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101013d :  # ADC DWORD PTR DS:[EAX],EAX # MOV AL,1 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101193e :  # INC EDI # ADD BYTE PTR DS:[ECX],CL # ADD BYTE PTR DS:[EAX],AL # ADD AL,CH # CMP DH,BYTE PTR SS:[EBP+C033FFFF] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101013f :  # MOV AL,1 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011940 :  # ADD BYTE PTR DS:[ECX],CL # ADD BYTE PTR DS:[EAX],AL # ADD AL,CH # CMP DH,BYTE PTR SS:[EBP+C033FFFF] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011942 :  # ADD BYTE PTR DS:[EAX],AL # ADD AL,CH # CMP DH,BYTE PTR SS:[EBP+C033FFFF] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011944 :  # ADD AL,CH # CMP DH,BYTE PTR SS:[EBP+C033FFFF] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011946 :  # CMP DH,BYTE PTR SS:[EBP+C033FFFF] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013ee2 :  # IMUL ESI,ESI,30 # MOV ECX,DWORD PTR DS:[ECX*4+110219C8] # AND BYTE PTR DS:[ECX+ESI+28],0FD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a55 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011ee3 :  # MOV EDX,ESI # MOV EAX,EDI # POP ESI # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101115b :  # INC EBP # ADC AL,83 # ADD BYTE PTR ES:[EBX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101115c :  # ADC AL,83 # ADD BYTE PTR ES:[EBX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016435 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101115e :  # ADD BYTE PTR ES:[EBX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101115f :  # ADD BYTE PTR DS:[EBX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015160 :  # LES ECX,FWORD PTR DS:[EDI] # MOV ESI,4E181C0 # ADD AL,0 # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015162 :  # MOV ESI,4E181C0 # ADD AL,0 # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015167 :  # ADD AL,0 # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015169 :  # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110170bb :  # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013eea :  # ADD DL,BYTE PTR DS:[ECX] # AND BYTE PTR DS:[ECX+ESI+28],0FD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015195 :  # FCHS # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110171a6 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015729 :  # ADD BYTE PTR DS:[EAX],AL # ADD ESP,1C # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014eed :  # SUB EAX,vetHost.1101CA30 # MOV BYTE PTR SS:[EBP-90],2 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014eee :  # XOR DL,CL # ADD DWORD PTR DS:[ECX],EDX # MOV BYTE PTR SS:[EBP-90],2 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ef0 :  # ADD DWORD PTR DS:[ECX],EDX # MOV BYTE PTR SS:[EBP-90],2 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110171a5 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139a6 :  # AND DWORD PTR DS:[ECX+350],FFFFFFFD # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139a7 :  # MOV EAX,DWORD PTR DS:[350] # STD # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139a8 :  # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139a9 :  # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139aa :  # ADD BYTE PTR DS:[EAX],AL # STD # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139ab :  # ADD CH,BH # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139ac :  # STD # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139ad :  # POP EDI # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139ae :  # MOV EAX,ESI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139b0 :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139b1 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139b2 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151b4 :  # MOV BYTE PTR SS:[EBP-90],0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110109b8 :  # ADD BYTE PTR DS:[EBX+2B],BL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151b9 :  # INC DWORD PTR DS:[EAX] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151ba :  # ADD BL,AL # MOV BYTE PTR SS:[EBP-90],0 # FADD QWORD PTR DS:[1101CAAE] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151bc :  # MOV BYTE PTR SS:[EBP-90],0 # FADD QWORD PTR DS:[1101CAAE] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110101be :  # IMUL EDI,EDI,-1 # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ef1 :  # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110101c1 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110109c2 :  # ADD BYTE PTR SS:[ESP+ECX+2B],DH # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151c3 :  # FADD QWORD PTR DS:[1101CAAE] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110109c4 :  # OR AL,2B # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151c7 :  # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ef7 :  # INC DWORD PTR DS:[EDX] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016727 :  # SUB AL,4 # AND AL,0C9 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110165a3 :  # AND AL,14 # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016af9 :  # IMUL EAX,DWORD PTR DS:[ECX],11 # SUB AL,6B # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110141dc :  # ADD BYTE PTR DS:[EAX],AL # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016afa :  # ADD DWORD PTR DS:[ECX],EDX # SUB AL,6B # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161df :  # INC DWORD PTR DS:[EDI] # ADD BYTE PTR DS:[EAX],AL # SUB EDI,3FE # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161e0 :  # POP ES # ADD BYTE PTR DS:[EAX],AL # SUB EDI,3FE # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161e1 :  # ADD BYTE PTR DS:[EAX],AL # SUB EDI,3FE # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016afb :  # ADC DWORD PTR DS:[EBX+EBP*2],EBP # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139e4 :  # ADD BYTE PTR DS:[ECX],11 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110139e5 :  # ADD DWORD PTR DS:[ECX],EDX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151e7 :  # ADD BL,CH # POP ES # MOV BYTE PTR SS:[EBP-90],0 # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151e9 :  # POP ES # MOV BYTE PTR SS:[EBP-90],0 # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151ea :  # MOV BYTE PTR SS:[EBP-90],0 # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110171a7 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015c52 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EDI+33],DL # PUSH ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110161ee :  # CMP BYTE PTR DS:[EDI+5D],BL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151ef :  # INC DWORD PTR DS:[EAX] # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151f1 :  # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016afe :  # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015c54 :  # ADD BYTE PTR DS:[EDI+33],DL # PUSH ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110111fa :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016aff :  # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110119fc :  # PUSHAD # PUSH EBX # ADD BYTE PTR DS:[EAX],AL # ADD ESP,0C # POP EDI # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110119fd :  # PUSH EBX # ADD BYTE PTR DS:[EAX],AL # ADD ESP,0C # POP EDI # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110119fe :  # ADD BYTE PTR DS:[EAX],AL # ADD ESP,0C # POP EDI # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011a01 :  # LES ECX,FWORD PTR DS:[EDI+EBX*2] # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a02 :  # OR AL,5F # XOR EAX,EAX # POP EBX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011204 :  # ADC BYTE PTR DS:[EAX+EAX],DL # ADD AL,CH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011205 :  # ADC AL,0 # ADD AL,CH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011b01 :  # POP EDI # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101020b :  # IMUL EDI,EDI,-1 # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011b02 :  # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101020e :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b03 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a16 :  # AND EAX,FF83EEE8 # INC EDI # ADD BYTE PTR DS:[EAX+EAX],CL # ADD BYTE PTR DS:[EAX],AL # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a19 :  # CMP EDI,-1 # MOV DWORD PTR DS:[EAX],0C # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a1b :  # INC EDI # ADD BYTE PTR DS:[EAX+EAX],CL # ADD BYTE PTR DS:[EAX],AL # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a1c :  # MOV DWORD PTR DS:[EAX],0C # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a1d :  # ADD BYTE PTR DS:[EAX+EAX],CL # ADD BYTE PTR DS:[EAX],AL # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a1e :  # OR AL,0 # ADD BYTE PTR DS:[EAX],AL # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a1f :  # OR EAX,ESI # POP ECX # AND EAX,31F # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013a20 :  # ADD BYTE PTR DS:[EAX],AL # XOR EAX,EAX # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a21 :  # POP ECX # AND EAX,31F # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010222 :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101545b :  # ADD DH,BYTE PTR DS:[EBX+EAX-27] # INS DWORD PTR ES:[EDI],DX # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a24 :  # OR EDX,DWORD PTR DS:[ESI-18] # OR AH,BYTE PTR DS:[ESI] # ADD BYTE PTR DS:[EAX],AL # POP ECX # MOV BYTE PTR DS:[ESI+8],1 # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014706 :  # MOV EAX,DWORD PTR DS:[350] # STD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015226 :  # ADD BL,CH # POP ES # MOV BYTE PTR SS:[EBP-90],1 # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a27 :  # OR AH,BYTE PTR DS:[ESI] # ADD BYTE PTR DS:[EAX],AL # POP ECX # MOV BYTE PTR DS:[ESI+8],1 # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a28 :  # ADD BYTE PTR ES:[EAX],AL # POP ECX # MOV BYTE PTR DS:[ESI+8],1 # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a29 :  # ADD BYTE PTR DS:[EAX],AL # POP ECX # MOV BYTE PTR DS:[ESI+8],1 # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a2a :  # ADD BYTE PTR DS:[ECX-3A],BL # INC ESI # OR BYTE PTR DS:[ECX],AL # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a2b :  # POP ECX # MOV BYTE PTR DS:[ESI+8],1 # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a2c :  # MOV BYTE PTR DS:[ESI+8],1 # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a2d :  # INC ESI # OR BYTE PTR DS:[ECX],AL # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a2e :  # OR BYTE PTR DS:[ECX],AL # MOV EAX,ESI # POP ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101545d :  # ADD EBX,ECX # INS DWORD PTR ES:[EDI],DX # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015230 :  # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016db3 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a37 :  # ADC EDI,EDI # DEC DWORD PTR DS:[EBX+E38B5DE5] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a39 :  # DEC DWORD PTR DS:[EBX+E38B5DE5] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101123a :  # INC EBP # ADC AL,3 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101123b :  # ADC AL,3 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101523e :  # MOV EBP,-90 # ADD BYTE PTR DS:[EDI+7],BH # MOV BYTE PTR SS:[EBP-90],1 # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016241 :  # OR DWORD PTR SS:[EBP+6A0575C0],EAX # ADD BL,BYTE PTR DS:[EAX+5D] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015243 :  # ADD BYTE PTR DS:[EDI+7],BH # MOV BYTE PTR SS:[EBP-90],1 # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015245 :  # POP ES # MOV BYTE PTR SS:[EBP-90],1 # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015246 :  # MOV BYTE PTR SS:[EBP-90],1 # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101470c :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101524b :  # INC DWORD PTR DS:[ECX] # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a4c :  # PUSH 7C11016A # PUSH 1 # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101524d :  # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a4f :  # ADC DWORD PTR DS:[EDX+EBP*2+1],EDI # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a51 :  # INC EBP # CLC # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a52 :  # CLC # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a53 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a54 :  # POP ES # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a55 :  # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a56 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a57 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a58 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a5b :  # NOP # MOV AL,BYTE PTR DS:[ESI] # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a5c :  # MOV AL,BYTE PTR DS:[ESI] # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a5d :  # PUSH ES # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a5e :  # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a61 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010262 :  # DEC EDI # IMUL EDI,EDI,-1 # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010263 :  # IMUL EDI,EDI,-1 # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a66 :  # POP EDI # XOR EAX,EAX # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a67 :  # XOR EAX,EAX # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a68 :  # MOV AL,BYTE PTR DS:[ESI] # MOV BYTE PTR DS:[EDI],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a69 :  # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a6a :  # MOV BYTE PTR DS:[EDI],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a6b :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011a6c :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101426d :  # ADD AL,0DD # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a6e :  # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101426f :  # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014270 :  # AND AL,4 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015271 :  # FCHS # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a73 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a74 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a75 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013279 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a7c :  # PUSH 3 # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a80 :  # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010a81 :  # ADD BYTE PTR DS:[EBX],CH # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a82 :  # MOV DH,0C0 # AND EAX,2 # ADD EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101606b :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a84 :  # INC EDI # ADD DWORD PTR DS:[EDX+47880246],ECX # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a85 :  # ADD DWORD PTR DS:[EDX+47880246],ECX # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a86 :  # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110151c1 :  # INC DWORD PTR DS:[EAX] # FADD QWORD PTR DS:[1101CAAE] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a88 :  # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a89 :  # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010a8a :  # ADD BYTE PTR SS:[ESP+ECX+2B],DH # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101728b :  # ADD BYTE PTR DS:[EAX],AL # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010a8c :  # OR AL,2B # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a8d :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a8e :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110163fb :  # MOV DWORD PTR DS:[0],ECX # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017291 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017292 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017293 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014297 :  # ADC DWORD PTR DS:[EAX],EAX # ADD BYTE PTR DS:[EBX+44DD10C4],AL # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014299 :  # ADD BYTE PTR DS:[EBX+44DD10C4],AL # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016729 :  # AND AL,0C9 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101429c :  # ADC CH,BL # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b1a :  # ADD ECX,DWORD PTR DS:[EAX+468A0347] # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101429e :  # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101429f :  # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b1b :  # MOV BYTE PTR DS:[EDI+3],AL # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152a8 :  # INS BYTE PTR ES:[EDI],DX # AND AL,6 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152a9 :  # AND AL,6 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152ae :  # ADD BYTE PTR DS:[EAX],CL # ADD BYTE PTR DS:[ESI+EAX-48],DH # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152b0 :  # ADD BYTE PTR DS:[ESI+EAX-48],DH # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ab1 :  # MOV EAX,ESI # XOR EDX,EDX # POP ESI # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ab3 :  # XOR EDX,EDX # POP ESI # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152b4 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ab5 :  # POP ESI # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ab6 :  # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ab7 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ab8 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152b9 :  # FADD QWORD PTR DS:[1101CAD0] # MOV EAX,0 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b1f :  # INC ESI # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010abd :  # ADD CL,BYTE PTR DS:[EBX+5B5E5FC6] # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010abe :  # MOV EAX,ESI # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110162bf :  # PUSH 4 # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010ac0 :  # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010ac1 :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010ac2 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010ac3 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ac5 :  # ADD DWORD PTR DS:[EAX],EAX # ADD BYTE PTR DS:[ECX],AL # OR EAX,ECX # AND EAX,1F1F001F # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ac7 :  # ADD BYTE PTR DS:[ECX],AL # OR EAX,ECX # AND EAX,1F1F001F # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ac9 :  # OR EAX,ECX # AND EAX,1F1F001F # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014acb :  # AND EAX,1F1F001F # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014acc :  # POP DS # ADD BYTE PTR DS:[EDI],BL # POP DS # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014acd :  # ADD BYTE PTR DS:[EDI],BL # POP DS # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ace :  # POP DS # POP DS # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014acf :  # POP DS # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ad0 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110142d4 :  # ADD AL,0DD # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ad5 :  # INC EBP # CLD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ad6 :  # CLD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ad7 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014ef2 :  # MOV BYTE PTR SS:[EBP-90],2 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110142dc :  # ADC CL,CL # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110142de :  # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110112e8 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015727 :  # PUSHAD # ADD EAX,DWORD PTR DS:[EAX] # ADD BYTE PTR DS:[EBX+5B5E1CC4],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015728 :  # ADD EAX,DWORD PTR DS:[EAX] # ADD BYTE PTR DS:[EBX+5B5E1CC4],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110162f3 :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101707e :  # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110142f7 :  # ADD AL,0DD # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152f8 :  # AND AL,0DB # SUB AL,24 # ADD ESP,0A # TEST EAX,0 # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110142f9 :  # INC ESP # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110142fa :  # AND AL,4 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152fb :  # AND AL,83 # LES ECX,FWORD PTR DS:[EDX] # TEST EAX,0 # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016afc :  # SUB AL,6B # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011afd :  # NEG ECX # XOR EDX,EDX # POP EDI # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110152fe :  # OR CH,BYTE PTR DS:[ECX] # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011aff :  # XOR EDX,EDX # POP EDI # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013b01 :  # INC EBP # CLD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b02 :  # CLD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b03 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011b04 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011b05 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b07 :  # NOP # MOV AL,BYTE PTR DS:[ESI+3] # MOV BYTE PTR DS:[EDI+3],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b08 :  # MOV AL,BYTE PTR DS:[ESI+3] # MOV BYTE PTR DS:[EDI+3],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b09 :  # INC ESI # ADD ECX,DWORD PTR DS:[EAX+448B0347] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b0a :  # ADD ECX,DWORD PTR DS:[EAX+448B0347] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b0b :  # MOV BYTE PTR DS:[EDI+3],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b0f :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b10 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b11 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b18 :  # MOV AL,BYTE PTR DS:[ESI+3] # MOV BYTE PTR DS:[EDI+3],AL # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b19 :  # INC ESI # ADD ECX,DWORD PTR DS:[EAX+468A0347] # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101531a :  # INC ESP # AND AL,8 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101531b :  # AND AL,8 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101631c :  # ADD DWORD PTR DS:[EAX],5D000001 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101631d :  # ADD BYTE PTR DS:[ECX],AL # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b1e :  # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101631f :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b20 :  # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015321 :  # AND AL,7F # ADD DH,BYTE PTR DS:[EBX+EAX-27] # SUB AL,24 # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013322 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b25 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b26 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b27 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015328 :  # AND AL,5A # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101435d :  # OR AL,CH # PUSH ES # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EBX+5D5E10C4],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b32 :  # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b33 :  # INC ESI # ADD CL,BYTE PTR DS:[EAX+468A0247] # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b34 :  # ADD CL,BYTE PTR DS:[EAX+468A0247] # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b35 :  # MOV BYTE PTR DS:[EDI+2],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b36 :  # INC EDI # ADD CL,BYTE PTR DS:[EDX+47880146] # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b37 :  # ADD CL,BYTE PTR DS:[EDX+47880146] # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b38 :  # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b39 :  # INC ESI # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101033a :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b3b :  # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b3c :  # INC EDI # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b3d :  # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b3f :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b40 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b41 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016401 :  # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b46 :  # MOV DWORD PTR SS:[EBP-4],ESI # LDMXCSR DWORD PTR SS:[EBP-4] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015228 :  # POP ES # MOV BYTE PTR SS:[EBP-90],1 # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b48 :  # CLD # LDMXCSR DWORD PTR SS:[EBP-4] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b49 :  # LDMXCSR DWORD PTR SS:[EBP-4] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b4b :  # PUSH EBP # CLD # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b4c :  # CLD # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b4d :  # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b4e :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b4f :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014b50 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015b51 :  # DEC DWORD PTR DS:[EBX+E38B5DE5] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015352 :  # AND AL,5A # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b56 :  # ADD BYTE PTR SS:[EBP+EAX+D],DH # ADD BYTE PTR DS:[EAX],DL # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101035a :  # ADC BYTE PTR DS:[EBX+47401E8],AL # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101335b :  # POP ES # DEC DWORD PTR DS:[EAX+EE83FF50] # ADD DWORD PTR SS:[EBP-15],ESI # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101335c :  # DEC DWORD PTR DS:[EAX+EE83FF50] # ADD DWORD PTR SS:[EBP-15],ESI # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b5d :  # WAIT # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101335e :  # PUSH EAX # INC DWORD PTR DS:[EBX+EB7501EE] # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101335f :  # INC DWORD PTR DS:[EBX+EB7501EE] # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014360 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EBX+5D5E10C4],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014361 :  # ADD BYTE PTR DS:[EAX],AL # ADD ESP,10 # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013362 :  # ADD DWORD PTR SS:[EBP-15],ESI # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014364 :  # LES EDX,FWORD PTR DS:[EAX] # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010365 :  # ADC AL,1C # ADD DL,BYTE PTR DS:[ECX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010368 :  # ADC DWORD PTR SS:[EBP-3D],EBX # MOV EAX,vetHost.11021C10 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110161e7 :  # ADD BYTE PTR DS:[EAX],AL # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101036c :  # ADC BYTE PTR DS:[EDX+EAX],BL # ADC DWORD PTR SS:[EBP-3D],EBX # MOV EAX,vetHost.11021C18 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b6e :  # INC EBP # CLD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b6f :  # CLD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b70 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b75 :  # CMP AL,8 # ADD BYTE PTR SS:[EBP-C],DH # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010376 :  # ADC DWORD PTR SS:[EBP-3D],EBX # MOV EAX,vetHost.11021C0C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b77 :  # ADD BYTE PTR SS:[EBP-C],DH # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101037a :  # OR AL,1C # ADD DL,BYTE PTR DS:[ECX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016074 :  # MOV DWORD PTR DS:[EAX],21 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016ff5 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015b9c :  # ADD DWORD PTR DS:[EAX],EAX # ADD DH,DH # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016116 :  # AND BYTE PTR DS:[EBX+E58B0CC4],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011ba5 :  # POP ESI # INC ECX # POP EDI # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ba6 :  # INC ECX # POP EDI # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ba7 :  # POP EDI # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ba8 :  # MOV DWORD PTR DS:[EBX],ECX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011baa :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011bab :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110153b1 :  # ADD BYTE PTR DS:[EAX],AL # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101709e :  # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110153b7 :  # AND AL,5A # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101489f :  # ADD BYTE PTR DS:[EAX],CL # ADD BYTE PTR DS:[EAX],AL # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a0 :  # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110113c3 :  # INC DWORD PTR DS:[EBX] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bc6 :  # MOV DWORD PTR SS:[EBP-4],ESI # LDMXCSR DWORD PTR SS:[EBP-4] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110148a1 :  # ADD BYTE PTR DS:[EAX],AL # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bc8 :  # CLD # LDMXCSR DWORD PTR SS:[EBP-4] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110133c9 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bcb :  # PUSH EBP # CLD # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bcc :  # CLD # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bcd :  # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bce :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bcf :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bd0 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110138a3 :  # MOV ECX,DWORD PTR SS:[EBP-10] # AND DWORD PTR DS:[ECX+350],FFFFFFFD # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014bdb :  # MOV DWORD PTR DS:[11021C44],EAX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a5 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110170a6 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013be6 :  # ADD BYTE PTR DS:[EBX+458BE475],CL # ADC BH,BH # XOR AL,CH # PUSH 59FFFFBC # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110103ea :  # POP ECX # POP ECX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013beb :  # INC EBP # ADC BH,BH # XOR AL,CH # PUSH 59FFFFBC # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013bec :  # ADC BH,BH # XOR AL,CH # PUSH 59FFFFBC # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015b52 :  # MOV ESP,EBP # POP EBP # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013bee :  # XOR AL,CH # PUSH 59FFFFBC # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013bf0 :  # PUSH 59FFFFBC # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011bfa :  # POP ESI # POP EDI # XOR EAX,EAX # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011bfb :  # POP EDI # XOR EAX,EAX # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011bfc :  # XOR EAX,EAX # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110163fd :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011bfe :  # XOR EDX,EDX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110163ff :  # ADD BYTE PTR DS:[EAX],AL # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011c01 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016402 :  # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014c03 :  # ADD BYTE PTR DS:[EAX],AL # ADD CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016404 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101572a :  # ADD BYTE PTR DS:[EBX+5B5E1CC4],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016409 :  # MOV EAX,DWORD PTR SS:[EBP-14] # MOV EAX,DWORD PTR DS:[EAX] # XOR ECX,ECX # CMP DWORD PTR DS:[EAX],C0000005 # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101640c :  # MOV EAX,DWORD PTR DS:[EAX] # XOR ECX,ECX # CMP DWORD PTR DS:[EAX],C0000005 # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101640e :  # XOR ECX,ECX # CMP DWORD PTR DS:[EAX],C0000005 # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016410 :  # CMP DWORD PTR DS:[EAX],C0000005 # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016414 :  # ADD AL,AL # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011415 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016416 :  # SETE CL # MOV EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013c1a :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101441c :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b5a :  # ADD BYTE PTR DS:[EAX],DL # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016c21 :  # ADD DWORD PTR SS:[EBP-F],ESI # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016c25 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016c26 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016c27 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c29 :  # POP ES # MOV EAX,DWORD PTR DS:[ECX*8+1101AF74] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c2a :  # MOV EAX,DWORD PTR DS:[ECX*8+1101AF74] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101642b :  # MOV DWORD PTR FS:[0],ECX # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101642c :  # MOV DWORD PTR DS:[0],ECX # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101642d :  # OR EAX,0 # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101642e :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c2f :  # ADD DWORD PTR DS:[ECX],EDX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c30 :  # ADC DWORD PTR DS:[EDI+5E],EBX # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c31 :  # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c32 :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c33 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c34 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013b5e :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016436 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a87 :  # INC ESI # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101435f :  # PUSH ES # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EBX+5D5E10C4],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015c3f :  # ADD BYTE PTR DS:[EAX],AL # ADD DH,DH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152fd :  # LES ECX,FWORD PTR DS:[EDX] # TEST EAX,0 # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101642f :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[ECX+5F],BL # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014362 :  # ADD BYTE PTR DS:[EBX+5D5E10C4],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015c4e :  # ADC BYTE PTR DS:[EDI],CL # TEST CL,AL # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EDI+33],DL # PUSH ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016af7 :  # ADC DWORD PTR DS:[EAX],EBX # IMUL EAX,DWORD PTR DS:[ECX],11 # SUB AL,6B # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015c50 :  # TEST CL,AL # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EDI+33],DL # PUSH ESI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c52 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EBX+9],DH # MOV EAX,DWORD PTR DS:[EAX*8+11019E50] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c54 :  # ADD BYTE PTR DS:[EBX+9],DH # MOV EAX,DWORD PTR DS:[EAX*8+11019E50] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c56 :  # OR DWORD PTR DS:[EBX+9E50C504],ECX # ADD DWORD PTR DS:[ECX],EDX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110170b9 :  # INC ESI # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010c58 :  # ADD AL,0C5 # PUSH EAX # SAHF # ADD DWORD PTR DS:[ECX],EDX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c5a :  # PUSH EAX # SAHF # ADD DWORD PTR DS:[ECX],EDX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c5b :  # SAHF # ADD DWORD PTR DS:[ECX],EDX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c5c :  # ADD DWORD PTR DS:[ECX],EDX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010c5d :  # ADC DWORD PTR SS:[EBP-3D],EBX # XOR EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014365 :  # ADC BYTE PTR DS:[ESI+5D],BL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015460 :  # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016462 :  # OR AL,0BA # OR EAX,DWORD PTR DS:[ECX] # ADD BYTE PTR DS:[EAX],AL # CMP WORD PTR DS:[ECX+18],DX # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016463 :  # MOV EDX,10B # CMP WORD PTR DS:[ECX+18],DX # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016464 :  # OR EAX,DWORD PTR DS:[ECX] # ADD BYTE PTR DS:[EAX],AL # CMP WORD PTR DS:[ECX+18],DX # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016466 :  # ADD BYTE PTR DS:[EAX],AL # CMP WORD PTR DS:[ECX+18],DX # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016468 :  # CMP WORD PTR DS:[ECX+18],DX # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016469 :  # CMP DWORD PTR DS:[ECX+18],EDX # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101646c :  # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110170bd :  # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110171a1 :  # ADD DWORD PTR SS:[EBP-F],ESI # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017008 :  # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017477 :  # BSF EAX,ECX # ADD EAX,EDX # MOVD EDX,MM3 # XOR ECX,ECX # CMP DL,BYTE PTR DS:[EAX] # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017478 :  # MOV ESP,66C203C1 # MOVD EDX,MM3 # XOR ECX,ECX # CMP DL,BYTE PTR DS:[EAX] # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101747a :  # ADD EAX,EDX # MOVD EDX,MM3 # XOR ECX,ECX # CMP DL,BYTE PTR DS:[EAX] # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101747c :  # MOVD EDX,MM3 # XOR ECX,ECX # CMP DL,BYTE PTR DS:[EAX] # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101747d :  # MOVD EDX,MM3 # XOR ECX,ECX # CMP DL,BYTE PTR DS:[EAX] # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017480 :  # XOR ECX,ECX # CMP DL,BYTE PTR DS:[EAX] # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017482 :  # CMP DL,BYTE PTR DS:[EAX] # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017484 :  # CMOVNE EAX,ECX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013c95 :  # OR EAX,FFFFFFFF # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013c98 :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013c99 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101036f :  # ADC DWORD PTR SS:[EBP-3D],EBX # MOV EAX,vetHost.11021C18 # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101621b :  # INC EBP # CLC # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101621c :  # CLC # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101621d :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a1e :  # POP ECX # OR EAX,ESI # POP ECX # AND EAX,31F # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a22 :  # AND EAX,31F # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010cd1 :  # ADD BYTE PTR DS:[EAX],AL # POP ECX # MOV EAX,EDI # POP EDI # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015302 :  # ADD BYTE PTR DS:[EAX],AL # MOV EAX,DWORD PTR DS:[EDX+4] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a25 :  # ADD BYTE PTR DS:[EAX],AL # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017286 :  # LEA ESP,DWORD PTR SS:[ESP] # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11017005 :  # ADD DWORD PTR DS:[EDX+47880246],ECX # ADD CL,BYTE PTR DS:[EBX+5E0C2444] # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a27 :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014a28 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110150d3 :  # PMOVMSKB ECX,QWORD PTR DS:[EDI] # MOV ESI,4E181C0 # ADD AL,0 # ADD BYTE PTR DS:[EBX+83D803DA],CL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174f6 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX+5F5EC475],AL # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015229 :  # MOV BYTE PTR SS:[EBP-90],1 # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110174f8 :  # ADD BYTE PTR DS:[EAX+5F5EC475],AL # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174f9 :  # XOR BYTE PTR SS:[EBP-3C],5E # POP EDI # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110174fb :  # LES EBX,FWORD PTR DS:[ESI+5F] # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016afd :  # IMUL EAX,DWORD PTR DS:[ECX],11 # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016505 :  # FIADD DWORD PTR DS:[EAX] # MOV ECX,EDX # MOV EDX,EBX # MOV EBX,ECX # MOV ECX,EAX # MOV EAX,ESI # POP ESI # RETN 0x10    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d06 :  # LEA ESP,DWORD PTR SS:[ESP] # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a79 :  # ADD DWORD PTR SS:[EBP+EAX+6A],ESI # ADD EBX,DWORD PTR DS:[EAX+5D] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d08 :  # AND AL,0 # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR SS:[EBP+448B0049],CL # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d09 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d0a :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR SS:[EBP+448B0049],CL # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d0b :  # ADD BYTE PTR DS:[EAX],AL # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d0c :  # ADD BYTE PTR SS:[EBP+448B0049],CL # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d0e :  # DEC ECX # ADD BYTE PTR DS:[EBX+5E0C2444],CL # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d0f :  # ADD BYTE PTR DS:[EBX+5E0C2444],CL # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d11 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d12 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016d13 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101522e :  # INC DWORD PTR DS:[ECX] # FADDP ST(1),ST # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101751c :  # ADC BYTE PTR DS:[EDX],BH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010b5c :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d2c :  # XOR EAX,EAX # TEST ESI,ESI # POP ESI # SETE AL # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d2e :  # TEST ESI,ESI # POP ESI # SETE AL # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d30 :  # POP ESI # SETE AL # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d31 :  # SETE AL # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b3a :  # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d34 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d35 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101753e :  # INC EDX # STD # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101753f :  # STD # POP ESI # POP EDI # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015d55 :  # ADD BYTE PTR DS:[EAX],AL # ADD ESP,1C # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110152c2 :  # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014d5d :  # ADD AL,0DD # INC ESP # AND AL,4 # ADD ESP,10 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014d5f :  # INC ESP # AND AL,4 # ADD ESP,10 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014d60 :  # AND AL,4 # ADD ESP,10 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d61 :  # MOV DWORD PTR DS:[EAX+18],ECX # MOV EAX,DWORD PTR SS:[EBP+8] # MOV DWORD PTR DS:[EAX+1C],ECX # MOV EAX,DWORD PTR SS:[EBP+8] # ADD EAX,0C # XCHG DWORD PTR DS:[EAX],ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014d63 :  # LES EDX,FWORD PTR DS:[EAX] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d64 :  # MOV EAX,DWORD PTR SS:[EBP+8] # MOV DWORD PTR DS:[EAX+1C],ECX # MOV EAX,DWORD PTR SS:[EBP+8] # ADD EAX,0C # XCHG DWORD PTR DS:[EAX],ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d65 :  # INC EBP # OR BYTE PTR DS:[ECX+458B1C48],CL # OR BYTE PTR DS:[EBX+8870CC0],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d66 :  # OR BYTE PTR DS:[ECX+458B1C48],CL # OR BYTE PTR DS:[EBX+8870CC0],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d67 :  # MOV DWORD PTR DS:[EAX+1C],ECX # MOV EAX,DWORD PTR SS:[EBP+8] # ADD EAX,0C # XCHG DWORD PTR DS:[EAX],ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d6a :  # MOV EAX,DWORD PTR SS:[EBP+8] # ADD EAX,0C # XCHG DWORD PTR DS:[EAX],ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d6b :  # INC EBP # OR BYTE PTR DS:[EBX+8870CC0],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d6c :  # OR BYTE PTR DS:[EBX+8870CC0],AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013d6d :  # ADD EAX,0C # XCHG DWORD PTR DS:[EAX],ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016fdd :  # PUSH ES # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013d70 :  # XCHG DWORD PTR DS:[EAX],ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016831 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b01 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101534c :  # ADD BYTE PTR DS:[EAX],AL # POP EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016590 :  # MOV EAX,DWORD PTR SS:[ESP+4] # MUL ECX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016591 :  # INC ESP # AND AL,4 # MUL ECX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016592 :  # AND AL,4 # MUL ECX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016594 :  # MUL ECX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016b02 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101659e :  # MOV EAX,DWORD PTR SS:[ESP+8] # MUL DWORD PTR SS:[ESP+14] # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101659f :  # INC ESP # AND AL,8 # MUL DWORD PTR SS:[ESP+14] # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110165a0 :  # AND AL,8 # MUL DWORD PTR SS:[ESP+14] # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110165a1 :  # OR BH,DH # AND AL,14 # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110165a2 :  # MUL DWORD PTR SS:[ESP+14] # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015a3a :  # MOV ESP,EBP # POP EBP # MOV ESP,EBX # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110165a4 :  # AND AL,14 # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016246 :  # PUSH 2 # POP EAX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110165a6 :  # ADD EBX,EAX # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110165a8 :  # MOV EAX,DWORD PTR SS:[ESP+8] # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110165a9 :  # INC ESP # AND AL,8 # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110165aa :  # AND AL,8 # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110165ac :  # MUL ECX # ADD EDX,EBX # POP EBX # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016db1 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016db2 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110161e5 :  # INC BYTE PTR DS:[EBX] # ADD BYTE PTR DS:[EAX],AL # POP ESI # MOV EAX,DWORD PTR SS:[EBP+10] # MOV DWORD PTR DS:[EAX],EDI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014db9 :  # CLC # ADD BYTE PTR DS:[EDI+EAX-23],DH # ADD EAX,vetHost.1101C9D8 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014dba :  # ADD BYTE PTR DS:[EDI+EAX-23],DH # ADD EAX,vetHost.1101C9D8 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014dc1 :  # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101545f :  # INS DWORD PTR ES:[EDI],DX # OR CL,CL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110174f7 :  # ADD BYTE PTR DS:[EAX],AL # XOR BYTE PTR SS:[EBP-3C],5E # POP EDI # POP EBX # XOR EAX,EAX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a4d :  # PUSH 1 # ADC DWORD PTR DS:[EDX+EBP*2+1],EDI # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a51 :  # PUSH 1 # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a52 :  # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a53 :  # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015a81 :  # MOVZX EAX,AL # AND EAX,2 # ADD EAX,EAX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110153aa :  # ADD BYTE PTR DS:[EAX],AL # POP EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016433 :  # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110103ab :  # NEG BYTE PTR DS:[ESI+5D] # RETN 0x04    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a57 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101160c :  # ADC DWORD PTR DS:[EBX+44F6E845],ECX # ADD DWORD PTR DS:[EAX],EBP # XOR BYTE PTR DS:[ESI+EAX*2+F],0BE # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011611 :  # INC ESP # ADD DWORD PTR DS:[EAX],EBP # XOR BYTE PTR DS:[ESI+EAX*2+F],0BE # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011612 :  # ADD DWORD PTR DS:[EAX],EBP # XOR BYTE PTR DS:[ESI+EAX*2+F],0BE # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011613 :  # SUB BYTE PTR DS:[EAX+BE0F4674],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011614 :  # XOR BYTE PTR DS:[ESI+EAX*2+F],0BE # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017007 :  # INC ESI # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010e16 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015b4f :  # ADC BH,BH # DEC DWORD PTR DS:[EBX+E38B5DE5] # POP EBX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015e2b :  # ADD EAX,4133D0F7 # OR BYTE PTR DS:[EBX],AH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101335a :  # DEC ESP # POP ES # DEC DWORD PTR DS:[EAX+EE83FF50] # ADD DWORD PTR SS:[EBP-15],ESI # POP ESI # POP EDI # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015e2f :  # INC ECX # OR BYTE PTR DS:[EBX],AH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015e30 :  # OR BYTE PTR DS:[EBX],AH # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110162c5 :  # ADD BYTE PTR DS:[EDX],AL # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010637 :  # POP EDI # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010638 :  # POP EDI # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010639 :  # ADD BYTE PTR DS:[EAX],AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017081 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014e3e :  # ADD CH,BL # INC ESP # AND AL,10 # ADD ESP,1C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014e40 :  # INC ESP # AND AL,10 # ADD ESP,1C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014e41 :  # AND AL,10 # ADD ESP,1C # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013647 :  # DEC DWORD PTR DS:[EBX+2BCE2BCA] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a62 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a63 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014fb9 :  # MOV BYTE PTR SS:[EBP-90],3 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010266 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016460 :  # ADD BYTE PTR SS:[EBP+C],DH # MOV EDX,10B # CMP WORD PTR DS:[ECX+18],DX # SETE AL # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110162c7 :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11015677 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a81 :  # INC ESI # ADD DWORD PTR DS:[EAX+468A0147],ECX # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110107bf :  # OR BYTE PTR DS:[EAX],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010e81 :  # OR EAX,FFFFFFFF # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a6b :  # POP ES # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010e84 :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010e85 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110107c1 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a6c :  # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016b21 :  # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a6d :  # INC ESI # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11011119 :  # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a6f :  # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101611a :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a70 :  # INC EDI # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a71 :  # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014bc9 :  # LDMXCSR DWORD PTR SS:[EBP-4] # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101491f :  # INC EAX # ADD BYTE PTR DS:[EAX],AL # POP EDI # MOV EAX,ECX # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110146c4 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110166c5 :  # FADD DWORD PTR DS:[EBX+5E5D00DA] # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110166c7 :  # FIADD DWORD PTR DS:[EAX] # POP EBP # POP ESI # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110166c8 :  # ADD BYTE PTR SS:[EBP+5E],BL # POP EDI # RETN 0x10    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106d3 :  # ADC DWORD PTR DS:[8000],ECX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106d5 :  # ADD BYTE PTR DS:[EAX+C35D0000],AL # OR EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106d6 :  # ADD BYTE PTR DS:[EAX],0 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106d7 :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106d8 :  # ADD BYTE PTR SS:[EBP-3D],BL # OR EAX,40 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106e1 :  # INC EAX # ADD BYTE PTR DS:[EAX],0 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106e2 :  # ADD BYTE PTR DS:[EAX],0 # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110106e3 :  # ADD BYTE PTR DS:[EAX],AL # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ee4 :  # XOR BYTE PTR DS:[EBX+19C88D0C],CL # ADD DL,BYTE PTR DS:[ECX] # AND BYTE PTR DS:[ECX+ESI+28],0FD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ee5 :  # MOV EAX,EDI # POP ESI # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ee7 :  # POP ESI # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ee8 :  # POP EDI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011ee9 :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11011eea :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013eeb :  # ADC DWORD PTR DS:[EAX+FD283164],EAX # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013eec :  # AND BYTE PTR DS:[ECX+ESI+28],0FD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013eed :  # XOR DWORD PTR FS:[EAX],EBP # STD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013eee :  # XOR DWORD PTR DS:[EAX],EBP # STD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013eef :  # SUB CH,BH # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ef0 :  # STD # POP EDI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010128 :  # ADC EAX,<&KERNEL32.GetProcessHeap> # TEST EAX,EAX # MOV DWORD PTR DS:[11021C04],EAX # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013ef2 :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013ef3 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11010129 :  # ADC BYTE PTR DS:[ECX+C0851101],AL # MOV DWORD PTR DS:[11021C04],EAX # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110146fb :  # AND BYTE PTR DS:[EAX+7400FC7D],AL # OR CL,BYTE PTR DS:[EBX+A183F04D] # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014701 :  # OR CL,BYTE PTR DS:[EBX+A183F04D] # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014702 :  # MOV ECX,DWORD PTR SS:[EBP-10] # AND DWORD PTR DS:[ECX+350],FFFFFFFD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014705 :  # AND DWORD PTR DS:[ECX+350],FFFFFFFD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013706 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014707 :  # PUSH EAX # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014708 :  # ADD EAX,DWORD PTR DS:[EAX] # ADD CH,BH # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014709 :  # ADD BYTE PTR DS:[EAX],AL # STD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101470a :  # ADD CH,BH # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101470b :  # STD # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101170c :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a82 :  # ADD DWORD PTR DS:[EAX+468A0147],ECX # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013f0e :  # LES EDX,FWORD PTR DS:[EAX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014f11 :  # FYL2X # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a83 :  # MOV BYTE PTR DS:[EDI+1],AL # MOV AL,BYTE PTR DS:[ESI+2] # MOV BYTE PTR DS:[EDI+2],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016a69 :  # PUSH ES # MOV BYTE PTR DS:[EDI],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101012f :  # MOV DWORD PTR DS:[11021C04],EAX # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x110170a7 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014f1f :  # CMP CL,DL # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010130 :  # ADD AL,1C # ADD DL,BYTE PTR DS:[ECX] # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014722 :  # ADC EDI,EDI # ADC EAX,<&KERNEL32.CreateFileW> # MOV DWORD PTR DS:[11021100],EAX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014724 :  # ADC EAX,<&KERNEL32.CreateFileW> # MOV DWORD PTR DS:[11021100],EAX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015725 :  # ADC AL,CH # PUSHAD # ADD EAX,DWORD PTR DS:[EAX] # ADD BYTE PTR DS:[EBX+5B5E1CC4],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014726 :  # ADD BYTE PTR DS:[ECX],11 # MOV DWORD PTR DS:[11021100],EAX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014727 :  # ADD DWORD PTR DS:[ECX],EDX # MOV DWORD PTR DS:[11021100],EAX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014728 :  # ADC DWORD PTR DS:[EBX+11021100],ESP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f29 :  # LES EDX,FWORD PTR DS:[EAX] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101472a :  # ADD BYTE PTR DS:[ECX],DL # ADD DL,BYTE PTR DS:[ECX] # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101572b :  # ADD ESP,1C # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101572c :  # LES EBX,FWORD PTR DS:[ESI+EBX*2] # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11010132 :  # ADD DL,BYTE PTR DS:[ECX] # SETNE AL # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101572e :  # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x1101572f :  # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11015730 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017288 :  # AND AL,0 # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR SS:[EBP+448B0049],CL # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014f35 :  # FYL2X # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11017289 :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[EAX],AL # LEA ECX,DWORD PTR DS:[ECX] # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101709f :  # INC ESI # ADD CL,BYTE PTR DS:[EAX+448B0247] # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101728a :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR SS:[EBP+448B0049],CL # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014742 :  # ADD BYTE PTR DS:[ECX],11 # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014743 :  # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016fe1 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101728c :  # ADD BYTE PTR SS:[EBP+448B0049],CL # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fdc :  # MOV AL,BYTE PTR DS:[ESI] # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fe2 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x1101374e :  # XOR AL,CH # XOR BYTE PTR DS:[EDI+C68BFFFF],DL # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013750 :  # XOR BYTE PTR DS:[EDI+C68BFFFF],DL # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013753 :  # DEC DWORD PTR DS:[EBX+E58B5EC6] # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013754 :  # MOV EAX,ESI # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11014f55 :  # FCHS # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013756 :  # POP ESI # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013757 :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016a8f :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013f65 :  # ADC DWORD PTR SS:[EBP+66E274C0],EAX # MOV EAX,DWORD PTR SS:[EBP+8] # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f6a :  # MOV AX,WORD PTR SS:[EBP+8] # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f6b :  # MOV EAX,DWORD PTR SS:[EBP+8] # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11013f6e :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |  ascii {PAGE_EXECUTE_READ}
+0x11016fe9 :  # PUSH ES # MOV BYTE PTR DS:[EDI],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110103eb :  # POP ECX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110103ec :  # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fa0 :  # FCHS # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110107b3 :  # ADD EAX,DWORD PTR DS:[EBX+C1F601C8] # ADD DH,BYTE PTR SS:[EBP+EAX+D] # ADD BYTE PTR DS:[EAX],AL # OR BYTE PTR DS:[EAX],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fb4 :  # SUB EAX,vetHost.1101CA30 # MOV BYTE PTR SS:[EBP-90],3 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fb5 :  # XOR DL,CL # ADD DWORD PTR DS:[ECX],EDX # MOV BYTE PTR SS:[EBP-90],3 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fb7 :  # ADD DWORD PTR DS:[ECX],EDX # MOV BYTE PTR SS:[EBP-90],3 # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110107b9 :  # ADD DH,BYTE PTR SS:[EBP+EAX+D] # ADD BYTE PTR DS:[EAX],AL # OR BYTE PTR DS:[EAX],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110107bc :  # OR EAX,80000 # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110107bd :  # ADD BYTE PTR DS:[EAX],AL # OR BYTE PTR DS:[EAX],AL # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fbe :  # INC DWORD PTR DS:[EBX] # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fbf :  # MOV DWORD PTR DS:[ESI+4],EAX # MOV EAX,DWORD PTR DS:[ESI+4] # AND DWORD PTR DS:[ESI+8],0 # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc0 :  # INC ESI # ADD AL,8B # INC ESI # ADD AL,83 # OR BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc1 :  # ADD AL,8B # INC ESI # ADD AL,83 # OR BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc2 :  # MOV EAX,DWORD PTR DS:[ESI+4] # AND DWORD PTR DS:[ESI+8],0 # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc3 :  # INC ESI # ADD AL,83 # OR BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc4 :  # ADD AL,83 # OR BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc5 :  # AND DWORD PTR DS:[ESI+8],0 # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc6 :  # OR BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc7 :  # OR BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI],EAX # POP ESI # POP EBX # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fc8 :  # ADD BYTE PTR DS:[ECX+5D5B5E06],CL # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fc9 :  # XOR DL,CL # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11014fcb :  # ADD DWORD PTR DS:[ECX],EDX # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd2 :  # ADD DWORD PTR DS:[ECX],EDX # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd3 :  # ADC DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd5 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd6 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fd7 :  # OR AL,5E # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fdb :  # NOP # MOV AL,BYTE PTR DS:[ESI] # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fdc :  # OR BYTE PTR DS:[ECX+A48E806],CL # ADD BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI+4],EAX # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110163fa :  # MOV DWORD PTR FS:[0],ECX # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fde :  # MOV BYTE PTR DS:[EDI],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe0 :  # DEC EAX # OR AL,BYTE PTR DS:[EAX] # ADD BYTE PTR DS:[ECX+C0330446],CL # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe1 :  # OR AL,BYTE PTR DS:[EAX] # ADD BYTE PTR DS:[ECX+C0330446],CL # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe2 :  # ADD BYTE PTR DS:[EAX],AL # MOV DWORD PTR DS:[ESI+4],EAX # XOR EAX,EAX # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11013fe3 :  # ADD BYTE PTR DS:[ECX+C0330446],CL # POP ESI # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fe8 :  # MOV AL,BYTE PTR DS:[ESI] # MOV BYTE PTR DS:[EDI],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110163fc :  # OR EAX,0 # POP ECX # POP EDI # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fea :  # MOV BYTE PTR DS:[EDI],AL # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016feb :  # POP ES # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fec :  # MOV AL,BYTE PTR DS:[ESI+1] # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fed :  # INC ESI # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fee :  # ADD DWORD PTR DS:[EAX+448B0147],ECX # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016fef :  # MOV BYTE PTR DS:[EDI+1],AL # MOV EAX,DWORD PTR SS:[ESP+C] # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff0 :  # INC EDI # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff1 :  # ADD DWORD PTR DS:[EBX+5E0C2444],ECX # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff3 :  # INC ESP # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x11016ff4 :  # AND AL,0C # POP ESI # POP EDI # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}
+0x110163fe :  # ADD BYTE PTR DS:[EAX],AL # ADD BYTE PTR DS:[ECX+5F],BL # POP ESI # POP EBX # MOV ESP,EBP # POP EBP # RETN    ** [vetHost.exe] **   |   {PAGE_EXECUTE_READ}

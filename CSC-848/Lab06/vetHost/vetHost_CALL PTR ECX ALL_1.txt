@@ -1,0 +1,38 @@
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#1	kernel32.dll	[Ops: 0xd]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+inc esp				0x78d62094 (offset 0x42094)
+movzx eax, word ptr [ecx + 0x5d8]				0x78d62095 (offset 0x42095)
+xor edx, edx				0x78d6209c (offset 0x4209c)
+xor ecx, ecx				0x78d6209e (offset 0x4209e)
+inc ecx				0x78d620a0 (offset 0x420a0)
+call dword ptr [ecx]				0x78d620a1 (offset 0x420a1)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#2	kernel32.dll	[Ops: 0xb]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+mov bh, 0x81				0x78d62096 (offset 0x42096)
+fadd dword ptr [0xd2330000]				0x78d62098 (offset 0x42098)
+xor ecx, ecx				0x78d6209e (offset 0x4209e)
+inc ecx				0x78d620a0 (offset 0x420a0)
+call dword ptr [ecx]				0x78d620a1 (offset 0x420a1)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#3	kernel32.dll	[Ops: 0xa]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+sbb eax, 0x33000005				0x78d62097 (offset 0x42097)
+sal byte ptr [ebx], cl				0x78d6209d (offset 0x4209d)
+leave 				0x78d6209f (offset 0x4209f)
+inc ecx				0x78d620a0 (offset 0x420a0)
+call dword ptr [ecx]				0x78d620a1 (offset 0x420a1)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#4	kernel32.dll	[Ops: 0x8]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+add eax, 0xd2330000				0x78d62099 (offset 0x42099)
+xor ecx, ecx				0x78d6209e (offset 0x4209e)
+inc ecx				0x78d620a0 (offset 0x420a0)
+call dword ptr [ecx]				0x78d620a1 (offset 0x420a1)
+
+*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
+#5	kernel32.dll	[Ops: 0x3]	DEP: True	 ASLR: True	SEH: False	CFG: False	
+xor ecx, ecx				0x78d6209e (offset 0x4209e)
+inc ecx				0x78d620a0 (offset 0x420a0)
+call dword ptr [ecx]				0x78d620a1 (offset 0x420a1)
