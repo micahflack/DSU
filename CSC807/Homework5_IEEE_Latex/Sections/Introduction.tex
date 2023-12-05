@@ -1,0 +1,21 @@
+\section{Introduction}
+
+According to the Federal Trade Commission (FTC), there were 37,932 reports of credit card fraud in 2012 and 87,451 reports in 2022. This marks a 30.5\% increase in credit card payment fraud compared to 2012. By comparison, since 2020, there has been a 14.6\% increase in credit-card-related fraud. Which excludes the millions of other fraud reports the FTC receives every year. In 2022 alone, there were around 5.1 million fraud, identity theft, and miscellaneous reports in total \cite{forthesentinelConsumerSentinelNetwork2022,ConsumerSentinelNetwork2023}. The statistics for these reports stress how crucial the security of payment systems is, both physical and online. And, the need to secure them grows every year.
+
+This research primarily focuses on physical point-of-sale (PoS) systems or terminals and their hardware (serial accessories), rather than online solutions. For instance, this does not include mobile payment apps such as Venmo, CashApp, Zelle, or Paypal \cite{wangMobilePaymentSecurity2016}. There are many reasons, but the types of systems being targeted vary greatly in terms of the hardware and software supported, as well as, how the transactions are handled with the payment processor.
+
+Serial devices pose a significant threat to the PoS security landscape, as well as, industrial control systems due to the limited security features of the devices. Because these devices implement no host monitoring, minimal hardware protections, dubious component suppliers, and unchecked communication with their host. Furthermore, the origin of the manufacturer, supplied components, firmware, and supporting libraries is a separate area of research; which, could provide further scrutiny into where these devices are deployed and in what environments.
+
+\subsection{Research Objectives}
+
+The research questions this study aims to answer are as follows:
+
+\begin{itemize}
+  \item \textbf{RQ1:} What is the baseline or minimum hardware these devices are running?
+  \item \textbf{RQ2:} What software is being used on these devices? OS, libraries...
+  \item \textbf{RQ3:} Can the software/firmware be modified? FreeRTOS, ReconOS, and VXWorks.
+  \item \textbf{RQ4:} If so, how much can be modified in memory? Is manually reflashing possible?
+  \item \textbf{RQ5:} Assuming reflashing is possible, can the original OS keep original functions and be used as a HID clone or hub?
+\end{itemize}
+
+Manufacturers must understand the hardware and software capabilities of their peripheral devices. During the design process, they should be asking whether the hardware can support adding unintended functionality at the application and physical layers. And, with what we know about the USB standard and developing real-time operating systems, can that functionality be used to recreate a dual-purpose device? This research answers all of the questions presented.

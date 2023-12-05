@@ -1,0 +1,22 @@
+\section{Related Works}
+
+\subsection{RTOS: Software and Security}
+\autocite{Benadjila2018WooKeyU} introduces several embedded kernels and discusses their differences regarding developing a secure mass storage device. For this research, we are primarily interested in RTOS-like kernels because of existing support for a sample device like the SNBC BTP-S80 printer. However, the paper criticizes such operating systems because their "real-time driven design is largely incompatible with the overhead produced by security mechanisms." For many applications, there is a trade-off with RTOS where performance is the main criterion and security is not a priority. \autocite{yuRealTimeOperatingSystem} introduces several common RTOS and discusses their security issues. Notably, most RTOS are susceptible to code injection, cryptography inefficiency, unprotected shared memory, priority inversion, denial of service attacks, privilege escalation, and inter-process communication vulnerabilities. Depending on the MPU (microprocessor unit), the vendor has hardware protections like Intel SGX or Arm Trust Zone. These are all areas that can be used for pivoting onto the device, especially shared memory and privilege escalation. If the target device firmware is outdated (or, even libraries used by the firmware) and there are known CVEs that can be repeatedly exploited, persistence mechanisms are not a requirement to gain routine access.
+
+\subsection{Embedded Firmware Patching}
+Typically, updating the firmware for a device or even delivering patches requires a complete shutdown and hardware debug access (if supported). In some cases, the reflashing is unsupported through the operating system or bootloader and the flash memory needs to be reprogrammed. \autocite{heRapidPatchFirmwareHotpatching2022} describes a method for hot-patching downstream RTOS devices without needing to shut down or reboot. Any changes made are permanent and as effective as traditional delivery methods. RapidPatch was capable of patching over 90\% of vulnerabilities for the affected device, only needing at least 64KB or more memory and a 64 MHz MCU clock. This appears to be an effective method for attackers to sideload client or server implants without risking detection.
+
+\subsection{BadUSB-like Devices}
+BadUSB is a well-known and documented attack vector. One of the most popular hacker tools is built on the concept \autocite{hak5BashBunny}. However, there are some limitations:
+
+\begin{itemize}
+  \item Precision of attacks is limited since scripts or effects are typically deployed blind. There is no knowledge of the user environment nor ability to interact with functional user interface mechanisms (e.g., a mouse clicking a button). 
+  \item Limited to the USB 2.0 standard. Meaning, no support for video adapters like HDMI, DisplayPort, or PowerDelivery like with USB 3.0. 
+  \item There are existing methods for limiting USB access from the host, such as GoodUSB \autocite{tianDefendingMaliciousUSB2015}.
+\end{itemize}
+
+GoodUSB supports the Linux USB stack, so another solution would be required for Windows systems or RTOS. This all depends on the environment of the connected host, the PoS system. It is entirely possible that the PoS could have software like Crowdstrike Falcon deployed, which would monitor system behavior and mass storage device access \autocite{backer2021sdn}. Although the experiment environment will not use such software, it is an important distinction to make.
+
+% Too much related works information... ?
+
+% In \autocite*{tianSoKPlugPray2018}, they describe several attacks at each of the applicable layers to USB attacks: the human, application, transport, and physical layers. These attacks would typically require some human element for deployment, but that is not the focus of the research (e.g., social engineering versus hardware hacking). Whereas the physical layer could allow signal eavesdropping or injection. This could enable a modified printer to overvolt the host (USBKiller \autocite{USBKillDevices}) to cause physical damage or perform other side-channel attacks \autocite*{sridharEMIIssuesUniversal2003}. Either of those methods would require investigating the device hardware to determine what level of control the bootloader or operating system has over power delivery.
