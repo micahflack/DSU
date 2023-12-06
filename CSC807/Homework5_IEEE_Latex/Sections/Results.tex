@@ -1,4 +1,4 @@
-\section*{Results}
+\section{Results}
 
 Due to time constraints and under-budgeting, the actual sample size for this research is smaller than initially proposed. The original proposal estimated a small sample population of three to five of the most common, accessible serial printers. However, the shipment of additional printers would have taken longer than the submission deadline. All data presented is limited to available equipment at the time of reporting, the SNBC BTP-S80 serial printer.
 
@@ -80,7 +80,7 @@ Component identification and analysis is divided into two parts. The first being
 The list of motherboard components, as shown in Figure \ref{fig:snbc_btp_s80_motherboard}:
 \begin{itemize}
     \item NXP 32-bit ARM Cortex-M4 MCU, LPC4078FET208
-    \item ESMT Flash DRAM, M12L16161A-7T
+    \item ESMT DRAM, M12L16161A-7T
 \end{itemize}
 
 \begin{figure}[ht]
@@ -101,42 +101,74 @@ All of these parts can be identified by reading the labeled markings. Typically,
 
 \begin{table*}
     \centering
-    \label{fig:LPC4078FET208}%
+    \label{table:LPC4078FET208}%
     \caption{NXP 32-bit ARM Cortex-M4 MCU, LPC4078FET208 \autocite{alldatasheet.comLPC4078FET208DatasheetPDF}}
     \begin{tabular}{|p{4cm}|p{12cm}|}
+        \hline\rowcolor{gray!30}
+    
+        \textbf{Specifications} &  \\
+        \hline
+    
+        Architecture & 32-bit ARM \\
+        \hline
+    
+        Platform & ARM Cortex-M4 \\
+        \hline
+    
+        Frequency & 120-MHz performance \\
+        \hline
+    
+        Memory & 512 kB flash program memory \\
+         & 96kB SRAM data memory \\
+         & 4032 bytes of EEPROM data memory \\
+        \hline
+
+        Features & External Memory Controller (EMC) \\
+         & General Purpose DMA Controller \\
+         & Quadrature Encoder Interface \\
+         & CRC calculation engine \\
+         & Code Read Protection (CRP) \\
+        \hline
+    
+        Advanced Comm. Interfaces & UART, SPIFI, I2C, USB/OTG, Ethernet, SSP \\
+        \hline
+    
+        Debug Interfaces & JTAG, SWD \\
+        \hline
+
+        Power & Single 3.3V (2.4V to 3.6V) \\
+        \hline
+    
+        Package format & 208-ball, TFBGA208 \\
+        \hline
+    
+    \end{tabular}
+\end{table*}
+
+\begin{table*}
+    \centering
+    \label{table:M12L16161A-7T}%
+    \caption{ESMT DRAM, M12L16161A-7T \autocite{alldatasheet.comM12L16161A7TDatasheetPDF}}
+    \begin{tabular}{|p{4cm}|p{12cm}|}
       \hline\rowcolor{gray!30}
   
       \textbf{Specifications} &  \\
       \hline
   
-      Single power supply operation & 2.7 to 3.6V \\
+      Single power supply operation & 3.3V \\
       \hline
   
-      Software Features & SPI Bus Compatible Serial Interface \\
+      Software Features & CMOS Technology \\
+      & Synchronous high data rate DRAM \\
+      & LVTTL compatible with multiplexed address \\
+      & Burst Read Single-bit Write operation \\
       \hline
   
-      Memory architecture & Uniform 64KB sectors \\
-      & 256 byte page size \\
+      Memory architecture & Dual banks operation \\
+      & 16,777,216 bits organized as 2 x 524,288 words by 16 bits\\
       \hline
   
-      Programming & Page programming (up to 256 bytes) \\
-      & Operations are page-by-page basis \\
-      & Accelerated mode via 9V W\#/ACC pin \\
-      & Quad page programming \\
-      \hline
-  
-      Erase commands & Bulk erase function \\
-       & Sector erase for 64KB sectors \\
-       & Sub-sector erase for 4KB and 8KB sectors \\
-      \hline
-  
-      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
-      \hline
-  
-      Package format & 16-pin SO \\
-      & 8-contact WSON \\
-      & 24-ball BGA, 5x5 pin config \\
-      & 24 ball BGA, 6x6 pin config \\
+      Package format & 50-pin, TSOP \\
       \hline
   
     \end{tabular}
@@ -144,42 +176,30 @@ All of these parts can be identified by reading the labeled markings. Typically,
 
 \begin{table*}
     \centering
-    \label{fig:M12L16161A-7T}%
-    \caption{ESMT Flash DRAM, M12L16161A-7T \autocite{alldatasheet.comM12L16161A7TDatasheetPDF}}
+    \label{table:SP2209E}%
+    \caption{SIPEX High ESD Dual Port RS-232 Transceiver, SP2209E \autocite{alldatasheet.comSP2209EDatasheetPDF}}
     \begin{tabular}{|p{4cm}|p{12cm}|}
       \hline\rowcolor{gray!30}
   
       \textbf{Specifications} &  \\
       \hline
   
-      Single power supply operation & 2.7 to 3.6V \\
+      Single power supply operation & 12V \\
+      & Operates with +3V or +5V logic as well as standby \\
+      \hline
+
+      Comm. Interfaces & Two serial ports, Six drivers, and 10 receivers \\
+      & One receiver on each port for active standby \\
+      & 460kbps minimum data rate \\
+      \hline
+
+      Features & LapLink Compatible \\
+      & Low EMI Emissions (EN55022) \\
+      & Fast Transient Burst (EFI) Immunity (EN61000-4-2) \\
+      & Pin compatible with ADM2209E \\
       \hline
   
-      Software Features & SPI Bus Compatible Serial Interface \\
-      \hline
-  
-      Memory architecture & Uniform 64KB sectors \\
-      & 256 byte page size \\
-      \hline
-  
-      Programming & Page programming (up to 256 bytes) \\
-      & Operations are page-by-page basis \\
-      & Accelerated mode via 9V W\#/ACC pin \\
-      & Quad page programming \\
-      \hline
-  
-      Erase commands & Bulk erase function \\
-       & Sector erase for 64KB sectors \\
-       & Sub-sector erase for 4KB and 8KB sectors \\
-      \hline
-  
-      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
-      \hline
-  
-      Package format & 16-pin SO \\
-      & 8-contact WSON \\
-      & 24-ball BGA, 5x5 pin config \\
-      & 24 ball BGA, 6x6 pin config \\
+      Package format & 38-pin, TSSOP \\
       \hline
   
     \end{tabular}
@@ -187,82 +207,33 @@ All of these parts can be identified by reading the labeled markings. Typically,
 
 \begin{table*}
     \centering
-    \label{fig:SP2209E}%
-    \caption{SIPEX RS-232 Transceiver, SP2209E \autocite{alldatasheet.comSP2209EDatasheetPDF}}
+    \label{table:AX88796C}%
+    \caption{ASIX Low-Power SPI or Non-PCI Ethernet Controller, AX88796C \autocite{AX88796CPdfAX88796C}}
     \begin{tabular}{|p{4cm}|p{12cm}|}
       \hline\rowcolor{gray!30}
-  
-      \textbf{Specifications} &  \\
-      \hline
-  
-      Single power supply operation & 2.7 to 3.6V \\alldatasheetnterface \\
-      \hline
-  
-      Memory architecture & Uniform 64KB sectors \\
-      & 256 byte page size \\
-      \hline
-  
-      Programming & Page programming (up to 256 bytes) \\
-      & Operations are page-by-page basis \\
-      & Accelerated mode via 9V W\#/ACC pin \\
-      & Quad page programming \\
-      \hline
-  
-      Erase commands & Bulk erase function \\
-       & Sector erase for 64KB sectors \\
-       & Sub-sector erase for 4KB and 8KB sectors \\
-      \hline
-  
-      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
-      \hline
-  
-      Package format & 16-pin SO \\
-      & 8-contact WSON \\
-      & 24-ball BGA, 5x5 pin config \\
-      & 24 ball BGA, 6x6 pin config \\
-      \hline
-  
-    \end{tabular}
-\end{table*}
 
-\begin{table*}
-    \centering
-    \label{fig:AX88796C}%
-    \caption{ASIX Ethernet Controller, AX88796C \autocite{AX88796CPdfAX88796C}}
-    \begin{tabular}{|p{4cm}|p{12cm}|}
-      \hline\rowcolor{gray!30}
-  
       \textbf{Specifications} &  \\
       \hline
   
-      Single power supply operation & 2.7 to 3.6V \\
+      Power & Variable voltage I/O (1.8/2.5/3.3V) \\
+      & Programmable driving strength (8/16mA) \\
+      \hline
+
+      Software Features & SPI slave interface for CPU w/ SPI master \\
+      & Interrupt pin with programmable timer \\
+      & IPv4/IPv6 checksum offload engine \\
+      & VLAN match filter \\
+      & IEEE 802.3/802.3u standards for 10Base-T/100Base-TX \\
       \hline
   
-      Software Features & SPI Bus Compatible Serial Interface \\
+      Memory & 8/16-bit SRAM-like host interface \\
+      & Supports Slave-DMA to minimize CPU overhead \\
+      & Burst mode read and write access over SRAM-like interface \\
+      & Embeds 14KB SRAM packet buffers \\
+      & Supports optional EEPROM interface for MAC storage \\
       \hline
-  
-      Memory architecture & Uniform 64KB sectors \\
-      & 256 byte page size \\
-      \hline
-  
-      Programming & Page programming (up to 256 bytes) \\
-      & Operations are page-by-page basis \\
-      & Accelerated mode via 9V W\#/ACC pin \\
-      & Quad page programming \\
-      \hline
-  
-      Erase commands & Bulk erase function \\
-       & Sector erase for 64KB sectors \\
-       & Sub-sector erase for 4KB and 8KB sectors \\
-      \hline
-  
-      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
-      \hline
-  
-      Package format & 16-pin SO \\
-      & 8-contact WSON \\
-      & 24-ball BGA, 5x5 pin config \\
-      & 24 ball BGA, 6x6 pin config \\
+   
+      Package format & 64-pin, LQFP \\
       \hline
   
     \end{tabular}
@@ -281,7 +252,7 @@ All of these parts can be identified by reading the labeled markings. Typically,
 %     \item Explanation of which sites/resources and why
 % \end{itemize}
 
-All technical data and specifications sheets were procured through AllDataSheet or FindChips \autocite{ALLDATASHEETCOMElectronic,FindchipsElectronicPart}. There is a litany of other sources that can be used, however, these are the ones used by the researcher. There are no empirical reasons for using these sources instead of others, it was purely motivated by personal preference. Regardless of which datasheet aggregator is used, it should not harm replicability of the research.
+All technical data and specifications sheets were procured through AllDataSheet or FindChips \autocite{ALLDATASHEETCOMElectronic,FindchipsElectronicPart}. There is a litany of other sources that can be used, however, these are the ones used by the researcher. There are no empirical reasons for using these sources instead of others, it was purely motivated by personal preference. Regardless of whichever datasheet aggregator is used, it should not harm replicability of the research.
 
 \subsection{Firmware Analysis} \label{firmwareanalysis}
 
@@ -294,17 +265,10 @@ $\downarrow$
     \item Known libraries
 \end{itemize}
 
-pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim.
+As shown in Section \ref{hardwareassessment} Hardware Assessment, we can determine the correct pin layout for interfacing with the debug headers using the manufacturer datasheet. Whether or not this process is successful largely depends on the type of component packaging. In the previous example where we demonstrated reading the datasheet in relation to the pin diagram, it was possible to attach a debugger to the interface without a header prepared by the manufacturer on the device PCB. This is not possible for the SNBC BTP-S80.
 
-\subsection{Security Protections} \label{securityprotections}
+Figure \ref{fig:snbc_btp_s80_motherboard} and the corresponding datasheet, shows us that the MPU uses a 208-ball thin and fine ball grid array (TFBGA) package. Unless we used a process called decapsulation or delamination it is not possible to access these pins without risking damage to the device \autocite{sanchezlopezContributionStudyElectronic2015}. The manufacturers of the BTP-S80 were kind enough to provide a JTAG debug header, as shown and labeled in Figure \ref{fig:snbc_btp_s80_motherboard}.
 
-\textbf{Outline}
-$\downarrow$
+However, the exact pin layout is not provided. This can easily be verified manually via a multimeter and logic analyzer while referencing the manufacturer documentation. The process can be time consuming for those unfamiliar and it is recommended to use a tool such as the Jtagulator \autocite{JTAGulator2023} for enumerating the correct configuration.
 
-\begin{itemize}
-    \item Summary of physical protections (e.g., too much information silkscreened on PCB)
-    \item List hardware protections (e.g., did manufacturer block debug access, are memory regions locked)
-    \item Discuss software protections (e.g., access to bootloader, identifiable CVEs/CWEs, attributable libraries/functions)
-\end{itemize}
-
-pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim.
+With the ground and voltage reference pins validated, the researcher can connect up to 24 channels or pins. The tool will then check every permutation of the channels until an available header is identified. Using this information, we can continue with the Jtagulator or another USB debugger to continue our investigation.

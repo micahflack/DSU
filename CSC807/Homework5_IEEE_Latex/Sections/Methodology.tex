@@ -1,4 +1,4 @@
-\section*{Methodology}
+\section{Methodology}
 
 There are several parts to the research methodology. First, technical information and datasheets were collected for each of the identified devices. Then, device capabilities were verified before beginning device teardown and flash recovery. During the disassembly, each component was documented and further technical information was gathered from respective manufacturers. The format for presenting the collected data is described later in section \ref{datacollectionprocess}.
 
@@ -14,11 +14,11 @@ Using cross-sectional surveys \autocite{creswell2017research} has multiple benef
 
 \subsection{Data Collection Process} \label{datacollectionprocess}
 
-The data collection process began with gathering technical specifications from device manufacturers. Typically, these contain information about the capabilities of the intended device functions. For a printer, this could contain information ranging from hardware specifications (e.g., CPU, architecture, memory) to things like printed pages per minute. This information forms the baseline for the device survey. Afterward, further specifications were gathered for components as each device was disassembled and examined. Roughly, the types and format of gathered device specifications appear as shown in Figure \ref{fig:device_specs} (e.g., SNBC BTP-S80 is used here).
+The data collection process began with gathering technical specifications from device manufacturers. Typically, these contain information about the capabilities of the intended device functions. For a printer, this could contain information ranging from hardware specifications (e.g., CPU, architecture, memory) to things like printed pages per minute. This information forms the baseline for the device survey. Afterward, further specifications were gathered for components as each device was disassembled and examined. Roughly, the types and format of gathered device specifications appear as shown in Table \ref{table:device_specs} (e.g., SNBC BTP-S80 is used here).
 
 \begin{table*}
   \centering
-  \label{fig:device_specs}%
+  \label{table:device_specs}%
   \caption{Device specifications for SNBC BTP-S80}
   \begin{tabular}{|p{4cm}|p{12cm}|}
     \hline\rowcolor{gray!30}
@@ -75,13 +75,13 @@ The data collection process began with gathering technical specifications from d
   \end{tabular}
 \end{table*}
 
-Following the previous example, the next step in the data collection process would be identifying the SoC. If there is no beforehand knowledge, the SoC can be identified by comparing gathered datasheets during the components discovery. This is easily accomplished using an online service like FindChips or AllDataSheets \autocite{FindchipsElectronicPart}. The expected type and format for SoCs are described in Figure \ref{fig:soc_specs}.
+Following the previous example, the next step in the data collection process would be identifying the SoC. If there is no beforehand knowledge, the SoC can be identified by comparing gathered datasheets during the components discovery. This is easily accomplished using an online service like FindChips or AllDataSheets \autocite{FindchipsElectronicPart}. The expected type and format for SoCs are described in Table \ref{table:soc_specs}.
 
-The process for gathering flash/memory chip specifications was similar; identify the serial number and manufacturer, then find the component datasheet. Gathering the pin layouts and format is also useful for later stages, should the manual flash need to be recovered. The expected format for memory chips can be seen in Figure \ref{fig:memory_specs}.
+The process for gathering flash/memory chip specifications was similar; identify the serial number and manufacturer, then find the component datasheet. Gathering the pin layouts and format is also useful for later stages, should the manual flash need to be recovered. The expected format for memory chips can be seen in Table \ref{table:memory_specs}.
 
 \begin{table*}
   \centering
-  \label{fig:soc_specs}%
+  \label{table:soc_specs}%
   \caption{SoC technical specs example using Stellaris LM3S2793 Microcontroller}
   \begin{tabular}{|p{4cm}|p{12cm}|}
     \hline\rowcolor{gray!30}
@@ -120,7 +120,7 @@ The process for gathering flash/memory chip specifications was similar; identify
 
 \begin{table*}
   \centering
-  \label{fig:memory_specs}%
+  \label{table:memory_specs}%
   \caption{Memory specifications example using Infineon Technologies S25FL064P \autocite{S25FL064PSeriesFlash}}
   \begin{tabular}{|p{4cm}|p{12cm}|}
     \hline\rowcolor{gray!30}
