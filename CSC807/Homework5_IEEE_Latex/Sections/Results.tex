@@ -97,7 +97,177 @@ The list of expansion components, as shown in Figure \ref{fig:snbc_btp_s80_expan
     \item ASIX Ethernet Controller, AX88796C
 \end{itemize}
 
-All of these parts can be identified by reading the labeled markings. Typically, there is a manufacturer logo, production date (e.g., YYMM), lot number, and part number. Using this information we cross reference a part database to validate the package of the component (e.g., QFP versus BGA types) and functionality. The records should tell us whether the component is the main processing unit, flash storage, or a micro-controller.  
+All of these parts can be identified by reading the labeled markings. Typically, there is a manufacturer logo, production date (e.g., YYMM), lot number, and part number. Using this information we cross reference a part database to validate the package of the component (e.g., QFP versus BGA types) and functionality. The records should tell us whether the component is the main processing unit, flash storage, or a micro-controller. Refer to Tables XX for relevant specifications regarding each component. This information aides the firmware analysis section as well as future research.
+
+\begin{table*}
+    \centering
+    \label{fig:LPC4078FET208}%
+    \caption{NXP 32-bit ARM Cortex-M4 MCU, LPC4078FET208 \autocite{alldatasheet.comLPC4078FET208DatasheetPDF}}
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+      \hline\rowcolor{gray!30}
+  
+      \textbf{Specifications} &  \\
+      \hline
+  
+      Single power supply operation & 2.7 to 3.6V \\
+      \hline
+  
+      Software Features & SPI Bus Compatible Serial Interface \\
+      \hline
+  
+      Memory architecture & Uniform 64KB sectors \\
+      & 256 byte page size \\
+      \hline
+  
+      Programming & Page programming (up to 256 bytes) \\
+      & Operations are page-by-page basis \\
+      & Accelerated mode via 9V W\#/ACC pin \\
+      & Quad page programming \\
+      \hline
+  
+      Erase commands & Bulk erase function \\
+       & Sector erase for 64KB sectors \\
+       & Sub-sector erase for 4KB and 8KB sectors \\
+      \hline
+  
+      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
+      \hline
+  
+      Package format & 16-pin SO \\
+      & 8-contact WSON \\
+      & 24-ball BGA, 5x5 pin config \\
+      & 24 ball BGA, 6x6 pin config \\
+      \hline
+  
+    \end{tabular}
+\end{table*}
+
+\begin{table*}
+    \centering
+    \label{fig:M12L16161A-7T}%
+    \caption{ESMT Flash DRAM, M12L16161A-7T \autocite{alldatasheet.comM12L16161A7TDatasheetPDF}}
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+      \hline\rowcolor{gray!30}
+  
+      \textbf{Specifications} &  \\
+      \hline
+  
+      Single power supply operation & 2.7 to 3.6V \\
+      \hline
+  
+      Software Features & SPI Bus Compatible Serial Interface \\
+      \hline
+  
+      Memory architecture & Uniform 64KB sectors \\
+      & 256 byte page size \\
+      \hline
+  
+      Programming & Page programming (up to 256 bytes) \\
+      & Operations are page-by-page basis \\
+      & Accelerated mode via 9V W\#/ACC pin \\
+      & Quad page programming \\
+      \hline
+  
+      Erase commands & Bulk erase function \\
+       & Sector erase for 64KB sectors \\
+       & Sub-sector erase for 4KB and 8KB sectors \\
+      \hline
+  
+      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
+      \hline
+  
+      Package format & 16-pin SO \\
+      & 8-contact WSON \\
+      & 24-ball BGA, 5x5 pin config \\
+      & 24 ball BGA, 6x6 pin config \\
+      \hline
+  
+    \end{tabular}
+\end{table*}
+
+\begin{table*}
+    \centering
+    \label{fig:SP2209E}%
+    \caption{SIPEX RS-232 Transceiver, SP2209E \autocite{alldatasheet.comSP2209EDatasheetPDF}}
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+      \hline\rowcolor{gray!30}
+  
+      \textbf{Specifications} &  \\
+      \hline
+  
+      Single power supply operation & 2.7 to 3.6V \\alldatasheetnterface \\
+      \hline
+  
+      Memory architecture & Uniform 64KB sectors \\
+      & 256 byte page size \\
+      \hline
+  
+      Programming & Page programming (up to 256 bytes) \\
+      & Operations are page-by-page basis \\
+      & Accelerated mode via 9V W\#/ACC pin \\
+      & Quad page programming \\
+      \hline
+  
+      Erase commands & Bulk erase function \\
+       & Sector erase for 64KB sectors \\
+       & Sub-sector erase for 4KB and 8KB sectors \\
+      \hline
+  
+      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
+      \hline
+  
+      Package format & 16-pin SO \\
+      & 8-contact WSON \\
+      & 24-ball BGA, 5x5 pin config \\
+      & 24 ball BGA, 6x6 pin config \\
+      \hline
+  
+    \end{tabular}
+\end{table*}
+
+\begin{table*}
+    \centering
+    \label{fig:AX88796C}%
+    \caption{ASIX Ethernet Controller, AX88796C \autocite{AX88796CPdfAX88796C}}
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+      \hline\rowcolor{gray!30}
+  
+      \textbf{Specifications} &  \\
+      \hline
+  
+      Single power supply operation & 2.7 to 3.6V \\
+      \hline
+  
+      Software Features & SPI Bus Compatible Serial Interface \\
+      \hline
+  
+      Memory architecture & Uniform 64KB sectors \\
+      & 256 byte page size \\
+      \hline
+  
+      Programming & Page programming (up to 256 bytes) \\
+      & Operations are page-by-page basis \\
+      & Accelerated mode via 9V W\#/ACC pin \\
+      & Quad page programming \\
+      \hline
+  
+      Erase commands & Bulk erase function \\
+       & Sector erase for 64KB sectors \\
+       & Sub-sector erase for 4KB and 8KB sectors \\
+      \hline
+  
+      Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
+      \hline
+  
+      Package format & 16-pin SO \\
+      & 8-contact WSON \\
+      & 24-ball BGA, 5x5 pin config \\
+      & 24 ball BGA, 6x6 pin config \\
+      \hline
+  
+    \end{tabular}
+\end{table*}
+
 
 \subsection{Technical Resources} \label{technicalresources}
 
