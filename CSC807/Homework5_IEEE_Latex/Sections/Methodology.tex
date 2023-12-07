@@ -18,8 +18,8 @@ The data collection process began with gathering technical specifications from d
 
 \begin{table*}
   \centering
-  \label{table:device_specs}%
   \caption{Device specifications for SNBC BTP-S80}
+  \label{table:device_specs}%
   \begin{tabular}{|p{4cm}|p{12cm}|}
     \hline\rowcolor{gray!30}
 
@@ -75,93 +75,95 @@ The data collection process began with gathering technical specifications from d
   \end{tabular}
 \end{table*}
 
-Following the previous example, the next step in the data collection process would be identifying the SoC. If there is no beforehand knowledge, the SoC can be identified by comparing gathered datasheets during the components discovery. This is easily accomplished using an online service like FindChips or AllDataSheets \autocite{FindchipsElectronicPart}. The expected type and format for SoCs are described in Table \ref{table:soc_specs}.
+Following the previous example, the next step in the data collection process would be identifying the SoC. If there is no beforehand knowledge, the SoC can be identified by comparing gathered datasheets during the components discovery. This is easily accomplished using an online service like FindChips or AllDataSheets \autocite{FindchipsElectronicPart}. The process for gathering flash/memory chip specifications was similar; identify the serial number and manufacturer, then find the component datasheet. Gathering the pin layouts and format is also useful for later stages, should the manual flash need to be recovered.
 
-The process for gathering flash/memory chip specifications was similar; identify the serial number and manufacturer, then find the component datasheet. Gathering the pin layouts and format is also useful for later stages, should the manual flash need to be recovered. The expected format for memory chips can be seen in Table \ref{table:memory_specs}.
+% The expected type and format for SoCs are described in Table \ref{table:soc_specs}.
 
-\begin{table*}
-  \centering
-  \label{table:soc_specs}%
-  \caption{SoC technical specs example using Stellaris LM3S2793 Microcontroller}
-  \begin{tabular}{|p{4cm}|p{12cm}|}
-    \hline\rowcolor{gray!30}
+% The expected format for memory chips can be seen in Table \ref{table:memory_specs}.
 
-    \textbf{Specifications} &  \\
-    \hline
+% \begin{table*}
+%   \centering
+%   \caption{SoC technical specs example using Stellaris LM3S2793 Microcontroller}
+%   \label{table:soc_specs}%
+%   \begin{tabular}{|p{4cm}|p{12cm}|}
+%     \hline\rowcolor{gray!30}
 
-    Architecture & 32-bit ARM \\
-    \hline
+%     \textbf{Specifications} &  \\
+%     \hline
 
-    Platform & ARM Cortex-M3 \\
-    \hline
+%     Architecture & 32-bit ARM \\
+%     \hline
 
-    Frequency & 80-MHz, 100DMIPS performance \\
-    \hline
+%     Platform & ARM Cortex-M3 \\
+%     \hline
 
-    Memory & 128KB single-cycle Flash memory \\
-     & 64KB single-cycle SRAM \\
-    \hline
+%     Frequency & 80-MHz, 100DMIPS performance \\
+%     \hline
 
-    Firmware & Internal ROM loaded with StellarisWare \\
-    \hline
+%     Memory & 128KB single-cycle Flash memory \\
+%      & 64KB single-cycle SRAM \\
+%     \hline
 
-    Advanced Comm. Interfaces & UART, SSI, I2C, I2S, CAN \\
-    \hline
+%     Firmware & Internal ROM loaded with StellarisWare \\
+%     \hline
 
-    Debug Interfaces & JTAG, SWD \\
-    \hline
+%     Advanced Comm. Interfaces & UART, SSI, I2C, I2S, CAN \\
+%     \hline
 
-    Package format & 100-pin LQFP \\
-    & 108-ball pin BGA \\
-    \hline
+%     Debug Interfaces & JTAG, SWD \\
+%     \hline
 
-  \end{tabular}
-\end{table*}
+%     Package format & 100-pin LQFP \\
+%     & 108-ball pin BGA \\
+%     \hline
 
-\begin{table*}
-  \centering
-  \label{table:memory_specs}%
-  \caption{Memory specifications example using Infineon Technologies S25FL064P \autocite{S25FL064PSeriesFlash}}
-  \begin{tabular}{|p{4cm}|p{12cm}|}
-    \hline\rowcolor{gray!30}
+%   \end{tabular}
+% \end{table*}
 
-    \textbf{Specifications} &  \\
-    \hline
+% \begin{table*}
+%   \centering
+%   \caption{Memory specifications example using Infineon Technologies S25FL064P \autocite{S25FL064PSeriesFlash}}
+%   \label{table:memory_specs}%
+%   \begin{tabular}{|p{4cm}|p{12cm}|}
+%     \hline\rowcolor{gray!30}
 
-    Single power supply operation & 2.7 to 3.6V \\
-    \hline
+%     \textbf{Specifications} &  \\
+%     \hline
 
-    Software Features & SPI Bus Compatible Serial Interface \\
-    \hline
+%     Single power supply operation & 2.7 to 3.6V \\
+%     \hline
 
-    Memory architecture & Uniform 64KB sectors \\
-    & 256 byte page size \\
-    \hline
+%     Software Features & SPI Bus Compatible Serial Interface \\
+%     \hline
 
-    Programming & Page programming (up to 256 bytes) \\
-    & Operations are page-by-page basis \\
-    & Accelerated mode via 9V W\#/ACC pin \\
-    & Quad page programming \\
-    \hline
+%     Memory architecture & Uniform 64KB sectors \\
+%     & 256 byte page size \\
+%     \hline
 
-    Erase commands & Bulk erase function \\
-     & Sector erase for 64KB sectors \\
-     & Sub-sector erase for 4KB and 8KB sectors \\
-    \hline
+%     Programming & Page programming (up to 256 bytes) \\
+%     & Operations are page-by-page basis \\
+%     & Accelerated mode via 9V W\#/ACC pin \\
+%     & Quad page programming \\
+%     \hline
 
-    Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
-    \hline
+%     Erase commands & Bulk erase function \\
+%      & Sector erase for 64KB sectors \\
+%      & Sub-sector erase for 4KB and 8KB sectors \\
+%     \hline
 
-    Package format & 16-pin SO \\
-    & 8-contact WSON \\
-    & 24-ball BGA, 5x5 pin config \\
-    & 24 ball BGA, 6x6 pin config \\
-    \hline
+%     Protections & W\#/ACC pin used with Status Register Bits to protect specified memory regions and configure parts as read-only; One time programmable area for permanent and secure identification \\
+%     \hline
 
-  \end{tabular}
-\end{table*}
+%     Package format & 16-pin SO \\
+%     & 8-contact WSON \\
+%     & 24-ball BGA, 5x5 pin config \\
+%     & 24 ball BGA, 6x6 pin config \\
+%     \hline
 
-A final report will be created detailing each of these tables for the devices and their identified core components. Operating system features and protections will be loosely summarized for each device, there is no set reporting format or requirements. Using the final report will aid in the process of designing an artifact for future research and testing.
+%   \end{tabular}
+% \end{table*}
+
+% A final report will be created detailing each of these tables for the devices and their identified core components. Operating system features and protections will be loosely summarized for each device, there is no set reporting format or requirements. Using the final report will aid in the process of designing an artifact for future research and testing.
 
 \subsection{Hardware Assessment} \label{hardwareassessment}
 

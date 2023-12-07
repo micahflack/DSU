@@ -67,8 +67,6 @@ The disassembly is completed after carefully disconnecting each cable, taking no
 %     \item Walkthrough of documented teardown of the serial printer
 % \end{itemize}
 
-Component identification and analysis is divided into two parts. The first being analysis of the motherboard, and the second being the serial expansion card. Analysis of the power delivery and USB type-b expansion card is not necessary since it features no controllers nor any flash to analyze. In some cases, these might still be used for fuzzing and debugging because labeled connectors are provided, however, this can be ignored with most single wire debugging tools (e.g., Jtagulator or Bus Pirate).
-
 \begin{figure}[ht]
     \centering
     {\includegraphics[width=88mm,scale=0.5]
@@ -76,6 +74,8 @@ Component identification and analysis is divided into two parts. The first being
     \caption{Motherboard components}
     \label{fig:snbc_btp_s80_motherboard}
 \end{figure}
+
+Component identification and analysis is divided into two parts. The first being analysis of the motherboard, and the second being the serial expansion card. Analysis of the power delivery and USB type-b expansion card is not necessary since it features no controllers nor any flash to analyze. In some cases, these might still be used for fuzzing and debugging because labeled connectors are provided, however, this can be ignored with most single wire debugging tools (e.g., Jtagulator or Bus Pirate).
 
 The list of motherboard components, as shown in Figure \ref{fig:snbc_btp_s80_motherboard}:
 \begin{itemize}
@@ -101,8 +101,8 @@ All of these parts can be identified by reading the labeled markings. Typically,
 
 \begin{table*}
     \centering
-    \label{table:LPC4078FET208}%
     \caption{NXP 32-bit ARM Cortex-M4 MCU, LPC4078FET208 \autocite{alldatasheet.comLPC4078FET208DatasheetPDF}}
+    \label{table:LPC4078FET208}%
     \begin{tabular}{|p{4cm}|p{12cm}|}
         \hline\rowcolor{gray!30}
     
@@ -147,8 +147,8 @@ All of these parts can be identified by reading the labeled markings. Typically,
 
 \begin{table*}
     \centering
-    \label{table:M12L16161A-7T}%
     \caption{ESMT DRAM, M12L16161A-7T \autocite{alldatasheet.comM12L16161A7TDatasheetPDF}}
+    \label{table:M12L16161A-7T}%
     \begin{tabular}{|p{4cm}|p{12cm}|}
       \hline\rowcolor{gray!30}
   
@@ -176,8 +176,8 @@ All of these parts can be identified by reading the labeled markings. Typically,
 
 \begin{table*}
     \centering
-    \label{table:SP2209E}%
     \caption{SIPEX High ESD Dual Port RS-232 Transceiver, SP2209E \autocite{alldatasheet.comSP2209EDatasheetPDF}}
+    \label{table:SP2209E}%
     \begin{tabular}{|p{4cm}|p{12cm}|}
       \hline\rowcolor{gray!30}
   
@@ -207,8 +207,8 @@ All of these parts can be identified by reading the labeled markings. Typically,
 
 \begin{table*}
     \centering
-    \label{table:AX88796C}%
     \caption{ASIX Low-Power SPI or Non-PCI Ethernet Controller, AX88796C \autocite{AX88796CPdfAX88796C}}
+    \label{table:AX88796C}%
     \begin{tabular}{|p{4cm}|p{12cm}|}
       \hline\rowcolor{gray!30}
 
@@ -290,17 +290,14 @@ Upon inspecting the strings for the dump, we can immediately see that the therma
 We are also able to analyze the remaining strings to see indications of a php web server if the networking interfaces are enabled; remember, these devices have bluetooth, wireless, and ethernet support. The library used by this device is the WebNet v1.0.0 software package developed for RT-Thread devices. In particular, the webserver supports the following features:
 
 \begin{itemize}
-    \item HTTP 1.0/1.1
+    \item HTTP 1.0/1.1 and CGI function
     \item AUTH basic authentication function
-    \item CGI function
     \item ASP variable substitution function
     \item SSI file embedding function
     \item INDEX directory file display function
     \item ALIAS alias access function
     \item file upload function
-    \item pre-compression function
     \item cache function
-    \item breakpoint resume functions
 \end{itemize}
 
 In addition, there were other libraries spotted within the memory dump:
