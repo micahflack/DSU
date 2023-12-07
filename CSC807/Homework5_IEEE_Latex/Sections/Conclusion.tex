@@ -1,18 +1,20 @@
 \section{Conclusion}
 
-\textbf{Outline}
-$\downarrow$
+% \textbf{Outline}
+% $\downarrow$
 
-\begin{itemize}
-    \item Reiterate the introduction, research questions, and how the results of the research answered those questions.
-    \item Provide supporting statements for future research and highlight areas that were loosely documented/known and would have been solid preliminary research.
-    \item Can these devices be extended? Research questions, yes/no...
-\end{itemize}
+% \begin{itemize}
+%     \item Reiterate the introduction, research questions, and how the results of the research answered those questions.
+%     \item Provide supporting statements for future research and highlight areas that were loosely documented/known and would have been solid preliminary research.
+%     \item Can these devices be extended? Research questions, yes/no...
+% \end{itemize}
 
-\begin{itemize}
-    \item Summary of physical protections (e.g., too much information silkscreened on PCB)
-    \item List hardware protections (e.g., did manufacturer block debug access, are memory regions locked)
-    \item Discuss software protections (e.g., access to bootloader, identifiable CVEs/CWEs, attributable libraries/functions)
-\end{itemize}
+% \begin{itemize}
+%     \item Summary of physical protections (e.g., too much information silkscreened on PCB)
+%     \item List hardware protections (e.g., did manufacturer block debug access, are memory regions locked)
+%     \item Discuss software protections (e.g., access to bootloader, identifiable CVEs/CWEs, attributable libraries/functions)
+% \end{itemize}
 
-in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris augue neque gravida in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet non curabitur
+In conclusion, the researcher was able to demonstrate four of the five objectives for the research. We identified baseline of the hardware and operating system used by the serial printer. We identified the specific version of the operating system, any supporting libraries as well as their versions (i.e., RT-Thread RTOS). We were also able to clearly demonstrate that the manufacturers have enabled minimal security protections despite the hardware supporting them; which, is especially worth noting because the operating system itself has minimal protections for isolating memory across processes other than CRC checksums. It is also possible, as demonstrated, to be able to reflash the memory utilizing the MCU hardware debug interfaces.
+
+Due to underestimating the time needed for delivery of the additional devices for the proposed sample population, only one device was assessed. Although the SNBC BTP-S80 is a fairly common serial printer used across financial sectors as well as industrial control, the research would have been better represented with the cross-examination against several other devices. Lastly, another goal of the research was to use the gathered data to support the proposal of future research into a design artifact for implementing BadUSB-like concepts on peripheral serial devices. 
