@@ -282,3 +282,38 @@ However, the exact pin layout is not provided. This can easily be verified manua
 With the ground and voltage reference pins validated, the researcher can connect up to 24 channels or pins. The tool will then check every permutation of the channels until an available header is identified. Using this information, we can continue with the Jtagulator or another USB debugger to complete our investigation. Figure \ref{fig:snbc_btp_s80_jtag_header}, provides a clearly labeled diagram of the JTAG layout.
 
 In Section \ref{identifiedcomponents} Identified Components, we discovered that the MCU used by the thermal printer is the NXP LPC4078FET208. This controller has a code read protection (CRP) feature that allows the manufacturer to disable any access to the JTAG interface. With this enabled it prevents hardware debugging, firmware recovery, and overall physical interactions. In this instance, SNBC failed to enable the CRP feature for their devices before distributing them. Because of this, we are able to gain access to the device, pull the memory, and reverse engineer the firmware using tools such as Ghidra.
+
+Using a J-Link Segger, a USB serial debugging device, we were able to pull all active memory stored in the EEPROM of the thermal printer. In total the memory dump is 659,460 KiB (645MiB). Opening the memory dump using a disassembler like Ghidra allows us to begin examing the functions and data.
+
+Upon inspecting the strings for the dump, we can immediately see that the thermal printer is running a modified version of RT-Thread RTOS, version "FV1.040.00". This is an open-source operating system that is community developed and accessible to any party. With this information, it is possible to begin recreating our own debuggable version of the operating system for vulnerability analysis or extended features (e.g., BadUSB/MITM).
+
+We are also able to analyze the remaining strings to see indications of a php web server if the networking interfaces are enabled; remember, these devices have bluetooth, wireless, and ethernet support. The library used by this device is the WebNet v1.0.0 software package developed for RT-Thread devices. In particular, the webserver supports the following features:
+
+\begin{itemize}
+    \item HTTP 1.0/1.1
+    \item AUTH basic authentication function
+    \item CGI function
+    \item ASP variable substitution function
+    \item SSI file embedding function
+    \item INDEX directory file display function
+    \item ALIAS alias access function
+    \item file upload function
+    \item pre-compression function
+    \item cache function
+    \item breakpoint resume functions
+\end{itemize}
+
+In addition, there were other libraries spotted within the memory dump:
+
+\begin{itemize}
+    \item Epson "7.00 ESC/POS", the printer command interpreter
+\end{itemize}
+
+And, there were records showing that the BTP-S80 and BTP-2002NP share the same firmware. It appears that a boolean value within the management software can control which profile is used. There is also an option to choose the default profile or printer mode. These settings, the WebNet library, and the Epson ESC/POS print interpreter are potential areas for vulnerability research. Especially if the printer is connected to the network and the web server is running, it might provide a form of persistence or entry into the device. 
+
+\begin{itemize}
+    \item "  Printer Mode:"
+    \item "Default Printer Mode\textbackslash n"
+    \item "The Printer Mode will be BTP-2002NP Mode\textbackslash n"
+\end{itemize}
+
