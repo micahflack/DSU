@@ -267,8 +267,18 @@ All technical data and specifications sheets were procured through AllDataSheet 
 
 As shown in Section \ref{hardwareassessment} Hardware Assessment, we can determine the correct pin layout for interfacing with the debug headers using the manufacturer datasheet. Whether or not this process is successful largely depends on the type of component packaging. In the previous example where we demonstrated reading the datasheet in relation to the pin diagram, it was possible to attach a debugger to the interface without a header prepared by the manufacturer on the device PCB. This is not possible for the SNBC BTP-S80.
 
-Figure \ref{fig:snbc_btp_s80_motherboard} and the corresponding datasheet, shows us that the MPU uses a 208-ball thin and fine ball grid array (TFBGA) package. Unless we used a process called decapsulation or delamination it is not possible to access these pins without risking damage to the device \autocite{sanchezlopezContributionStudyElectronic2015}. The manufacturers of the BTP-S80 were kind enough to provide a JTAG debug header, as shown and labeled in Figure \ref{fig:snbc_btp_s80_motherboard}.
+Figure \ref{fig:snbc_btp_s80_motherboard} and the corresponding datasheet, shows us that the MCU uses a 208-ball thin and fine ball grid array (TFBGA) package. Unless we used a process called decapsulation or delamination it is not possible to access these pins without risking damage to the device \autocite{sanchezlopezContributionStudyElectronic2015}. The manufacturers of the BTP-S80 were kind enough to provide a JTAG debug header, as shown and labeled in Figure \ref{fig:snbc_btp_s80_motherboard}.
 
 However, the exact pin layout is not provided. This can easily be verified manually via a multimeter and logic analyzer while referencing the manufacturer documentation. The process can be time consuming for those unfamiliar and it is recommended to use a tool such as the Jtagulator \autocite{JTAGulator2023} for enumerating the correct configuration.
 
-With the ground and voltage reference pins validated, the researcher can connect up to 24 channels or pins. The tool will then check every permutation of the channels until an available header is identified. Using this information, we can continue with the Jtagulator or another USB debugger to continue our investigation.
+\begin{figure}[ht]
+    \centering
+    {\includegraphics[width=88mm,scale=0.5]
+    {Figures/Teardown/JTAG_annotated.png}}
+    \caption{SNBC BTP-S80 Labeled JTAG Header}
+    \label{fig:snbc_btp_s80_jtag_header}
+\end{figure}
+
+With the ground and voltage reference pins validated, the researcher can connect up to 24 channels or pins. The tool will then check every permutation of the channels until an available header is identified. Using this information, we can continue with the Jtagulator or another USB debugger to complete our investigation. Figure \ref{fig:snbc_btp_s80_jtag_header}, provides a clearly labeled diagram of the JTAG layout.
+
+In Section \ref{identifiedcomponents} Identified Components, we discovered that the MCU used by the thermal printer is the NXP LPC4078FET208. This controller has a code read protection (CRP) feature that allows the manufacturer to disable any access to the JTAG interface. With this enabled it prevents hardware debugging, firmware recovery, and overall physical interactions. In this instance, SNBC failed to enable the CRP feature for their devices before distributing them. Because of this, we are able to gain access to the device, pull the memory, and reverse engineer the firmware using tools such as Ghidra.
