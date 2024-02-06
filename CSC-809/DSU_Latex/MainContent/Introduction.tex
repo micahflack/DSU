@@ -7,6 +7,7 @@
 
 Serial printers are devices commonly used for instant reporting of system data for industrial control systems (ICS) and receipts for point-of-sale (POS) systems. These devices are connected to their host using Wi-Fi, bluetooth, ethernet, or USB; in some cases, serial RS232 is an option as well. The goal of this research is to assess what software and hardware protections are enabled, as well as, how configurable the serial printers are for further exploit research.
 
+
 \begin{figure}[ht]%
   \centering
   \subfloat[\centering Square POS]{{ \includegraphics[width=0.30\textwidth,keepaspectratio]{Figures/MidSquare.png} }}%
@@ -28,7 +29,11 @@ By default, the printer has enough headroom to process ESC/POS commands for prin
 
 According to the Federal Trade Commission (FTC), there were 37,932 reports of credit card fraud in 2012 and 87,451 reports in 2022. This marks an increase of credit card payment fraud by an estimated, 30.5\%. By comparison, since 2020, there has been a 14.6\% increase in credit card related fraud. Which does not include the millions of other fraud reports the FTC receives every year. In 2022 alone, there were around 5.1 million fraud, identity theft, and miscellaneous reports in total \autocite{ConsumerSentinelNetwork2023,forthesentinelConsumerSentinelNetwork2022}. The statistics for these reports stresses how crucial the security of payment systems are, both physical and online. And, the need to secure them grows every year.
 
-\section{Research Goals and Objectives}  \label{significance}
+Spyduino is \autocite{karystinosSpyduinoArduinoHID2019} a working example of a programmable BadUSB device using an Arduino to mimic a Human Interface Device (HID). Arduinos are typically more accessible and easily developed compared to an embedded device whose design is more single purpose. Especially if the goal is to not modify hardware or require hands-on access for exploitation. However, the research shows us that is it possible create HID clones from scratch if the hardware is compatible.
+
+The Arduino used in their research is powered by an ATmega328P microcontroller with 32KB flash memory, 2KB SRAM, and 1KB EEPROM. Compared to the most likely target device of our proposed research, the SNBC BTP-S80, it features an ARM Cortex M4 microcontroller with 512KB flash memory, 96KB SRAM, 4KB of EEPROM. BadUSBs are a known and tested area of research. The novelty of this proposal comes from the assessment of the printer devices and showing whether one could be used maliciously within their environments (e.g., PoS systems, or ICS).
+
+\section{Research Goals and Objectives}  \label{researchgoalsobjectives}
 
 This research primarily focuses on physical POS systems or terminals and their hardware (serial accessories), rather than online solutions. For instance, not mobile payment apps like Venmo, CashApp, Zelle, or Paypal \autocite{wangMobilePaymentSecurity2016}. There are many reasons, but the types of systems being targeted varies greatly in terms of the hardware and software supported, as well as, how the transactions are handled with the payment  processor. Presumably, the host-to-guest communication will not differ greatly
 between other environments (e.g., ICS). If the printers have demonstrable weaknesses with an Ubuntu host, that will fulfill the testing requirements.
@@ -47,3 +52,14 @@ The goal of this research is to further establish academic works in regards to e
 % \end{figure}
 
 % Figure \ref{fig:comparison_pos} shows us two similar looking point-of-sale systems, albeit one is much older looking. However, the operating system and required hardware is very different. Typically, unless you have the Square provided terminal, their software/client is installed onto an Android or iOS device and connected to a Square compatible card reader \autocite{ondrusMobilePaymentsMarket2011}. Whereas, the SurePoS, NCR, or other common EFTPoS system will run a proprietary OS derived from Windows or Linux \autocite{ebimoboweiROLESOFTWARECASHLESS2018}. Furthermore, these PoS tend to require some form of printing receipts as record keeping for the business owner and customer. And these devices also vary in terms of processing capabilities and operating system.
+
+\section{Research Questions}  \label{researchquestions}
+
+The research questions that this proposal seeks to answer are as follows:
+\begin{itemize}
+  \item Q1: Can the hardware be reflashed with a modified firmware image (e.g., FreeRTOS, ReconOS, VxWorks)?
+  \item Q2: Does the base OS have bandwidth to support HID functionality?
+  \item Q3: Besides HID cloning, what other threat areas are exposed (e.g., network stack, web management portal, memory protections)?
+\end{itemize}
+
+Each of these goals will be approached individually as prescribed by the methodology.

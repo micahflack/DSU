@@ -6,6 +6,21 @@
 \chapter{\leavevmode Related Works}
 \label{chap:relatedworks}
 
+% 
+% 
+% New outline for related works
+
+% Section talking about PoS and ICS attacks
+%   - types of attacks... e.g., card skimming
+% 
+% Embedded devices research
+%   - ...
+% 
+% Network and firmware analysis methods
+%   - might overlap with the previous section
+% 
+
+
 %%% The goal of this research is to assess different serial printers for their equipped hardware (input/output, architecture, memory type/capacity, processor), software (operating system, network stack library [think Treck TCP vulnerabilities or FreeRTOS specific]), featured capabilities (intended operation [think ESC/POS commands to printed paper over serial], network connectivity), and security protections. Then, with the information that has been gathered, make several determinations: what hardware/software protections can be relaxed, if modified how can firmware be pushed to the device, can memory be removed and reflashed, does the device have hardware debugging, is the hardware debugging enabled, is the native operating system open source, can we modify the operating system and save versions with debug symbol data, is the flash storage on the device enough for multiple functions (webserver and printing || BadUSB and printing || etc...).
 
 %%% Methodology: describe the process of identifying hardware debug ports/headers
@@ -19,15 +34,27 @@
 
 \autocite{Benadjila2018WooKeyU} introduces several embedded kernels and discusses their differences in regard to developing a secure mass storage device. For this research, we are primarily interested in RTOS-like kernels because of existing support for a sample device like the SNBC BTP-S80 printer. However, the paper criticizes such operating systems because their "real-time driven design is barely compatible with the overhead produced by security mechanisms." For many applications, there is a trade off with RTOS where performance is the main criteria and security is not a priority. \autocite{yuRealTimeOperatingSystem} introduces several common RTOS and discusses their security issues. Notably, most RTOS are susceptible to code injection, cryptography inefficiency, unprotected shared memory, priority inversion, denial of service attacks, privilege escalation, and inter-process communication vulnerabilities. Depending on the MPU (microprocessor unit), the vendor has hardware protections like Intel SGX or Arm Trust Zone. These are all areas that can be used for pivoting onto the device, especially shared memory and privilege escalation. If the target device firmware is outdated (or, even libraries used by the firmware) and there are known CVEs that can be repeatedly exploited, persistence mechanisms are not a requirement to gain routine access.
 
-% \section*{Embedded Firmware Patching}
-% \addcontentsline{toc}{section}{Embedded Device Hot Patching}
-\section{Embedded Firmware Patching} \label{embeddedfirmwarepatching}
+\section{PoS Attack Patterns} \label{posattackpatterns}
 
-% can embedded devices firmware be hot patched? are there methods for this while a device is running
-% RapidPatch is a possible example for maliciously patching RTOS devices
-% what is the limit for device hot patching? for what's required, is a complete reflash needed?
+Section Outline:
+\begin{itemize}
+  \item Card skimming (NFC + Magnetic)
+  \item Terminal swapping
+  \item Fake payment processor requests (e.g., venmo, cashapp)
+  \item Memory scraping (i.e., virtualized PoS systems)
+  \item EMV cloning
+\end{itemize}
 
-Typically, updating the firmware for a device or even delivering patches requires a complete shutdown and hardware debug access (if supported). In some cases, the reflashing is unsupported through the operating system or bootloader and the flash memory needs to be reprogrammed. \autocite{heRapidPatchFirmwareHotpatching2022} describes a method for hotpatching downstream RTOS devices without needing to shutdown or reboot. Any changes made are permanent and as effective as traditional delivery methods. RapidPatch was capable of patching over 90\% of vulnerabilities for the affected device, only needing at least 64KB or more memory and 64 MHz MCU clock. This appears to be an effective method for attackers to sideload client or server implants without risking detection. 
+
+% % \section*{Embedded Firmware Patching}
+% % \addcontentsline{toc}{section}{Embedded Device Hot Patching}
+% \section{Embedded Firmware Patching} \label{embeddedfirmwarepatching}
+
+% % can embedded devices firmware be hot patched? are there methods for this while a device is running
+% % RapidPatch is a possible example for maliciously patching RTOS devices
+% % what is the limit for device hot patching? for what's required, is a complete reflash needed?
+
+% Typically, updating the firmware for a device or even delivering patches requires a complete shutdown and hardware debug access (if supported). In some cases, the reflashing is unsupported through the operating system or bootloader and the flash memory needs to be reprogrammed. \autocite{heRapidPatchFirmwareHotpatching2022} describes a method for hotpatching downstream RTOS devices without needing to shutdown or reboot. Any changes made are permanent and as effective as traditional delivery methods. RapidPatch was capable of patching over 90\% of vulnerabilities for the affected device, only needing at least 64KB or more memory and 64 MHz MCU clock. This appears to be an effective method for attackers to sideload client or server implants without risking detection. 
 
 % \section*{BadUSB-like Devices}
 % \addcontentsline{toc}{section}{Embedded BadUSB-like Devices}
@@ -56,4 +83,4 @@ In \autocite*{tianSoKPlugPray2018}, they describe several attacks at each of the
 % \addcontentsline{toc}{section}{Summary}
 \section{Summary} \label{introductionsummary}
 
-As demonstrated by the previous works, vulnerability assessment of an embedded device is a well documented process. However, the extent that a serial thermal printer (e.g., Figure \ref{fig:btp_s80}) can be maliciously expanded through a modified FreeRTOS image, while supporting original functionality, has not. And, given success in the assessment, it could suggest room for continual and improved research.
+As demonstrated by the previous works, vulnerability assessment of an embedded device is a well documented process. However, the extent that a serial thermal printer (e.g., Figure \ref{fig:comparison_pos}) can be maliciously expanded through a modified FreeRTOS image, while supporting original functionality, has not. And, given success in the assessment, it could suggest room for continual and improved research.
