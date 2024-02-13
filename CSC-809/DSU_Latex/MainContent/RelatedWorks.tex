@@ -36,15 +36,37 @@
 
 \section{PoS Attack Patterns} \label{posattackpatterns}
 
-Section Outline:
-\begin{itemize}
-  \item Card skimming (NFC + Magnetic)
-  \item Terminal swapping
-  \item Fake payment processor requests (e.g., venmo, cashapp)
-  \item Memory scraping (i.e., virtualized PoS systems)
-  \item EMV cloning
-\end{itemize}
+% Section Outline:
+% \begin{itemize}
+%   \item Card skimming (NFC + Magnetic)
+%   \item Terminal swapping
+%   \item Fake payment processor requests (e.g., venmo, cashapp)
+%   \item Memory scraping (i.e., virtualized PoS systems)
+%   \item EMV cloning
+% \end{itemize}
 
+Typically, when discussing attack patterns for PoS systems they are limited to card skimming, fake payment processor requests, or EMV cloning. In rarer cases, they might deliver malware to perform memory scraping within the PoS system or attempt swapping hardware while employees are distracted. None of these attacks include thermal printers at any point during their attack chain or delivery.
+
+% Card skimming (NFC/Magnetic) + EMV cloning
+
+Easily the most common and well known type of attack is card skimming. Attackers will place these devices directly on top of the existing equipment to skim, or gather, credit card information at the time of purchases. They can be incredibly difficult to identify because of the sleek and stealthy designs that fraudsters use. But there is plenty of research being presented on how to quickly detect these devices \autocite{scaifeFearReaperCharacterization2018,scaifeKissRogueEvaluating2019a}.
+
+Without going into too much technical detail, card skimming attacks are accomplished by reading the signals emitted when swiping a magnetic card or by using an NFC reader in proximity to the payment terminal. When the customer goes to pay and uses their card, the nearby skimmer will record the transaction data being transferred. NFC skimmers, however, are not limited to being used near the terminals. Skimmer capabilities vary, and in some cases they have cameras as well or keypads for capturing PIN and zip code data.
+
+In response to the susceptibility of magnetic cards, EMV cards were created. They are able to avoid the issues that magnetic cards and NFC share by using a chip to securely exchange transaction data with the payment terminal using secret authentication codes. The idea is that these codes cannot be tampered with or easily cloned. Despite these security advancements, EMV cards are susceptible to pre-play attacks targeting the "unpredictable number" (UN) algorithm used by ATMs \autocite{bondChipSkimCloning2014}.
+
+% NEED Citation ^
+
+
+\autocite{wangMobilePaymentSecurity2016}
+
+% Fake payment processor requests (e.g., venmo, cashapp)
+Social engineers use payment processor mobile applications to directly target their victims instead of using elaborate and technical attacks against servers or user equipment \autocite{bejuFraudsBankingSystem2023}. The attackers simply send payment requests disguised as payments using their preferred platform. Unwittingly, the victim will accept the request thinking they were receiving money instead.
+
+In some cases, the fraudster sends the victim money but requests a refund shortly after. As a result, the victim is either charged fees for processing the transactions or they have already spent the refunded money. These attacks are much simpler in-terms of delivery compared to the others and the intended outcomes are different. There are instances where the user device is compromised by malware specifically for exfiltrating banking data or similar PCI, but further discourse is outside the scope of the proposed research \autocite{darvishSecurityAnalysisMobile2018}.
+
+% Memory scraping (i.e., virtualized PoS systems)
+Researchers at Stony Brook University \autocite{hizverIntrospectionBasedMemoryScraper2012a}, demonstrated a successful introspection-based memory scraping attack against nine commercial PoS applications. Within their environment, it is assumed that the given VM (i.e., Dom0) within the shared virtualization platform (i.e., Xen) is compromised and it has escaped the guest environment. Because the privileges associated with the first VM, it has read access to the others and can perform out-of-VM memory scraping. This exact attack is likely limited to the platform used for the experiment, Xen Hypervisor; attempting something similarly against VMWare, Virtualbox, or QEMU would require further experimentation due to architectural differences. Also, PCI-DSS and PA-DSS requirements were not an obstacle for this attack since the data is not stored to disk and it is read from memory instead. 
 
 % % \section*{Embedded Firmware Patching}
 % % \addcontentsline{toc}{section}{Embedded Device Hot Patching}

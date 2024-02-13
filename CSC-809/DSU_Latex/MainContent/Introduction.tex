@@ -57,9 +57,9 @@ The goal of this research is to further establish academic works in regards to e
 
 The research questions that this proposal seeks to answer are as follows:
 \begin{itemize}
-  \item Q1: Can the hardware be reflashed with a modified firmware image (e.g., FreeRTOS, ReconOS, VxWorks)?
-  \item Q2: Does the base OS have bandwidth to support HID functionality?
-  \item Q3: Besides HID cloning, what other threat areas are exposed (e.g., network stack, web management portal, memory protections)?
+  \item Q1: Can the hardware be reflashed with a modified firmware image (e.g., FreeRTOS, ReconOS, VxWorks)? Testing a version of the original firmware with additional libraries, or an alternative OS, allows us to see if supply chain attacks are a concern. Either by the manufacturer, supplier, or other party.  
+  \item Q2: Does the base OS have bandwidth to support HID functionality? In other words, can we maintain operation of standard printer command interpretation and side-channel input attacks without causing crashes or delays? The viability of the attack depends on it going unnoticed by operators or technicians. 
+  \item Q3: Besides HID cloning, what other threat areas are exposed (e.g., network stack, web management portal, memory protections)? Are there any identifiable or known exploits when accessing the configuration panel (e.g., HTTP/2)? These provide a non-invasive method for bootstrapping the device.
 \end{itemize}
 
 Each of these goals will be approached individually as prescribed by the methodology.
