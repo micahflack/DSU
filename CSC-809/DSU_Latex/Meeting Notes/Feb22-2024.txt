@@ -5,3 +5,11 @@ Notes:
 ** include diagram explaining overall methodology process
     ** diagram from design science research methodology
     ** explain each and every block of the diagram
+
+
+** design chapter
+    ** break down design and development steps
+
+** timeline chapter
+    ** gantt chart
+    ** break down timeline for research
