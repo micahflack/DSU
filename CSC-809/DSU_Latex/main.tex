@@ -11,6 +11,8 @@
 \usepackage{titlesec}
 \usepackage{titletoc}
 \usepackage{lipsum}
+\usepackage{ragged2e}
+\usepackage{url}
 % \usepackage{fmtcount} % for textual representation of numbers
 \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\thechapter}{0pt}{\Huge}
 \usepackage{enumitem}
@@ -195,7 +197,7 @@
 \input{MainContent/Timeline.tex}
 
 % % Chapter 6
-% \input{MainContent/Conclusion.tex}
+\input{MainContent/Conclusion.tex}
 
 %%% % Evaluations
 %%% \input{MainContent/Evaluations.tex}
@@ -214,7 +216,9 @@
 %========================================
 \addcontentsline{toc}{chapter}{References}
 \begin{singlespace}
+	% \RaggedRight
 	\setlength\bibitemsep{\baselineskip}
+	\sloppy
 	\printbibliography[title={References}]
 \end{singlespace}
 \clearpage

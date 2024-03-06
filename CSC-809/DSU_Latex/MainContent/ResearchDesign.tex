@@ -268,7 +268,7 @@ The final report will contain each of these tables for the device and their iden
     \hline
 
   \end{tabular}
-  \caption{Memory specifications example using Infineon Technologies S25FL064P \autocite{S25FL064PSeriesFlash}}
+  \caption{Memory specs example using Infineon Technologies S25FL064P \autocite{S25FL064PSeriesFlash}}
   \label{fig:memory_specs}%
 \end{table}
 
@@ -307,7 +307,7 @@ Figure \ref{fig:jtag_pinout} is an example showing what the physical SoC looks l
     \hline
 
   \end{tabular}
-  \caption{example JTAG pin-out for the LM3S2793}
+  \caption{Example JTAG pin-out for the LM3S2793}
   % \caption{Memory specifications example using Infineon Technologies S25FL064P \autocite{S25FL064PSeriesFlash}}
   \label{table:example_jtag_pinout}%
 \end{table}
@@ -316,16 +316,51 @@ Using this information, a device like the JTAGULATOR \autocite{JTAGulator2023} c
 
 If the JTAG is disabled, the researcher will then attempt to recover flash manually using a device like the Segger J-Link \autocite{SEGGERJLinkDebug}. The Segger has pre-defined and existing support for working with flash memory and flash breakpoints, whereas using OpenOCD with the JTAGULATOR would require time crafting custom configurations. Assuming there are no access protections to the flash memory, the researcher can begin performing firmware analysis to identify the operating system or potential vulnerabilities. Documenting the size and address range of memory regions is a key part of the process.
 
-\section{Networking Traffic Analysis} \label{networkanalysis}
+\section{Network Traffic Analysis} \label{networkanalysis}
 
-Work in progress.
+Capturing and understanding the traffic between the serial printer and the host helps to identify incorrect implementations or misconfigurations. This information can then be analyzed to further identify any misuses of authentication methods, cookies, or input validation. All of which are potential areas an attacker could use to leverage unprivileged access.
+
+For example, the Treck TCP/IP networking library, before version 6.0.1.68, had multiple input validation and out-of-bounds read vulnerabilities that allowed attackers unauthenticated remote access \autocite{NVDCVE202025066,NVDCVE202027336,NVDCVE202027338,NVDCVE202027337}. Following that example, one of the goals of this research is to identify vulnerabilities within the serial printer firmware or networking libraries that could be used to gain unauthenticated access. This is not the only method that will be used to gain access for in-memory modification or reflashing, but it is relevant to identifying supply chain risks and the indirect methods that attackers could use to compromise equipment. Preliminary research into serial devices, and the target of this proposal, identified that the printer uses WebNet v1.0.0 \autocite{RTThreadpackagesWebnet2024}. This library is an independent package developed by RT-Thread to support basic HTTP functionality.
+
+Knowing that information, all network traffic between the serial printer and host will be captured using WireShark. This will be useful later during firmware analysis because the library is open source and it will provide the researcher with realtime data produced by the library to compare when reviewing the firmware disassembly. During analysis of the network traffic, any URL or call to an API with references to AUTH, CGI, or ASP functions will be documented and tested for input validation \autocite{WSTGLatestOWASP}. The HPP vulnerability that affected Apple Cups, a common printing system for UNIX systems, is an example: \url{hxxp://127.0.0.1:631/admin/?kerberos=onmouseover=alert(1)&kerberos}. By modifying the kerberos parameter, it allowed attackers to trigger a cross-site scripting vulnerability.
 
 \section{USB Communication Analysis} \label{usbcommanalysis}
 
-Work in progress.
+Recording the data transmitted between the host and the printer or target HID provides necessary information for RTOS modification. In order to maintain the appearance of the serial device and cloned HID, device descriptors and vendor IDs are needed \autocite{karystinosSpyduinoArduinoHID2019,SoKPlugPray}. The information will then be used to modify firmware and/or bootloader configuration to allow configuring the new IDs needed for the HID cloning attacks. Masking vendor IDs and descriptors is not absolutely necessary when emulating a HID, but it helps bypass whitelists which limit what devices can connect.
+
+Communication between the host, printer, and target HID will be recorded using WireShark and an ellisys USB Explorer 200. WireShark is a software based solution and it natively provides support for USB protocol logging and analysis \autocite{CaptureSetupUSBWireshark}. The ellisys USB Explorer, however, is a hardware and software solution that allows only USB 2.0 analysis. Since both the printer and HID use the USB 2.0 protocol, the explorer is appropriate. Currently, there is no preference for using either tool because of a certain feature or other reason. In the event that data cannot be logged correctly, the other tool will be used.
+
+% \begin{figure}[ht]
+%     \centering
+%     {\includegraphics[width=148mm,scale=0.8]
+%     {Figures/methodology_diagram_corrected.png}}
+%     \caption{Research methodology diagram \autocite{peffersDesignScienceResearch2007}}
+%     \label{fig:methodology_diagram}
+%   \end{figure}
+
+\begin{figure}[!htb]%
+    \centering
+    {\includegraphics[width=148mm,scale=0.8]{Figures/wireshark_capture.png}}
+    \caption{USB capture using WireShark}%
+    \label{fig:wireshark_usb}%
+\end{figure}
+
+\begin{figure}[!htb]%
+    \centering
+    {\includegraphics[width=148mm,scale=0.8]{Figures/ellisys_explorer.png}}
+    \caption{Example w/ ellisys USB Explorer 200}%
+    \label{fig:ellisys_usb}%
+\end{figure}
 
 \section{RTOS Modification} \label{rtosmodification}
 
-Work in progress.
+Using the information collected through prior analyses, the firmware will be modified using one of two methods. Either through in-memory exploitation identified through the network and firmware analysis stages or by reflashing firmware manually. Following the Treck vulnerability example, any in-memory modifications would begin through unauthenticated remote code access using a method similar to the heap-based buffer overflow within the HTTP server component. This would allow an attacker to push a payload into memory via the same HTTP server. Depending on the type of payload, the same method used to write into memory could then be used again to trigger the payload. Such a method would require that the payload overwrote a function that is used and exposed by the HTTP server (e.g., CGI/ASP).
 
+\begin{figure}[!htb]%
+    \centering
+    {\includegraphics[width=148mm,scale=0.8]{Figures/j-flash-lite.png}}
+    \caption{Example flashing device using Segger J-Flash \autocite{JLinkFlashDownload}}%
+    \label{fig:jlink_flash}%
+\end{figure}
 
+Modification and reflashing of the firmware (RT-Thread) is made easier since it is open source. The print interpreter library (ESC/POS) and HTTP server library (WebNet) are also open source. If there are no identifiable vulnerabilities within the WebNet HTTP server component to enable RCE, rebuilding the firmware is a reliable method and it still fits within the supply chain attack context. Reflashing firmware also assumes that hardware write protections for the flash are not enabled.
