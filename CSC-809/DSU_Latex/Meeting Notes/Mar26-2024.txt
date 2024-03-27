@@ -1,0 +1,9 @@
+Dissertation Meeting Notes
+    + Reduce scope of Q3
+    + Correct the methodology diagram
+        - Bullet points answering each block
+    + Make introduction less technical
+        - add background section explaining the problem
+        - explain USB standard, why there is threat room
+    + Add chapter 5 (?)
+        - Implementation / Validation / Expected Results

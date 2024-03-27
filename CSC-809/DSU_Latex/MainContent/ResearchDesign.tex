@@ -326,9 +326,9 @@ Knowing that information, all network traffic between the serial printer and hos
 
 \section{USB Communication Analysis} \label{usbcommanalysis}
 
-Recording the data transmitted between the host and the printer or target HID provides necessary information for RTOS modification. In order to maintain the appearance of the serial device and cloned HID, device descriptors and vendor IDs are needed \autocite{karystinosSpyduinoArduinoHID2019,SoKPlugPray}. The information will then be used to modify firmware and/or bootloader configuration to allow configuring the new IDs needed for the HID cloning attacks. Masking vendor IDs and descriptors is not absolutely necessary when emulating a HID, but it helps bypass whitelists which limit what devices can connect.
+Recording the data transmitted between the host and the printer or target HID provides necessary information for RTOS modification. In order to maintain the appearance of the serial device and cloned HID, device descriptors and vendor IDs are needed \autocite{karystinosSpyduinoArduinoHID2019,SoKPlugPray}. The information will then be used to modify firmware and/or bootloader configuration to allow setting the new IDs needed for the HID cloning attacks. Masking vendor IDs and descriptors is not absolutely necessary when emulating a HID, but it helps bypass whitelists which limit what devices can connect.
 
-Communication between the host, printer, and target HID will be recorded using WireShark and an ellisys USB Explorer 200. WireShark is a software based solution and it natively provides support for USB protocol logging and analysis \autocite{CaptureSetupUSBWireshark}. The ellisys USB Explorer, however, is a hardware and software solution that allows only USB 2.0 analysis. Since both the printer and HID use the USB 2.0 protocol, the explorer is appropriate. Currently, there is no preference for using either tool because of a certain feature or other reason. In the event that data cannot be logged correctly, the other tool will be used.
+Communication between the host, printer, and target HID will be recorded using WireShark and an Ellisys USB Explorer 200. WireShark is a software based solution and it natively provides support for USB protocol logging and analysis \autocite{CaptureSetupUSBWireshark}. The Ellisys USB Explorer, however, is a hardware and software solution that allows only USB 2.0 analysis. Since both the printer and HID use the USB 2.0 protocol, the explorer is appropriate. Currently, there is no preference for using either tool because of a certain feature or other reason. In the event that data cannot be logged correctly, the other tool will be used.
 
 % \begin{figure}[ht]
 %     \centering
@@ -348,7 +348,7 @@ Communication between the host, printer, and target HID will be recorded using W
 \begin{figure}[!htb]%
     \centering
     {\includegraphics[width=148mm,scale=0.8]{Figures/ellisys_explorer.png}}
-    \caption{Example w/ ellisys USB Explorer 200}%
+    \caption{Example w/ Ellisys USB Explorer 200}%
     \label{fig:ellisys_usb}%
 \end{figure}
 
