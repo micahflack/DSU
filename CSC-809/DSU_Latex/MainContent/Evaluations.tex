@@ -15,14 +15,33 @@
 %   \item socially constructive [0 - 5] ... (3): Similar to the second standard, finding the exact wording to stress the significance and utility of the work is required. Regardless, these devices are seen everywhere and not just on PoS systems. They can be found on critical infrastructure and industrial control systems or human-machine interfaces where paper reporting is used. Assessment and then creation of a proof-of-concept as future work would, in my eyes, be a novel contribution.
 % \end{itemize}
 
-This is the evaluation chapter! Looking at similar papers suggests the following content structure!
+Draft: This is the evaluation chapter! Looking at similar papers suggests the following content structure!
 
 \begin{itemize}
   \item Artifact Objectives
-  \item Implementation
-  \item Population
-  \item Sample
-  \item Data Collection and Instrumentation
+  \item Data Collection and Implementation
   \item Reliability and Validity
   \item Data Analysis
 \end{itemize}
+
+\section{Artifact Objectives} \label{artifactobjectives}
+
+The artifact produced by this research will be used to demonstrate the potential for supply chain attacks using serial printer devices. There are many potential methods that could be used for assessing weaknesses or attacking a host through a peripheral device, however, time is limited and the scope needs to be definite. As such the research should prove successful through in-memory modifications of the firmware or by manual reflashing. Then the success of either method can be quantified using performance metrics gathered before and after device compromise. Should the firmware modifications exceed the threshold for performance impact or operability, the results will be considered as failing.
+
+\section{Data Collection and Implementation} \label{datacollectionimplementation}
+
+Applicability of the data collection and implementation method across other devices is reliant upon the architecture and availability of debug interfaces for the sample device. The method that will be employed here is specific to Cortex-M3/M4 processors using Serial Wire Viewer (SWV) and kernel-aware (KA) debugging --CITATION--. Using this method should allow greater granularity and realtime collection of the needed metrics. Especially since the data will be collected externally from the hardware and firmware of the sample device, there is no risk that could be imparted from relying on an internal clock to measure the impact of an exploited firmware and/or libraries. 
+
+. ++ Describe in detail what SWV and KA debugging are, how will they be accessed, how will the data be recovered.
+
+\section{Reliability and Validity} \label{artifactobjectives}
+
+. ++ Explain reliability of external metrics gathering using hardware debuggers
+
+\section{Data Analysis} \label{dataanalysis}
+
+. ++ Explain and demonstrate how the data analysis will be performed
+
+. ++ This should be a basic table showing the collected metrics for each pass, as well as the final median values
+
+. ++ It would likely be best to gather 3 passes targeting ... idle, during print, other functionality (?) 
