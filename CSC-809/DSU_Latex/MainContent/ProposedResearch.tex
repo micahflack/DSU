@@ -36,28 +36,28 @@
 % \addcontentsline{toc}{section}{Methodology}
 \section{Methodology}  \label{methodology}
 
-For this research, the quantitative approach and case study research will be used \autocite{babbie2017basics,creswell2017research} to create a design artifact. The goal being to gather and examine, point-in-time, data from a serial printer device as a common sample representative of the affected population. By using quantitative survey research, it is possible to evaluate potential vulnerabilities for the attacks hypothesized, as well as, prototype a modified firmware image to use them against the host environment.
+For this research, the quantitative approach and case study research will be used \autocite{babbie2017basics,creswell2017research} to create a design artifact. The goal being to gather and examine, point-in-time, data from a serial printer device as a common sample representative of the affected population. By using quantitative survey research, it is possible to evaluate potential vulnerabilities for the attacks hypothesized, as well as, prototype a modified firmware image to use them against the host environment. Each step of the process is described as follows:
 
-Each step of the process shown in Figure \ref{fig:methodology_diagram}, is described as follows:
-
-\begin{figure}[ht]
-  \centering
-  {\includegraphics[width=148mm,scale=0.8]
-  {Figures/methodology_diagram_corrected.png}}
-  \caption{Research methodology diagram \autocite{peffersDesignScienceResearch2007}}
-  \label{fig:methodology_diagram}
-\end{figure}
+% I do not want to waste time editing a diagram for the billionth time
+% 
+% \begin{figure}[ht]
+%   \centering
+%   {\includegraphics[width=148mm,scale=0.8]
+%   {Figures/methodology_diagram_corrected.png}}
+%   \caption{Research methodology diagram \autocite{peffersDesignScienceResearch2007}}
+%   \label{fig:methodology_diagram}
+% \end{figure}
 
 % There are several parts to the methodology of the proposed research. First, technical information and datasheets must be collected for each of the identified devices. Then, device capabilities will be verified before beginning teardown and flash recovery. During the disassembly, each component will be documented and further technical information will be gathered from respective manufacturers. The format for presenting the collected data is described later in Section \ref{datacollectionprocess}.
 
-\begin{itemize}
+\begin{enumerate}[label=\Roman*.]
   \item \textbf{Problem Identification:} A research gap exists when identifying the risks that off-the-shelf hardware exposes to host environments (i.e., PoS systems, HMI, ICS). Auxiliary devices, like serial printers, are black box pieces of equipment with questionable supply chain and development life cycles.
   \item \textbf{Objectives and Solutions:} This research aims to thoroughly examine such a device and demonstrate that it can be used as a part of a hypothetical supply chain attack. Using the information gathered, a modified firmware image with HID cloning will be created. This solution should prove that such an attack is a viable method and there are existing issues with sourcing third-party hardware.
   \item \textbf{Research Design:} The research design process begins by tearing down the target device and identifying components. That information is then used to recover the firmware for analysis, as well as, analyze the network and USB communications with a host. After reviewing, a modified firmware image will be created and then flashed to the device. All information is documented and collected. Refer to Section \ref{designprocess} for further detail about the exact process.
   \item \textbf{Demonstration:} Using the artifact, the researcher will demonstrate that scripted HID attacks against the host are possible. Should the host filter devices using restricted vendor IDs, this attack will still work irregardless of the host operating system. It is also important that original functionality is maintained with the modified firmware.
   \item \textbf{Evaluation:} Whether or not the research has been successful depends on several factors: firmware recovery, firmware modification (using recovered firmware or third-party), attack development, and sustaining the original ESC/POS print functions. Assuming each step has been completed, the final demonstration should be able to show working print operations and scripted attacks against the host. These attacks should also work irrespective of target environment.
   \item \textbf{Communication:} The research will present the identified gaps and issues to the embedded security field. By demonstrating the research and artifacts, the researchers hope to greater increase the scrutiny for auxiliary, third-party hardware and the associated risks. In addition, the artifacts could potentially be used for future research into embedded security and exploit development.
-\end{itemize}
+\end{enumerate}
 
 % \textbf{QUESTION: Should each of the bullet points have their own section explaining the process in detail?}
 
