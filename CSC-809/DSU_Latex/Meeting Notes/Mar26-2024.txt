@@ -7,3 +7,9 @@ Dissertation Meeting Notes
         - explain USB standard, why there is threat room
     + Add chapter 5 (?)
         - Implementation / Validation / Expected Results
+
+Breakdown and explain each bit of the timeline more, should show that each part is feasible within the designated time limit. (Disassembly should have more time).
+
+Maybe include an implementation diagram.
+
+Talk to Brianna about diss credits.
